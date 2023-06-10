@@ -95,8 +95,7 @@
 /* ========================= Button ========================= */
 
 .button {
-    -fx-pref-width: 35;
-    -fx-pref-height: 35;
+
     -fx-padding: 0;
 }
 

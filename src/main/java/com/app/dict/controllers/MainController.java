@@ -27,6 +27,7 @@ public class MainController implements Initializable {
 
     @FXML
     private AnchorPane thoiKyPane;
+    private AnchorPane nhanVatPane;
     private ThoiKyController thoiKyController;
     private NhanVatController nhanVatController;
     private SuKienController suKienController;
@@ -80,7 +81,14 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        setMainContent(thoiKyPane);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/app/dict/nhan-vat.fxml"));
+            nhanVatPane = loader.load();
+            nhanVatController = loader.getController();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        setMainContent(nhanVatPane);
 
 
     }
