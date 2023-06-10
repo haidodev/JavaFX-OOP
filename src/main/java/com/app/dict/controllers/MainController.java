@@ -27,11 +27,17 @@ public class MainController implements Initializable {
 
     @FXML
     private AnchorPane thoiKyPane;
+    @FXML
     private AnchorPane nhanVatPane;
+    @FXML
     private ThoiKyController thoiKyController;
+    @FXML
     private NhanVatController nhanVatController;
+    @FXML
     private SuKienController suKienController;
+    @FXML
     private DiTichController diTichController;
+    @FXML
     private LeHoiController leHoiController;
 
     private void setMainContent(AnchorPane anchorPane) {

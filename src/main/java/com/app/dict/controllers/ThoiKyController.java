@@ -1,43 +1,70 @@
 package com.app.dict.controllers;
 
+import com.app.dict.base.DoiTuong;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebView;
 
-public class ThoiKyController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ResourceBundle;
+
+public class ThoiKyController extends GeneralController implements Initializable {
     public WebView definitionView;
     public Button showTextBtn;
 
     public void handleClickTransButton(ActionEvent actionEvent) {
     }
-
-    public void searchFieldAction(KeyEvent keyEvent) {
+    private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        for (DoiTuong temp : duLieu.getThoiKy()) {
+            thoiKyList.add(temp.getSearching());
+        }
+        listView.setItems(thoiKyList);
     }
-
-    public void handleClickListView(MouseEvent mouseEvent) {
+    public void setThoiKyListViewItem() {
+        thoiKyList.clear();
+        if (searchField.getText().equals("")) {
+            searchTemp.clear();
+            searchTemp.addAll(duLieu.getThoiKy());
+        }
+        for (DoiTuong temp : searchTemp) {
+            thoiKyList.add(temp.getSearching());
+        }
+        listView.setItems(thoiKyList);
     }
-
-    public void showDefinition(MouseEvent mouseEvent) {
+    @FXML
+    public void thoiKySearchFieldAction() throws IOException {
+        searchTemp.clear();
+        thoiKyList.clear();
+        String word = searchField.getText();
+        int index = duLieu.binaryLookup(0, duLieu.getThoiKy().size() - 1, word, duLieu.getThoiKy());
+        if (index < 0) {
+            index = duLieu.binaryLookup(0, duLieu.getThoiKy().size() -1, word, duLieu.getThoiKy());
+        }
+        updateWordInListView(word, index, duLieu.getThoiKy(), searchTemp);
+        setThoiKyListViewItem();
     }
-
-    public void handleClickRemoveButton(ActionEvent actionEvent) {
+    @FXML
+    public void showThoiKyDetail() {
+        String spelling = listView.getSelectionModel().getSelectedItem();
+        if (spelling == null) {
+            return;
+        }
+        int index = Collections.binarySearch(duLieu.getThoiKy(), new DoiTuong(spelling, null));
+        String meaning = duLieu.getThoiKy().get(index).getMeaning();
+        definitionView.getEngine().loadContent(meaning, "text/html");
     }
-
-    public void handleClickEditButton(ActionEvent actionEvent) {
-    }
-
-    public void handleClickBookmarkButton(ActionEvent actionEvent) {
-    }
-
-    public void handleClickSaveButton(ActionEvent actionEvent) {
-    }
-
-    public void handleClickSpeaker2(ActionEvent actionEvent) {
-    }
-
-    public void handleClickSpeaker1(ActionEvent actionEvent) {
+    public void initThoiKyListView() {
+        listView.getItems().clear();
+        setThoiKyListViewItem();
     }
     private String sampleNhanVat(){
         String[][] data = {
