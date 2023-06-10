@@ -10,7 +10,7 @@ public class dictApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stage.setResizable(false);
-        FXMLLoader fxmlLoader = new FXMLLoader(dictApplication.class.getResource("main-file.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(dictApplication.class.getResource("dict-main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 857, 600);
         stage.setTitle("My Dict");
         stage.setScene(scene);

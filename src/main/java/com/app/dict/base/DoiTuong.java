@@ -31,6 +31,6 @@ public class DoiTuong implements Comparable<DoiTuong>{
 
     @Override
     public int compareTo(DoiTuong o) {
-        return 0;
+        return getSearching().compareTo(o.getSearching());
     }
 }

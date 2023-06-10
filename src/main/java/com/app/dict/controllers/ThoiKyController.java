@@ -18,9 +18,6 @@ import java.util.ResourceBundle;
 public class ThoiKyController extends GeneralController implements Initializable {
     public WebView definitionView;
     public Button showTextBtn;
-
-    public void handleClickTransButton(ActionEvent actionEvent) {
-    }
     private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -60,6 +57,7 @@ public class ThoiKyController extends GeneralController implements Initializable
         }
         int index = Collections.binarySearch(duLieu.getThoiKy(), new DoiTuong(spelling, null));
         String meaning = duLieu.getThoiKy().get(index).getMeaning();
+        System.out.println(spelling);
         definitionView.getEngine().loadContent(meaning, "text/html");
     }
     public void initThoiKyListView() {
@@ -123,5 +121,15 @@ public class ThoiKyController extends GeneralController implements Initializable
         htmlContent = htmlTable.toString();
 
         definitionView.getEngine().loadContent(sampleNhanVat());
+    }
+
+    public void searchFieldAction(KeyEvent keyEvent) {
+    }
+
+    public void handleClickListView(MouseEvent mouseEvent) {
+
+    }
+
+    public void showDefinition(MouseEvent mouseEvent) {
     }
 }
