@@ -8,9 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class GeneralController extends MainController implements Initializable {
@@ -20,7 +22,7 @@ public class GeneralController extends MainController implements Initializable {
     private static final String diTich_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     private static final String leHoi_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     protected final ObservableList<String> nhanVatList = FXCollections.observableArrayList();
-    protected final ObservableList<String> thoiKyList = FXCollections.observableArrayList();
+    protected final ObservableList<String> objectList = FXCollections.observableArrayList();
     protected final ObservableList<String> suKienList = FXCollections.observableArrayList();
     protected final ObservableList<String> diTichList = FXCollections.observableArrayList();
     protected final ObservableList<String> leHoiList = FXCollections.observableArrayList();
@@ -30,9 +32,46 @@ public class GeneralController extends MainController implements Initializable {
     protected ListView<String> listView;
     @FXML
     protected TextField searchField;
+    @FXML
+    protected WebView definitionView;
+    private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+    public void setListViewItem(ArrayList<DoiTuong> resource) {
+        objectList.clear();
+        if (searchField.getText().equals("")) {
+            searchTemp.clear();
+            searchTemp.addAll(resource);
+        }
+        for (DoiTuong temp : searchTemp) {
+            objectList.add(temp.getSearching());
+        }
+        listView.setItems(objectList);
+    }
+
+    public void searchFieldAction(ArrayList<DoiTuong> resource) {
+        searchTemp.clear();
+        objectList.clear();
+        String word = searchField.getText();
+        int index = duLieu.binaryLookup(0, resource.size() - 1, word, resource);
+        if (index < 0) {
+            index = duLieu.binaryLookup(0, resource.size() -1, word, resource);
+        }
+        updateWordInListView(word, index, resource, searchTemp);
+        setListViewItem(resource);
+    }
+
+    public void showDetail(ArrayList<DoiTuong> resource) {
+        String spelling = listView.getSelectionModel().getSelectedItem();
+        if (spelling == null) {
+            return;
+        }
+        int index = Collections.binarySearch(resource, new DoiTuong(spelling, null));
+        String meaning = resource.get(index).getMeaning();
+        System.out.println(spelling);
+        definitionView.getEngine().loadContent(meaning, "text/html");
     }
     public void updateWordInListView(String word, int index, ArrayList<DoiTuong> res, ArrayList<DoiTuong> des) {
         if (index < 0) {
