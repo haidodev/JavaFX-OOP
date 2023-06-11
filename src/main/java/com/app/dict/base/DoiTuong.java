@@ -5,23 +5,33 @@ import java.util.regex.Pattern;
 
 public class DoiTuong implements Comparable<DoiTuong>{
     private String searching;
-    private String meaning;
+    private String info;
     public DoiTuong(){
         searching = "";
-        meaning = "";
+        info = "";
     }
 
-    public DoiTuong(String searching, String meaning) {
+    public DoiTuong(String searching, String info) {
         this.searching = searching;
-        this.meaning = meaning;
+        this.info = info;
     }
 
     public String getSearching() {
         return searching;
     }
-    public String getMeaning() {
-        return meaning;
+
+    public void setSearching(String searching) {
+        this.searching = searching;
     }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
 
     @Override
     public int compareTo(DoiTuong o) {
