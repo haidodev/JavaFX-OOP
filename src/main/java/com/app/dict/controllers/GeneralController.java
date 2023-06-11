@@ -17,7 +17,6 @@ import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class GeneralController extends MainController implements Initializable {
-
     protected final ObservableList<String> nhanVatList = FXCollections.observableArrayList();
     protected final ObservableList<String> objectList = FXCollections.observableArrayList();
     protected final ObservableList<String> suKienList = FXCollections.observableArrayList();
@@ -29,8 +28,7 @@ public class GeneralController extends MainController implements Initializable {
     protected ListView<String> listView;
     @FXML
     protected TextField searchField;
-    @FXML
-    protected WebView definitionView;
+    private WebView definitionView;
     private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
 
     @Override

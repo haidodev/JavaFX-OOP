@@ -14,11 +14,11 @@
             xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.app.dict.controllers.SuKienController">
     <AnchorPane layoutY="-3.0" prefHeight="459.0" prefWidth="257.0" styleClass="second-color"
                 AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-3.0">
-        <TextField fx:id="searchField" onKeyReleased="#nhanVatSearchFieldAction" layoutX="19.0" layoutY="18.0" prefHeight="35.0" prefWidth="219.0" promptText="Tra từ"/>
+        <TextField fx:id="searchField" onKeyReleased="#suKienSearchFieldAction" layoutX="19.0" layoutY="18.0" prefHeight="35.0" prefWidth="219.0" promptText="Tra cứu"/>
         <VBox layoutX="19.0" layoutY="58.0" prefHeight="525.0" prefWidth="219.0" style="-fx-background-radius: 3;"
               styleClass="third-color" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="19.0"
               AnchorPane.topAnchor="58.0">
-            <ListView fx:id="listView" onMouseClicked="#showNhanVatDetail"
+            <ListView fx:id="listView" onMouseClicked="#showSuKienDetail"
                       prefHeight="529.0" prefWidth="236.0"
                       style="-fx-background-color: none;"/>
         </VBox>
