@@ -10,6 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
+<?import javafx.scene.control.ScrollPane?>
 <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="second-color" stylesheets="@style/search.css"
             xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.app.dict.controllers.ThoiKyController">
     <AnchorPane layoutY="-3.0" prefHeight="459.0" prefWidth="257.0" styleClass="second-color"
@@ -23,6 +24,11 @@
                       style="-fx-background-color: none;"/>
         </VBox>
     </AnchorPane>
+<!--    <ScrollPane layoutX="254.0" layoutY="14.0" prefHeight="565.0" prefWidth="492.0" style="-fx-background-radius: 3;"-->
+<!--                styleClass="first-color" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="254.0"-->
+<!--                AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="14.0">-->
+<!--        -->
+<!--    </ScrollPane>-->
     <AnchorPane layoutX="254.0" layoutY="14.0" prefHeight="565.0" prefWidth="492.0" style="-fx-background-radius: 3;"
                 styleClass="first-color" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="254.0"
                 AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="14.0">
@@ -35,6 +41,7 @@
                 <Font size="10.0"/>
             </font>
         </Label>
+
         <AnchorPane layoutX="10.0" layoutY="87.0" prefHeight="468.0" prefWidth="472.0"
                     AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
                     AnchorPane.topAnchor="87.0">

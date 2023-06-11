@@ -1,5 +1,7 @@
 package com.app.dict.base;
 
+import com.app.dict.util.VietnameseUtil;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.text.Normalizer;
@@ -122,14 +124,16 @@ public class LoadData {
         }
     }
     public static int isContain(String str1, String str2) {
-        for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
-            if (str1.charAt(i) > str2.charAt(i)) {
+        String normalizedStr1 = VietnameseUtil.generalizeVietnameseString(str1);
+        String normalizedStr2 = VietnameseUtil.generalizeVietnameseString(str2);
+        for (int i = 0; i < Math.min(normalizedStr1.length(), normalizedStr2.length()); i++) {
+            if (normalizedStr1.charAt(i) > normalizedStr2.charAt(i)) {
                 return 1;
-            } else if (str1.charAt(i) < str2.charAt(i)) {
+            } else if (normalizedStr1.charAt(i) < normalizedStr2.charAt(i)) {
                 return -1;
             }
         }
-        if (str1.length() > str2.length()) {
+        if (normalizedStr1.length() > normalizedStr2.length()) {
             return 1;
         }
         return 0;
@@ -139,12 +143,7 @@ public class LoadData {
             return -1;
         }
         int mid = start + (end - start) / 2;
-        String dTNormalized = generalizeVietnameseString(dT);
-        String midNormalized = generalizeVietnameseString(temp.get(mid).getSearching());
-//        System.out.printf("\"%s\" -> \"%s\"%n", dT, dTNormalized);
-//        System.out.printf("\"%s\" -> \"%s\"%n", temp.get(mid).getSearching(), midNormalized);
-        int compare = isContain(dTNormalized, midNormalized);
-//        System.out.println(compare);
+        int compare = isContain(dT, temp.get(mid).getSearching());
         if (compare == -1) {
             return binaryLookup(start, mid - 1, dT, temp);
         } else if (compare == 1) {
@@ -152,19 +151,5 @@ public class LoadData {
         } else {
             return mid;
         }
-    }
-    private String generalizeVietnameseString(String vietnameseString) {
-        // Remove accents
-        String normalizedString = Normalizer.normalize(vietnameseString, Normalizer.Form.NFD);
-        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
-        String withoutAccents = pattern.matcher(normalizedString).replaceAll("");
-
-        // Convert to lowercase
-        String lowercaseString = withoutAccents.toLowerCase();
-
-        // Remove redundant spaces
-        String trimmedString = lowercaseString.trim();
-
-        return trimmedString.replaceAll("\\s+", " ");
     }
 }
