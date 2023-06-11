@@ -30,6 +30,12 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane nhanVatPane;
     @FXML
+    private AnchorPane diTichPane;
+    @FXML
+    private AnchorPane suKienPane;
+    @FXML
+    private AnchorPane leHoiPane;
+    @FXML
     private ThoiKyController thoiKyController;
     @FXML
     private NhanVatController nhanVatController;
@@ -50,7 +56,6 @@ public class MainController implements Initializable {
         diTichBtn.getStyleClass().removeAll("active");
         leHoiBtn.getStyleClass().removeAll("active");
     }
-
     public void showThoiKyPane(ActionEvent actionEvent) {
         resetStyleNav();
         thoiKyBtn.getStyleClass().add("active");
@@ -61,6 +66,8 @@ public class MainController implements Initializable {
     public void showNhanVatPane(ActionEvent actionEvent) {
         resetStyleNav();
         nhanVatBtn.getStyleClass().add("active");
+        setMainContent(nhanVatPane);
+
     }
 
     public void showSuKienPane(ActionEvent actionEvent) {
@@ -94,7 +101,30 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        setMainContent(nhanVatPane);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/app/dict/su-kien.fxml"));
+            suKienPane = loader.load();
+            suKienController = loader.getController();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/app/dict/di-tich.fxml"));
+            diTichPane = loader.load();
+            diTichController = loader.getController();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/app/dict/le-hoi.fxml"));
+            leHoiPane = loader.load();
+            leHoiController = loader.getController();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        thoiKyBtn.getStyleClass().add("active");
+
+        setMainContent(thoiKyPane);
 
 
     }

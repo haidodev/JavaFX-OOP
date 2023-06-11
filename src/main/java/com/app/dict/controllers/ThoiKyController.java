@@ -56,7 +56,7 @@ public class ThoiKyController extends GeneralController implements Initializable
             return;
         }
         int index = Collections.binarySearch(duLieu.getThoiKy(), new DoiTuong(spelling, null));
-        String meaning = duLieu.getThoiKy().get(index).getMeaning();
+        String meaning = duLieu.getThoiKy().get(index).getInfo();
         System.out.println(spelling);
         definitionView.getEngine().loadContent(meaning, "text/html");
     }

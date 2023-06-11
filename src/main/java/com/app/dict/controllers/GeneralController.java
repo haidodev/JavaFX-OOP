@@ -3,7 +3,6 @@ package com.app.dict.controllers;
 import com.app.dict.base.DoiTuong;
 import com.app.dict.base.LoadData;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class GeneralController extends MainController implements Initializable {
     private static final String nhanVat_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
-    private static final String thoiKy_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
+    private static final String thoiKy_Path = "src/main/resources/com/app/dict/data/ThoiKy.txt";
     private static final String suKien_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     private static final String diTich_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     private static final String leHoi_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
@@ -48,12 +47,12 @@ public class GeneralController extends MainController implements Initializable {
             }
         }
         for (int i = j + 1; i <= index; i++) {
-            DoiTuong temp = new DoiTuong(res.get(i).getSearching(), res.get(i).getMeaning());
+            DoiTuong temp = new DoiTuong(res.get(i).getSearching(), res.get(i).getInfo());
             des.add(temp);
         }
         for (int i = index + 1; i < res.size(); i++) {
             if (LoadData.isContain(word, res.get(i).getSearching()) == 0) {
-                DoiTuong temp = new DoiTuong(res.get(i).getSearching(), res.get(i).getMeaning());
+                DoiTuong temp = new DoiTuong(res.get(i).getSearching(), res.get(i).getInfo());
                 des.add(temp);
             } else {
                 break;

@@ -2,15 +2,15 @@ package com.app.dict.base;
 
 public class DoiTuong implements Comparable<DoiTuong>{
     private String searching;
-    private String meaning;
+    private String info;
     public DoiTuong(){
         searching = "";
-        meaning = "";
+        info = "";
     }
 
-    public DoiTuong(String searching, String meaning) {
+    public DoiTuong(String searching, String info) {
         this.searching = searching;
-        this.meaning = meaning;
+        this.info = info;
     }
 
     public String getSearching() {
@@ -21,12 +21,12 @@ public class DoiTuong implements Comparable<DoiTuong>{
         this.searching = searching;
     }
 
-    public String getMeaning() {
-        return meaning;
+    public String getInfo() {
+        return info;
     }
 
-    public void setMeaning(String meaning) {
-        this.meaning = meaning;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     @Override
