@@ -16,9 +16,10 @@ import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class GeneralController extends MainController implements Initializable {
+    public WebView definitionView;
     private static final String nhanVat_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     private static final String thoiKy_Path = "src/main/resources/com/app/dict/data/ThoiKy.txt";
-    private static final String suKien_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
+    private static final String suKien_Path = "src/main/resources/com/app/dict/data/ThoiKy.txt";
     private static final String diTich_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     private static final String leHoi_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
     protected final ObservableList<String> nhanVatList = FXCollections.observableArrayList();
@@ -32,8 +33,6 @@ public class GeneralController extends MainController implements Initializable {
     protected ListView<String> listView;
     @FXML
     protected TextField searchField;
-    @FXML
-    protected WebView definitionView;
     private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
 
     @Override
