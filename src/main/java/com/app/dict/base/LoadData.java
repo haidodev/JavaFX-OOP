@@ -2,8 +2,10 @@ package com.app.dict.base;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.regex.Pattern;
 
 public class LoadData {
     private final String NV_PATH;
@@ -137,7 +139,12 @@ public class LoadData {
             return -1;
         }
         int mid = start + (end - start) / 2;
-        int compare = isContain(dT, temp.get(mid).getSearching());
+        String dTNormalized = generalizeVietnameseString(dT);
+        String midNormalized = generalizeVietnameseString(temp.get(mid).getSearching());
+//        System.out.printf("\"%s\" -> \"%s\"%n", dT, dTNormalized);
+//        System.out.printf("\"%s\" -> \"%s\"%n", temp.get(mid).getSearching(), midNormalized);
+        int compare = isContain(dTNormalized, midNormalized);
+//        System.out.println(compare);
         if (compare == -1) {
             return binaryLookup(start, mid - 1, dT, temp);
         } else if (compare == 1) {
@@ -145,5 +152,19 @@ public class LoadData {
         } else {
             return mid;
         }
+    }
+    private String generalizeVietnameseString(String vietnameseString) {
+        // Remove accents
+        String normalizedString = Normalizer.normalize(vietnameseString, Normalizer.Form.NFD);
+        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+        String withoutAccents = pattern.matcher(normalizedString).replaceAll("");
+
+        // Convert to lowercase
+        String lowercaseString = withoutAccents.toLowerCase();
+
+        // Remove redundant spaces
+        String trimmedString = lowercaseString.trim();
+
+        return trimmedString.replaceAll("\\s+", " ");
     }
 }

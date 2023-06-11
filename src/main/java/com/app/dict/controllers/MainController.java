@@ -94,7 +94,7 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        setMainContent(nhanVatPane);
+        setMainContent(thoiKyPane);
 
 
     }
