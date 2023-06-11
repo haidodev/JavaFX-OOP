@@ -69,7 +69,7 @@ public class GeneralController extends MainController implements Initializable {
             return;
         }
         int index = Collections.binarySearch(resource, new DoiTuong(spelling, null));
-        String meaning = resource.get(index).getMeaning();
+        String meaning = resource.get(index).getInfo();
         System.out.println(spelling);
         definitionView.getEngine().loadContent(meaning, "text/html");
     }
