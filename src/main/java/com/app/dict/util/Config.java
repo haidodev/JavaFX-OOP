@@ -1,6 +1,11 @@
 package com.app.dict.util;
 
 public class Config {
+    public static final String NHAN_VAT_HTML = "src/main/resources/com/app/dict/data/NhanVat.txt";
+    public static final String THOI_KY_HTML = "src/main/resources/com/app/dict/data/ThoiKy.txt";
+    public static final String SU_KIEN_HTML = "src/main/resources/com/app/dict/data/NhanVat.txt";
+    public static final String DI_TICH_HTML = "src/main/resources/com/app/dict/data/NhanVat.txt";
+    public static final String LE_HOI_HTML = "src/main/resources/com/app/dict/data/NhanVat.txt";
     public static final String HISTORICAL_DESTINATION_FILENAME = "src/main/resources/com/app/dict/database/json/historicalDestinations.json";
     public static final String HISTORICAL_DESTINATION_HTML = "src/main/resources/com/app/dict/database/html/historicalDestinations.html";
     public static final String HISTORICAL_DESTINATION_WEBPAGE = "https://nguoikesu.com/dia-danh/bien-dong";

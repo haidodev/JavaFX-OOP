@@ -22,7 +22,7 @@ public class LoadData {
     private final ArrayList<DoiTuong> diTich = new ArrayList<>();
     private final ArrayList<DoiTuong> leHoi = new ArrayList<>();
 
-    public LoadData(String nvPath, String tkPath, String skPath, String dtPath, String lhPath) {
+    public LoadData(String tkPath, String nvPath, String skPath, String dtPath, String lhPath) {
         NV_PATH = nvPath;
         loadDataFromHTMLFile(NV_PATH, nhanVat);
         TK_PATH = tkPath;

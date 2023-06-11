@@ -73,16 +73,19 @@ public class MainController implements Initializable {
     public void showSuKienPane(ActionEvent actionEvent) {
         resetStyleNav();
         suKienBtn.getStyleClass().add("active");
+        setMainContent(suKienPane);
     }
 
     public void showDiTichPane(ActionEvent actionEvent) {
         resetStyleNav();
         diTichBtn.getStyleClass().add("active");
+        setMainContent(diTichPane);
     }
 
     public void showLeHoiPane(ActionEvent actionEvent) {
         resetStyleNav();
         leHoiBtn.getStyleClass().add("active");
+        setMainContent(leHoiPane);
     }
 
     @Override

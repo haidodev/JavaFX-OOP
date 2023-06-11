@@ -2,6 +2,7 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.DoiTuong;
 import com.app.dict.base.LoadData;
+import com.app.dict.util.Config;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,17 +17,13 @@ import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class GeneralController extends MainController implements Initializable {
-    private static final String nhanVat_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
-    private static final String thoiKy_Path = "src/main/resources/com/app/dict/data/ThoiKy.txt";
-    private static final String suKien_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
-    private static final String diTich_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
-    private static final String leHoi_Path = "src/main/resources/com/app/dict/data/NhanVat.txt";
+
     protected final ObservableList<String> nhanVatList = FXCollections.observableArrayList();
     protected final ObservableList<String> objectList = FXCollections.observableArrayList();
     protected final ObservableList<String> suKienList = FXCollections.observableArrayList();
     protected final ObservableList<String> diTichList = FXCollections.observableArrayList();
     protected final ObservableList<String> leHoiList = FXCollections.observableArrayList();
-    protected static LoadData duLieu = new LoadData(nhanVat_Path, thoiKy_Path, suKien_Path, diTich_Path, leHoi_Path);
+    protected static LoadData duLieu = new LoadData(Config.THOI_KY_HTML, Config.NHAN_VAT_HTML, Config.SU_KIEN_HTML, Config.DI_TICH_HTML, Config.LE_HOI_HTML);
 
     @FXML
     protected ListView<String> listView;
