@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 
 public class ThoiKyController extends GeneralController implements Initializable {
     public Button showTextBtn;
-    private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getThoiKy()) {

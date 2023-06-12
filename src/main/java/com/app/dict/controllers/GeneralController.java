@@ -1,10 +1,7 @@
 package com.app.dict.controllers;
 
-import com.app.dict.base.DoiTuong;
 import com.app.dict.base.LoadData;
-import com.app.dict.base.LoadData2;
 import com.app.dict.base.Model;
-import com.app.dict.util.Config;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -24,8 +21,7 @@ public class GeneralController extends MainController implements Initializable {
     protected final ObservableList<String> suKienList = FXCollections.observableArrayList();
     protected final ObservableList<String> diTichList = FXCollections.observableArrayList();
     protected final ObservableList<String> leHoiList = FXCollections.observableArrayList();
-    protected static LoadData duLieu = new LoadData(Config.THOI_KY_HTML, Config.NHAN_VAT_HTML, Config.SU_KIEN_HTML, Config.DI_TICH_HTML, Config.LE_HOI_HTML);
-    protected static LoadData2 database = new LoadData2();
+    protected static LoadData database = new LoadData();
 
     @FXML
     protected ListView<String> listView;
