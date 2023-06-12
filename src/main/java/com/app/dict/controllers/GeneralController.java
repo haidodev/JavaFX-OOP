@@ -2,6 +2,8 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.DoiTuong;
 import com.app.dict.base.LoadData;
+import com.app.dict.base.LoadData2;
+import com.app.dict.base.Model;
 import com.app.dict.util.Config;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,70 +25,72 @@ public class GeneralController extends MainController implements Initializable {
     protected final ObservableList<String> diTichList = FXCollections.observableArrayList();
     protected final ObservableList<String> leHoiList = FXCollections.observableArrayList();
     protected static LoadData duLieu = new LoadData(Config.THOI_KY_HTML, Config.NHAN_VAT_HTML, Config.SU_KIEN_HTML, Config.DI_TICH_HTML, Config.LE_HOI_HTML);
+    protected static LoadData2 database = new LoadData2();
 
     @FXML
     protected ListView<String> listView;
     @FXML
     protected TextField searchField;
+    @FXML
     private WebView definitionView;
-    private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
+    private final ArrayList<Model> searchTemp = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-    public void setListViewItem(ArrayList<DoiTuong> resource) {
+    public void setListViewItem(ArrayList<Model> resource) {
         objectList.clear();
         if (searchField.getText().equals("")) {
             searchTemp.clear();
             searchTemp.addAll(resource);
         }
-        for (DoiTuong temp : searchTemp) {
-            objectList.add(temp.getSearching());
+        for (Model temp : searchTemp) {
+            objectList.add(temp.getName());
         }
         listView.setItems(objectList);
     }
 
-    public void searchFieldAction(ArrayList<DoiTuong> resource) {
+    public void searchFieldAction(ArrayList<Model> resource) {
         searchTemp.clear();
         objectList.clear();
         String word = searchField.getText();
-        int index = duLieu.binaryLookup(0, resource.size() - 1, word, resource);
+        int index = database.binaryLookup(0, resource.size() - 1, word, resource);
         if (index < 0) {
-            index = duLieu.binaryLookup(0, resource.size() -1, word, resource);
+            index = database.binaryLookup(0, resource.size() -1, word, resource);
         }
         updateWordInListView(word, index, resource, searchTemp);
         setListViewItem(resource);
     }
 
-    public void showDetail(ArrayList<DoiTuong> resource) {
+    public void showDetail(ArrayList<Model> resource) {
         String spelling = listView.getSelectionModel().getSelectedItem();
         if (spelling == null) {
             return;
         }
-        int index = Collections.binarySearch(resource, new DoiTuong(spelling, null));
-        String meaning = resource.get(index).getInfo();
+        int index = Collections.binarySearch(resource, new Model(spelling, ""));
+        String meaning = resource.get(index).getHTML();
         System.out.println(spelling);
         definitionView.getEngine().loadContent(meaning, "text/html");
     }
-    public void updateWordInListView(String word, int index, ArrayList<DoiTuong> res, ArrayList<DoiTuong> des) {
+    public void updateWordInListView(String word, int index, ArrayList<Model> res, ArrayList<Model> des) {
         if (index < 0) {
             return;
         }
         int j = index;
         while (j >= 0) {
-            if (LoadData.isContain(word, res.get(j).getSearching()) == 0) {
+            if (LoadData.isContain(word, res.get(j).getName()) == 0) {
                 j--;
             } else {
                 break;
             }
         }
         for (int i = j + 1; i <= index; i++) {
-            DoiTuong temp = new DoiTuong(res.get(i).getSearching(), res.get(i).getInfo());
+            Model temp = new Model(res.get(i).getName(), res.get(i).getHTML());
             des.add(temp);
         }
         for (int i = index + 1; i < res.size(); i++) {
-            if (LoadData.isContain(word, res.get(i).getSearching()) == 0) {
-                DoiTuong temp = new DoiTuong(res.get(i).getSearching(), res.get(i).getInfo());
+            if (LoadData.isContain(word, res.get(i).getName()) == 0) {
+                Model temp = new Model(res.get(i).getName(), res.get(i).getHTML());
                 des.add(temp);
             } else {
                 break;

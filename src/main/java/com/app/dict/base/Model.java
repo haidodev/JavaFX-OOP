@@ -1,26 +1,41 @@
 package com.app.dict.base;
 
 import com.app.dict.util.Config;
+import com.app.dict.util.VietnameseUtil;
 
 import java.util.*;
 
-public abstract class Model
+public class Model implements Comparable<Model>
 {
     protected int id;
     protected String name;
     protected List<String> description;
+    private String modelHTML;
 
     public Model(String ten, List<String> description)
     {
         setName(ten);
         setDescription(description);
     }
-
+    public Model(String ten, String html)
+    {
+        setName(ten);
+        modelHTML = html;
+    }
+    public void setHTML(){
+        if (modelHTML != null) return;
+        modelHTML = toHTML();
+    }
+    public String getHTML(){
+        return modelHTML;
+    }
     public String getName() {
         return name;
     }
 
-    public  abstract String toHTML();
+    public String toHTML(){
+        return "";
+    };
 
     public void setId(int id)
     {
@@ -40,6 +55,12 @@ public abstract class Model
             description.add(Config.nullRepresentation);
         }
         this.description = description;
+    }
+    public int compareTo(Model o) {
+
+        String searchingNormalized = VietnameseUtil.generalizeVietnameseString(getName());
+        String oSearchingNormalized = VietnameseUtil.generalizeVietnameseString(o.getName());
+        return searchingNormalized.compareTo(oSearchingNormalized);
     }
 }
 

@@ -1,6 +1,7 @@
 package com.app.dict.controllers;
 
 import com.app.dict.base.DoiTuong;
+import com.app.dict.base.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,8 +23,8 @@ public class NhanVatController extends GeneralController implements Initializabl
 //    private final ArrayList<DoiTuong> searchTemp = new ArrayList<>();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (DoiTuong temp : duLieu.getNhanVat()) {
-            objectList.add(temp.getSearching());
+        for (Model temp : database.getNhanVat()) {
+            objectList.add(temp.getName());
         }
         listView.setItems(objectList);
     }
@@ -49,7 +50,7 @@ public class NhanVatController extends GeneralController implements Initializabl
 //        }
 //        updateWordInListView(word, index, duLieu.getNhanVat(), searchTemp);
 //        setNhanVatListViewItem();
-        searchFieldAction(duLieu.getNhanVat());
+        searchFieldAction((ArrayList<Model>) database.getNhanVat());
     }
     @FXML
     public void showNhanVatDetail() {
@@ -61,6 +62,6 @@ public class NhanVatController extends GeneralController implements Initializabl
 //        String meaning = duLieu.getNhanVat().get(index).getInfo();
 //        System.out.println(spelling);
 //        definitionView.getEngine().loadContent(meaning, "text/html");
-        showDetail(duLieu.getNhanVat());
+        showDetail((ArrayList<Model>) database.getNhanVat());
     }
 }
