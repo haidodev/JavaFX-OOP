@@ -1,11 +1,8 @@
 package com.app.dict.controllers;
 
-import com.app.dict.base.DoiTuong;
 import com.app.dict.base.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ArrayList;
