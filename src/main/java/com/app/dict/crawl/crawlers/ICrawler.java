@@ -1,11 +1,11 @@
-package com.app.dict.crawler.crawlers;
-
-import java.util.List;
+package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.Model;
 
+import java.util.List;
+
 
 public interface ICrawler {
-    public List<Model> crawlPages(String page);
+    public List<Model> crawlPages();
     public void writeJson(String fileName, List<Model> models);
 }

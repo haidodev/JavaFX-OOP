@@ -5,6 +5,7 @@ import com.app.dict.util.VietnameseUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -47,7 +48,7 @@ public class LoadData
     }
     public List<Model> loadNhanVat()
     {
-        List<NhanVatModel> myList = loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
+        List<NhanVatModel> myList = loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -55,7 +56,7 @@ public class LoadData
     }
     public List<Model> loadThoiKy()
     {
-        List<ThoiKyModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
+        List<ThoiKyModel> myList = loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -63,7 +64,7 @@ public class LoadData
     }
     public List<Model> loadSuKien()
     {
-        List<SuKienModel> myList = loader(Config.EVENT_FILENAME,  new TypeToken<List<SuKienModel>>() {});
+        List<SuKienModel> myList = loader(Config.SU_KIEN_FILENAME,  new TypeToken<List<SuKienModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -71,7 +72,7 @@ public class LoadData
     }
     public List<Model> loadDiTich()
     {
-        List<DiTichModel> myList = loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
+        List<DiaDanhModel> myList = loader(Config.DIA_DANH_FILENAME,  new TypeToken<List<DiaDanhModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -80,7 +81,7 @@ public class LoadData
 
     public List<Model> loadLeHoi()
     {
-        List<LeHoiModel> myList = loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
+        List<LeHoiModel> myList = loader(Config.LE_HOI_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
