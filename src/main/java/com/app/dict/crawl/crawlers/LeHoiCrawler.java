@@ -1,21 +1,19 @@
-package com.app.dict.crawler.crawlers;
+package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.LeHoiModel;
 import com.app.dict.base.Model;
-import com.app.dict.crawler.superCrawler.SCrawler;
 import com.app.dict.util.Config;
-import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.text.Normalizer;
 
 public class LeHoiCrawler extends SCrawler implements ICrawler
 {
@@ -26,11 +24,17 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
         map = new HashMap<>();
     }
 
-    public List<Model> crawlPages(String page)
+    public List<Model> crawlPages()
     {
         List<Model> festivals;
+        String page = Config.LE_HOI_WEBPAGE;
         festivals = scrapeTableFestivals(page);
         festivals.addAll(scrapeTinhFestivals(page));
+        festivals.addAll(crawlLehoiInfo());
+        for (Model model : festivals)
+        {
+            model.setId(festivals.indexOf(model) + 1);
+        }
 
         return festivals;
     }
@@ -96,11 +100,16 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
                 String[] parts;
                 parts = provinceFestival.split("\\s+(?=năm|tháng|\\d)", 2);
                 String name = parts[0];
-                if (map.containsKey(location))
+                String locationCode = convertToCode(location);
+                if (map.containsKey(locationCode))
                 {
-                    if (map.get(location).contains(name))
+                    if (map.get(locationCode).contains(name))
                     {
                         continue;
+                    }
+                    else
+                    {
+                        map.get(locationCode).add(name);
                     }
                 }
                 String time = "không rõ";
@@ -110,8 +119,7 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
                 }
                 List<String> description = new ArrayList<>();
                 description.add("không rõ");
-                String locationCode = convertToCode(location);
-                Model festival = new LeHoiModel(name, time, location, "", "", description, locationCode);
+                Model festival = new LeHoiModel("Lễ hội " + name, time, location, "", "", description, locationCode);
                 festivals.add(festival);
             }
         }
@@ -160,15 +168,16 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
                 }
                 else
                 {
-                    if (!map.containsKey(province))
+                    String provinceCode = convertToCode(province);
+                    if (!map.containsKey(provinceCode))
                     {
                         ArrayList<String> newA = new ArrayList<>();
                         newA.add(name);
-                        map.put(province, newA);
+                        map.put(provinceCode, newA);
                     }
                     else
                     {
-                        map.get(province).add(name);
+                        map.get(provinceCode).add(name);
                     }
                 }
             }
@@ -189,7 +198,7 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
                 doc2 = Jsoup.connect(href)
                         .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" +
                                 " (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
-                        .get();
+                        .timeout(20000).get();
             }
             catch(IOException e)
             {
@@ -212,11 +221,108 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
             }
 
             String locationCode = convertToCode(location.split(",")[0]);
-            Model festival = new LeHoiModel(name, time, location, historicalFigureLinked, fistTimeHolding, others, locationCode);
+            Model festival = new LeHoiModel("Lễ hội " + name, time, location, historicalFigureLinked, fistTimeHolding, others, locationCode);
             festivals.add(festival);
         }
 
         return festivals;
+    }
+
+    public List<Model> crawlLehoiInfo()
+    {
+        List<Model> festivalList = new ArrayList<>();
+        String url = "http://lehoi.info/viet-nam/page";
+
+        for (int i = 1; i <= 64; i++)
+        {
+            System.out.println(i);
+            festivalList.addAll(crawlLeHoiInfoFestivals(url + i));
+        }
+
+        return festivalList;
+    }
+
+    public List<Model> crawlLeHoiInfoFestivals(String page)
+    {
+        Document doc;
+        List<Model> models = new ArrayList<>();
+
+        try
+        {
+            doc = Jsoup.connect(page)
+                    .get();
+        }
+        catch(IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        Element listview = doc.selectFirst("div.listview");
+        Elements festivals = listview.select("li:has(a.thumb)");
+
+        for (Element festival : festivals)
+        {
+            String href = festival.selectFirst("a.thumb").attr("href");
+            String url = "http://lehoi.info" + href;
+            System.out.println(url);
+
+            Model model = crawlAFestival(url);
+            if (model != null)
+            {
+                models.add(model);
+            }
+        }
+
+        return models;
+    }
+
+    public Model crawlAFestival(String url) throws RuntimeException {
+        Document doc;
+
+        try
+        {
+            doc = Jsoup.connect(url)
+                    .timeout(2000000).get();
+        }
+        catch(IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        String briefInfo = doc.selectFirst("h1").text();
+        String[] briefInfos = briefInfo.split("tại|ở", 2);
+
+        String name = briefInfos[0].trim();
+        String location = url.replaceFirst("http://lehoi.info/", "").split("/")[0];
+        if (map.containsKey(location))
+        {
+            if (map.get(location).contains(name))
+            {
+                return null;
+            }
+        }
+        if (briefInfos.length == 2)
+        {
+            location = briefInfos[1].trim();
+        }
+        String time = "";
+        Element timeContainer = doc.selectFirst("b.lehoi-time");
+        if (timeContainer != null)
+        {
+            time = doc.selectFirst("b.lehoi-time").text().trim();
+        }
+        List<String> description = new ArrayList<>();
+        Element details = doc.selectFirst("div.content-detail");
+        String d = details.selectFirst("br").text().trim();
+        if (!d.equals(""))
+        {
+            description.add(d);
+        }
+        String code = convertToCode(name);
+
+        Model festival = new LeHoiModel(name, time, location, "", "", description, code);
+
+        return festival;
     }
 
     private String convertToCode(String str)
@@ -228,31 +334,24 @@ public class LeHoiCrawler extends SCrawler implements ICrawler
         return str.replaceAll(" ", "-");
     }
 
-    public void createFestivalsJson()
+    public void createLeHoiJson()
     {
-        String page = Config.FESTIVAL_WEBPAGE;
-        String festivalFilename = Config.FESTIVAL_FILENAME;
+        String page = Config.LE_HOI_WEBPAGE;
+        String festivalFilename = Config.LE_HOI_FILENAME;
         List<Model> festivals;
 
-        festivals = crawlPages(page);
+        festivals = crawlPages();
         writeJson(festivalFilename, festivals);
     }
 
     public static void main(String[] args)
     {
-//        FestivalsCrawler festivalsScraper = new FestivalsCrawler();
-//        String page = Config.FESTIVAL_WEBPAGE;
-//        String festivalFilename = Config.FESTIVAL_FILENAME;
-//        List<Model> festivals;
-//
-//        festivals = festivalsScraper.crawlPages(page);
-//        festivalsScraper.writeJson(festivalFilename, festivals);
-//        festivalsScraper.writeHTML(Config.FESTIVAL_HTML, festivals);
+        LeHoiCrawler festivalsScraper = new LeHoiCrawler();
+        String page = Config.LE_HOI_WEBPAGE;
+        String festivalFilename = Config.LE_HOI_FILENAME;
+        List<Model> festivals;
 
-        LeHoiCrawler test = new LeHoiCrawler();
-        List<LeHoiModel> myList = test.loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        test.writeHTML(Config.FESTIVAL_HTML, newList);
+        festivals = festivalsScraper.crawlPages();
+        festivalsScraper.writeJson(festivalFilename, festivals);
     }
 }

@@ -1,6 +1,8 @@
 package com.app.dict.base;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class ThoiKyModel extends Model
 {

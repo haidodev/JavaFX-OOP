@@ -1,12 +1,12 @@
-package com.app.dict.crawler.linkers;
+package com.app.dict.crawl.linkers;
 
 import com.app.dict.base.Model;
 import com.app.dict.base.NhanVatModel;
 import com.app.dict.base.ThoiKyModel;
-import com.app.dict.crawler.crawlers.NhanVatCrawler;
-import com.app.dict.crawler.crawlers.ThoiKyCrawler;
-import com.google.gson.reflect.TypeToken;
+import com.app.dict.crawl.crawlers.NhanVatCrawler;
+import com.app.dict.crawl.crawlers.ThoiKyCrawler;
 import com.app.dict.util.Config;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.*;
 
@@ -17,7 +17,7 @@ public class NhanVatToThoiKy
     {
         Map<String, String> hashMap = new HashMap<>();
         ThoiKyCrawler periodsCrawler = new ThoiKyCrawler();
-        List<ThoiKyModel> eraList = periodsCrawler.loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
+        List<ThoiKyModel> eraList = periodsCrawler.loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
 
         for (ThoiKyModel era : eraList)
         {
@@ -35,7 +35,7 @@ public class NhanVatToThoiKy
         Map<String, String> figureToEra = generateHashMap();
         NhanVatCrawler figuresCrawler = new NhanVatCrawler();
         List<NhanVatModel> figureList = figuresCrawler
-                .loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<>() {});
+                .loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<>() {});
 
         for (NhanVatModel figure : figureList)
         {
@@ -49,7 +49,7 @@ public class NhanVatToThoiKy
 
         List<Model> models = new ArrayList<>();
         models.addAll(figureList);
-        figuresCrawler.writeJson(Config.HISTORICAL_FIGURE_FILENAME, models);
+        figuresCrawler.writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, models);
     }
 
     public static void main(String[] args)
