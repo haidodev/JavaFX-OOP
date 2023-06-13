@@ -2,29 +2,30 @@ package com.app.dict.base;
 
 import java.util.*;
 
-public class EraModel extends Model
+public class ThoiKyModel extends Model
 {
-    private Set<String> relatedFigures;
-    private Set<String> relatedPlaces;
 
-    public List<String> getRelatedFigures() {
-        return new ArrayList<>(this.relatedFigures);
+    private Set<String> cacNhanVatLienQuan;
+    private Set<String> cacDiTichLienQuan;
+
+    public List<String> getcacNhanVatLienQuan() {
+        return new ArrayList<>(this.cacNhanVatLienQuan);
     }
 
-    public EraModel(String name, List<String> description, String code, Set<String> relatedFigures
-            , Set<String> relatedPlaces)
+    public ThoiKyModel(String name, List<String> moTa, String code, Set<String> cacNhanVatLienQuan
+            , Set<String> cacDiTichLienQuan)
     {
-        super(name, description);
+        super(name, moTa);
         setCode(code);
-        setRelatedFigures(relatedFigures);
-        setRelatedPlaces(relatedPlaces);
+        setcacNhanVatLienQuan(cacNhanVatLienQuan);
+        setcacDiTichLienQuan(cacDiTichLienQuan);
     }
-    public void setRelatedFigures(Set<String> relatedFigures) {
-        this.relatedFigures = relatedFigures;
+    public void setcacNhanVatLienQuan(Set<String> cacNhanVatLienQuan) {
+        this.cacNhanVatLienQuan = cacNhanVatLienQuan;
     }
 
-    public void setRelatedPlaces(Set<String> relatedPlaces) {
-        this.relatedPlaces = relatedPlaces;
+    public void setcacDiTichLienQuan(Set<String> cacDiTichLienQuan) {
+        this.cacDiTichLienQuan = cacDiTichLienQuan;
     }
 
     @Override
@@ -37,7 +38,7 @@ public class EraModel extends Model
         htmlBuilder.append("<head>");
         htmlBuilder.append("</head>");
         htmlBuilder.append("<body contenteditable=\"true\">");
-        htmlBuilder.append("<i>").append(this.name).append("</i>");
+        htmlBuilder.append("<i>").append(this.tenModel).append("</i>");
         htmlBuilder.append("<meta charset=\"UTF-8\">");
         // htmlBuilder.append("<title>").append(getName()).append("</title>");
         htmlBuilder.append("<style>");
@@ -55,16 +56,19 @@ public class EraModel extends Model
         htmlBuilder.append("<h2>Thông tin thời kỳ</h2>");
 
         // Add the description
-        for (String desc : this.description) {
-            htmlBuilder.append("<p>").append(desc).append("</p>");
+        if (this.moTa != null) {
+            for (String desc : this.moTa) {
+                htmlBuilder.append("<p>").append(desc).append("</p>");
+            }
         }
 
+
         // Add the related figures
-        if (this.relatedFigures != null)
+        if (this.cacNhanVatLienQuan != null)
         {
             htmlBuilder.append("<h2>Related Figures</h2>");
             htmlBuilder.append("<ul>");
-            for (String figure : this.relatedFigures) {
+            for (String figure : this.cacNhanVatLienQuan) {
                 htmlBuilder.append("<li>").append(figure).append("</li>");
             }
             htmlBuilder.append("</ul>");
@@ -79,8 +83,8 @@ public class EraModel extends Model
 
     @Override
     public String toString() {
-        return "\n{ \"Tên thời kỳ\":\"" + this.name + "\", "
-                + "\n\"Miêu tả\":\"" + this.description + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.relatedFigures + "\" }" + "\n";
+        return "\n{ \"Tên thời kỳ\":\"" + this.tenModel + "\", "
+                + "\n\"Miêu tả\":\"" + this.moTa + "\", "
+                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
     }
 }

@@ -9,22 +9,22 @@ import java.util.*;
 public class Model implements Comparable<Model>
 {
     protected int id;
-    protected String name;
-    protected List<String> description;
+    protected String tenModel;
+    protected List<String> moTa = new ArrayList<>();
     protected String code;
     private String modelHTML;
     public Model(String ten){
-        this.name = ten;
+        this.tenModel = ten;
     }
 
-    public Model(String ten, List<String> description)
+    public Model(String ten, List<String> moTa)
     {
-        setName(ten);
-        setDescription(description);
+        setTenModel(ten);
+        setMoTa(moTa);
     }
     public Model(String ten, String html)
     {
-        setName(ten);
+        setTenModel(ten);
         modelHTML = html;
     }
     public void setHTML(){
@@ -39,14 +39,16 @@ public class Model implements Comparable<Model>
     }
     public void setCode(){
         if (code == null) return;
-        code = Encode.encodeString(this.name);
+
+        code = Encode.encodeString(this.tenModel);
     }
     public void setCode(String code) {
         this.code = code;
     }
 
-    public String getName() {
-        return name;
+
+    public String getTenModel() {
+        return tenModel;
     }
 
     public String toHTML(){
@@ -58,24 +60,24 @@ public class Model implements Comparable<Model>
         this.id = id;
     }
 
-    public void setName(String name)
+    public void setTenModel(String tenModel)
     {
-        this.name = name.equals("") ? Config.nullRepresentation : name;
+        this.tenModel = tenModel.equals("") ? Config.nullRepresentation : tenModel;
     }
 
-    public void setDescription(List<String> description)
+    public void setMoTa(List<String> moTa)
     {
-        if (description == null)
+        if (moTa == null)
         {
-            description = new ArrayList<>();
-            description.add(Config.nullRepresentation);
+            moTa = new ArrayList<>();
+            moTa.add(Config.nullRepresentation);
         }
-        this.description = description;
+        this.moTa = moTa;
     }
     public int compareTo(Model o) {
 
-        String searchingNormalized = VietnameseUtil.generalizeVietnameseString(getName());
-        String oSearchingNormalized = VietnameseUtil.generalizeVietnameseString(o.getName());
+        String searchingNormalized = VietnameseUtil.generalizeVietnameseString(getTenModel());
+        String oSearchingNormalized = VietnameseUtil.generalizeVietnameseString(o.getTenModel());
         return searchingNormalized.compareTo(oSearchingNormalized);
     }
 }

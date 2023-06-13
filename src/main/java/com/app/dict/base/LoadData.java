@@ -39,15 +39,15 @@ public class LoadData
         return leHoi;
     }
     public LoadData() {
-        nhanVat = loadFigure();
+        nhanVat = loadNhanVat();
         thoiKy = loadThoiKy();
         suKien = loadSuKien();
         diTich = loadDiTich();
-        leHoi = loadFestival();
+        leHoi = loadLeHoi();
     }
-    public List<Model> loadFigure()
+    public List<Model> loadNhanVat()
     {
-        List<FigureModel> myList = loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<FigureModel>>() {});
+        List<NhanVatModel> myList = loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -55,7 +55,7 @@ public class LoadData
     }
     public List<Model> loadThoiKy()
     {
-        List<EraModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<EraModel>>() {});
+        List<ThoiKyModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -63,7 +63,7 @@ public class LoadData
     }
     public List<Model> loadSuKien()
     {
-        List<EventModel> myList = loader(Config.EVENT_FILENAME,  new TypeToken<List<EventModel>>() {});
+        List<SuKienModel> myList = loader(Config.EVENT_FILENAME,  new TypeToken<List<SuKienModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -71,16 +71,16 @@ public class LoadData
     }
     public List<Model> loadDiTich()
     {
-        List<PlaceModel> myList = loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<PlaceModel>>() {});
+        List<DiTichModel> myList = loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
         return newList;
     }
 
-    public List<Model> loadFestival()
+    public List<Model> loadLeHoi()
     {
-        List<FestivalModel> myList = loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<FestivalModel>>() {});
+        List<LeHoiModel> myList = loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -120,7 +120,7 @@ public class LoadData
             return -1;
         }
         int mid = start + (end - start) / 2;
-        int compareNext = dT.compareTo(modelList.get(mid).getName());
+        int compareNext = dT.compareTo(modelList.get(mid).getTenModel());
         if (mid == 0) {
             if (compareNext < 0) {
                 return 0;
@@ -130,7 +130,7 @@ public class LoadData
                 return -1;
             }
         } else {
-            int comparePrevious = dT.compareTo(modelList.get(mid - 1).getName());
+            int comparePrevious = dT.compareTo(modelList.get(mid - 1).getTenModel());
             if (comparePrevious > 0 && compareNext < 0) {
                 return mid;
             } else if (comparePrevious < 0) {
@@ -165,7 +165,7 @@ public class LoadData
             return -1;
         }
         int mid = start + (end - start) / 2;
-        int compare = isContain(dT, temp.get(mid).getName());
+        int compare = isContain(dT, temp.get(mid).getTenModel());
         if (compare == -1) {
             return binaryLookup(start, mid - 1, dT, temp);
         } else if (compare == 1) {
@@ -177,10 +177,9 @@ public class LoadData
 
     public static void main(String[] args) {
         LoadData ld = new LoadData();
-        for (Model m : ld.getNhanVat()) {
-            if (m instanceof FigureModel){
-                System.out.println(((FigureModel) m).getRelatedFigures());
-            }
+
+        for (Model m : ld.getThoiKy()) {
+            System.out.println(m);
         }
     }
 }

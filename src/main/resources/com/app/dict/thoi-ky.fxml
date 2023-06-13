@@ -21,7 +21,7 @@
                 styleClass="first-color">
         <VBox>
             <Label layoutX="25.0" layoutY="17.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning"
-                   text="Thoi Ky Lịch Sử" textFill="#902929">
+                   text="Thời Kỳ Lịch Sử" textFill="#902929">
                 <style>
                     -fx-font-weight: bold;
                 </style>
@@ -37,6 +37,7 @@
                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </AnchorPane>
             <Button text="Chọn ADV" onAction="#handleNhanVatLienQuanBtn"/>
+
 
             <Button text="Add Label" onAction="#handleButtonClick2"/>
             <VBox fx:id="contentVBox" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
