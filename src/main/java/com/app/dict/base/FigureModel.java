@@ -5,16 +5,11 @@ import java.util.Set;
 
 public class FigureModel extends Model
 {
-    private String code;
     private List<List<String>> infobox;
     private Set<String> relatedFigures;
     private Set<String> relatedPlaces;
     private Set<String> relatedPeriod;
 
-
-    public String getCode() {
-        return code;
-    }
 
     public FigureModel(String name, List<String> description, String code, List<List<String>> infobox
             , Set<String> relatedFigures, Set<String> relatedPlaces, Set<String> relatedPeriod)
@@ -25,10 +20,6 @@ public class FigureModel extends Model
         setRelatedFigures(relatedFigures);
         setRelatedPlaces(relatedPlaces);
         setRelatedPeriod(relatedPeriod);
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public void setInfobox(List<List<String>> infobox) {
@@ -50,6 +41,10 @@ public class FigureModel extends Model
     public Set<String> getRelatedPeriod() {
         return relatedPeriod;
     }
+    public Set<String> getRelatedFigures() {
+        return relatedFigures;
+    }
+
 
     @Override
     public String toHTML() {

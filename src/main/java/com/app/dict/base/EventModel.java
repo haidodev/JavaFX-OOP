@@ -7,15 +7,6 @@ public class EventModel extends Model {
     private String time;
     private String location;
     private String battleResult;
-    private String eventCode;
-
-    public String getEventCode() {
-        return eventCode;
-    }
-
-    public void setEventCode(String eventCode) {
-        this.eventCode = eventCode;
-    }
 
     private Set<String> relatedFigures;
     private Set<String> relatedPlaces;
@@ -23,7 +14,7 @@ public class EventModel extends Model {
     public EventModel(String name, String eventCode, List<String> description, String time, String location, String battleResult
             , Set<String> relatedFigures, Set<String> relatedPlaces) {
         super(name, description);
-        setEventCode(eventCode);
+        setCode(eventCode);
         setTime(time);
         setLocation(location);
         setBattleResult(battleResult);

@@ -177,7 +177,10 @@ public class LoadData
 
     public static void main(String[] args) {
         LoadData ld = new LoadData();
-        //List<Model> tmp = ld.loading(Config.HISTORICAL_FIGURE_FILENAME);
-        for (Model m : ld.getDiTich()) System.out.println(m);
+        for (Model m : ld.getNhanVat()) {
+            if (m instanceof FigureModel){
+                System.out.println(((FigureModel) m).getRelatedFigures());
+            }
+        }
     }
 }

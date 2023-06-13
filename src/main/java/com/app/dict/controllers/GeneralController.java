@@ -33,6 +33,7 @@ public class GeneralController extends MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        super.initialize(location, resources);
     }
     public void setListViewItem(ArrayList<Model> resource) {
         objectList.clear();
@@ -92,5 +93,18 @@ public class GeneralController extends MainController implements Initializable {
                 break;
             }
         }
+    }
+    public void handleNhanVatLienQuanBtn(){
+        //System.out.println(thoiKyPane);
+        //showNhanVatPane();
+        String spelling = "An Dương Vương";
+        //listView.getSelectionModel().select(spelling);
+        ArrayList<Model> resource = (ArrayList<Model>) database.getNhanVat();
+        int index = Collections.binarySearch(resource, new Model(spelling, ""));
+        String meaning = resource.get(index).getHTML();
+        System.out.println(spelling);
+        definitionView.getEngine().loadContent(meaning, "text/html");
+
+
     }
 }

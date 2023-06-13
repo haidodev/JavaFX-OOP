@@ -1,6 +1,7 @@
 package com.app.dict.base;
 
 import com.app.dict.util.Config;
+import com.app.dict.util.Encode;
 import com.app.dict.util.VietnameseUtil;
 
 import java.util.*;
@@ -10,7 +11,11 @@ public class Model implements Comparable<Model>
     protected int id;
     protected String name;
     protected List<String> description;
+    protected String code;
     private String modelHTML;
+    public Model(String ten){
+        this.name = ten;
+    }
 
     public Model(String ten, List<String> description)
     {
@@ -29,6 +34,17 @@ public class Model implements Comparable<Model>
     public String getHTML(){
         return modelHTML;
     }
+    public String getCode() {
+        return code;
+    }
+    public void setCode(){
+        if (code == null) return;
+        code = Encode.encodeString(this.name);
+    }
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public String getName() {
         return name;
     }
