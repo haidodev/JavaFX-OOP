@@ -95,9 +95,11 @@ public class GeneralController extends MainController implements Initializable {
         }
     }
     public void handleNhanVatLienQuanBtn(){
-        //System.out.println(thoiKyPane);
+        System.out.println(listView);
+
         //showNhanVatPane();
         String spelling = "An Dương Vương";
+
         //listView.getSelectionModel().select(spelling);
         ArrayList<Model> resource = (ArrayList<Model>) database.getNhanVat();
         int index = Collections.binarySearch(resource, new Model(spelling, ""));

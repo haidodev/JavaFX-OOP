@@ -1,5 +1,7 @@
 package com.app.dict.controllers;
 
+import com.app.dict.base.Model;
+import com.app.dict.base.NhanVatModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,8 @@ import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -132,5 +136,4 @@ public class MainController implements Initializable {
 
 
     }
-
 }
