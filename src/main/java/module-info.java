@@ -3,6 +3,7 @@ module com.app.dict {
     requires javafx.fxml;
     requires javafx.web;
     requires com.google.gson;
+    requires org.jsoup;
 
 
     opens com.app.dict to javafx.fxml;
