@@ -12,7 +12,7 @@ public class NhanVatController extends GeneralController implements Initializabl
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getNhanVat()) {
-            objectList.add(temp.getName());
+            objectList.add(temp.getTenModel());
         }
         listView.setItems(objectList);
     }

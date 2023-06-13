@@ -41,7 +41,7 @@ public class GeneralController extends MainController implements Initializable {
             searchTemp.addAll(resource);
         }
         for (Model temp : searchTemp) {
-            objectList.add(temp.getName());
+            objectList.add(temp.getTenModel());
         }
         listView.setItems(objectList);
     }
@@ -74,19 +74,19 @@ public class GeneralController extends MainController implements Initializable {
         }
         int j = index;
         while (j >= 0) {
-            if (LoadData.isContain(word, res.get(j).getName()) == 0) {
+            if (LoadData.isContain(word, res.get(j).getTenModel()) == 0) {
                 j--;
             } else {
                 break;
             }
         }
         for (int i = j + 1; i <= index; i++) {
-            Model temp = new Model(res.get(i).getName(), res.get(i).getHTML());
+            Model temp = new Model(res.get(i).getTenModel(), res.get(i).getHTML());
             des.add(temp);
         }
         for (int i = index + 1; i < res.size(); i++) {
-            if (LoadData.isContain(word, res.get(i).getName()) == 0) {
-                Model temp = new Model(res.get(i).getName(), res.get(i).getHTML());
+            if (LoadData.isContain(word, res.get(i).getTenModel()) == 0) {
+                Model temp = new Model(res.get(i).getTenModel(), res.get(i).getHTML());
                 des.add(temp);
             } else {
                 break;
@@ -94,7 +94,7 @@ public class GeneralController extends MainController implements Initializable {
         }
     }
     public void handleNhanVatLienQuanBtn(){
-        showNhanVatPane();
+        //showNhanVatPane();
 
 
     }

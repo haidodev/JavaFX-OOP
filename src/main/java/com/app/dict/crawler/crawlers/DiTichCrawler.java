@@ -1,11 +1,11 @@
 package com.app.dict.crawler.crawlers;
 
+
+import com.app.dict.base.DiTichModel;
+import com.app.dict.base.Model;
+import com.app.dict.crawler.superCrawler.SCrawler;
+import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
-import com.oop2.interfaces.ICrawler;
-import com.oop2.models.PlaceModel;
-import com.oop2.models.Model;
-import com.oop2.superCrawler.SCrawler;
-import com.oop2.util.Config;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,9 +16,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import static com.oop2.util.UrlDecode.getCodeFromUrl;
 
-public class PlacesCrawler extends SCrawler implements ICrawler {
+import static com.app.dict.util.UrlDecode.getCodeFromUrl;
+
+
+public class DiTichCrawler extends SCrawler implements ICrawler {
     @Override
     public List<Model> crawlPages(String page) {
         String baseUrl = page;
@@ -106,7 +108,7 @@ public class PlacesCrawler extends SCrawler implements ICrawler {
                 nhanVatLienQuan.add(getCodeFromUrl(name));
             }
 
-            Model destination =  new PlaceModel(title, texts, getCodeFromUrl(completeUrl), nhanVatLienQuan);
+            Model destination =  new DiTichModel(title, texts, getCodeFromUrl(completeUrl), nhanVatLienQuan);
             destination.setId(++id);
             destinationList.add(destination);
             nextElements = doc.select("a.btn.btn-sm.btn-secondary.next");
@@ -128,8 +130,8 @@ public class PlacesCrawler extends SCrawler implements ICrawler {
 //        test.writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
 //        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, locationList);
 
-        PlacesCrawler test = new PlacesCrawler();
-        List<PlaceModel> myList = test.loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<PlaceModel>>() {});
+        DiTichCrawler test = new DiTichCrawler();
+        List<DiTichModel> myList = test.loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);
         test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, newList);

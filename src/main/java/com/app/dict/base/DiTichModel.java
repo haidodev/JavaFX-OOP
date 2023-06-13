@@ -3,18 +3,18 @@ package com.app.dict.base;
 import java.util.List;
 import java.util.Set;
 
-public class PlaceModel extends Model{
-    private Set<String> relatedFigures;
-    public PlaceModel(String name, List<String> description, String placeCode, Set<String> relatedFigures)
+public class DiTichModel extends Model{
+    private Set<String> cacNhanVatLienQuan;
+    public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
-        super(name, description);
-        setCode(placeCode);
-        setRelatedFigures(relatedFigures);
+        super(tenModel, moTa);
+        setCode(code);
+        setcacNhanVatLienQuan(cacNhanVatLienQuan);
     }
 
-    public void setRelatedFigures(Set<String> relatedFigures)
+    public void setcacNhanVatLienQuan(Set<String> cacNhanVatLienQuan)
     {
-        this.relatedFigures = relatedFigures;
+        this.cacNhanVatLienQuan = cacNhanVatLienQuan;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class PlaceModel extends Model{
 
         // Start the HTML structure
         htmlBuilder.append("<html>");
-        htmlBuilder.append("<i>").append(this.name).append("</i>");
+        htmlBuilder.append("<i>").append(this.tenModel).append("</i>");
         htmlBuilder.append("<head>");
         htmlBuilder.append("</head>");
         htmlBuilder.append("<body contenteditable=\"true\">");
@@ -47,18 +47,24 @@ public class PlaceModel extends Model{
 
 
         // Add the description
-        htmlBuilder.append("<h2>Description</h2>");
-        for (String desc : this.description) {
-            htmlBuilder.append("<p>").append(desc).append("</p>");
+        if (this.moTa != null)
+        {
+            htmlBuilder.append("<h2>Description</h2>");
+            for (String desc : this.moTa) {
+                htmlBuilder.append("<p>").append(desc).append("</p>");
+            }
         }
 
         // Add the related figures
-        htmlBuilder.append("<h2>Related Figures</h2>");
-        htmlBuilder.append("<ul>");
-        for (String figure : this.relatedFigures) {
-            htmlBuilder.append("<li>").append(figure).append("</li>");
+        if (this.cacNhanVatLienQuan != null)
+        {
+            htmlBuilder.append("<h2>Related Figures</h2>");
+            htmlBuilder.append("<ul>");
+            for (String figure : this.cacNhanVatLienQuan) {
+                htmlBuilder.append("<li>").append(figure).append("</li>");
+            }
+            htmlBuilder.append("</ul>");
         }
-        htmlBuilder.append("</ul>");
 
         // Close the HTML structure
         htmlBuilder.append("</body>");
@@ -70,9 +76,9 @@ public class PlaceModel extends Model{
     @Override
     public String toString() {
         return  "\n{ \"Id\":\"" + this.id + "\", "
-                + "\n\"Địa danh\":\"" + this.name + "\", "
+                + "\n\"Địa danh\":\"" + this.tenModel + "\", "
                 + "\n\"Code\":\"" + this.code + "\", "
-                + "\n\"Miêu tả\":\"" + this.description + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.relatedFigures + "\" }" + "\n";
+                + "\n\"Miêu tả\":\"" + this.moTa + "\", "
+                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
     }
 }

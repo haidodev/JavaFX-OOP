@@ -12,7 +12,7 @@ public class DiTichController extends GeneralController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getDiTich()) {
-            objectList.add(temp.getName());
+            objectList.add(temp.getTenModel());
         }
         listView.setItems(objectList);
     }

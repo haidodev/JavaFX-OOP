@@ -1,22 +1,22 @@
 package com.app.dict.crawler.crawlers;
 
-import com.oop2.interfaces.ICrawler;
-import com.oop2.superCrawler.SCrawler;
-import com.oop2.util.Config;
+import com.app.dict.base.Model;
+import com.app.dict.base.ThoiKyModel;
+import com.app.dict.crawler.superCrawler.SCrawler;
+import com.app.dict.util.Config;
+import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import com.oop2.models.Model;
-import java.util.HashSet;
-import java.util.Set;
-import com.oop2.models.EraModel;
-import com.google.gson.reflect.TypeToken;
 
-public class PeriodsCrawler extends SCrawler implements ICrawler {
+import java.util.*;
+
+
+
+public class ThoiKyCrawler extends SCrawler implements ICrawler {
     public List<Model> crawlPages(String page) {
         String baseUrl = page;
         String thoiKyUrl = "/dong-lich-su";
@@ -92,7 +92,7 @@ public class PeriodsCrawler extends SCrawler implements ICrawler {
                 }
             }
 
-            Model era = new EraModel(eraName, description, eraCode
+            Model era = new ThoiKyModel(eraName, description, eraCode
                     , historicalFiguresLinked, historicalDestinationsLinked);
             era.setId(++id);
             eraList.add(era);
@@ -137,7 +137,7 @@ public class PeriodsCrawler extends SCrawler implements ICrawler {
 
     public void createErasHTML()
     {
-        List<EraModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<EraModel>>() {});
+        List<ThoiKyModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);
         writeHTML(Config.ERA_HTML, newList);
@@ -145,11 +145,11 @@ public class PeriodsCrawler extends SCrawler implements ICrawler {
 
     // Testing
     public static void main(String[] args) {
-        PeriodsCrawler test = new PeriodsCrawler();
+        ThoiKyCrawler test = new ThoiKyCrawler();
 //        List<Model> models = test.crawlPages(Config.ERA_WEBPAGE);
 //        test.writeJson(Config.ERA_FILENAME, models);
 
-        List<EraModel> myList = test.loader(Config.ERA_FILENAME,  new TypeToken<List<EraModel>>() {});
+        List<ThoiKyModel> myList = test.loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);
         test.writeHTML(Config.ERA_HTML, newList);

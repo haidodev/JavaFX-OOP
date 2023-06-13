@@ -1,31 +1,27 @@
 package com.app.dict.crawler.crawlers;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.app.dict.base.LeHoiModel;
+import com.app.dict.base.Model;
+import com.app.dict.crawler.superCrawler.SCrawler;
+import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
-import com.oop2.models.EraModel;
-import com.oop2.superCrawler.SCrawler;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import java.io.FileWriter;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.text.Normalizer;
-import com.oop2.interfaces.ICrawler;
-import com.oop2.models.Model;
-import com.oop2.models.FestivalModel;
-import com.oop2.util.Config;
 
-public class FestivalsCrawler extends SCrawler implements ICrawler
+public class LeHoiCrawler extends SCrawler implements ICrawler
 {
     private Map<String, List<String>> map;
 
-    public FestivalsCrawler()
+    public LeHoiCrawler()
     {
         map = new HashMap<>();
     }
@@ -115,7 +111,7 @@ public class FestivalsCrawler extends SCrawler implements ICrawler
                 List<String> description = new ArrayList<>();
                 description.add("không rõ");
                 String locationCode = convertToCode(location);
-                Model festival = new FestivalModel(name, time, location, "", "", description, locationCode);
+                Model festival = new LeHoiModel(name, time, location, "", "", description, locationCode);
                 festivals.add(festival);
             }
         }
@@ -216,7 +212,7 @@ public class FestivalsCrawler extends SCrawler implements ICrawler
             }
 
             String locationCode = convertToCode(location.split(",")[0]);
-            Model festival = new FestivalModel(name, time, location, historicalFigureLinked, fistTimeHolding, others, locationCode);
+            Model festival = new LeHoiModel(name, time, location, historicalFigureLinked, fistTimeHolding, others, locationCode);
             festivals.add(festival);
         }
 
@@ -253,8 +249,8 @@ public class FestivalsCrawler extends SCrawler implements ICrawler
 //        festivalsScraper.writeJson(festivalFilename, festivals);
 //        festivalsScraper.writeHTML(Config.FESTIVAL_HTML, festivals);
 
-        FestivalsCrawler test = new FestivalsCrawler();
-        List<FestivalModel> myList = test.loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<FestivalModel>>() {});
+        LeHoiCrawler test = new LeHoiCrawler();
+        List<LeHoiModel> myList = test.loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);
         test.writeHTML(Config.FESTIVAL_HTML, newList);

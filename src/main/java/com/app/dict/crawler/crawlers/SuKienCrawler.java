@@ -1,8 +1,7 @@
 package com.app.dict.crawler.crawlers;
 
-import com.app.dict.base.EventModel;
+import com.app.dict.base.SuKienModel;
 import com.app.dict.base.Model;
-import com.app.dict.crawler.interfaces.ICrawler;
 import com.app.dict.crawler.superCrawler.SCrawler;
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
@@ -16,13 +15,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import com.oop2.models.Model;
-import com.oop2.interfaces.ICrawler;
-import com.oop2.models.EventModel;
 
-import static com.oop2.util.UrlDecode.getCodeFromUrl;
 
-public class EventsCrawler extends SCrawler implements ICrawler {
+
+import static com.app.dict.util.UrlDecode.getCodeFromUrl;
+
+public class SuKienCrawler extends SCrawler implements ICrawler {
     @Override
     public List<Model> crawlPages(String page) {
         // the URL of the target website's home page
@@ -112,7 +110,7 @@ public class EventsCrawler extends SCrawler implements ICrawler {
                 diaDiemLienQuan.add(getCodeFromUrl(name));
             }
 
-            Model skls = new EventModel(eventName, historicalEventCode,null, time, location, battleResult, nhanVatLienQuan, diaDiemLienQuan);
+            Model skls = new SuKienModel(eventName, historicalEventCode,null, time, location, battleResult, nhanVatLienQuan, diaDiemLienQuan);
             skls.setId(++id);
             historicalEvents.add(skls);
             // looking for the "Next →" HTML element in the new page
@@ -158,8 +156,8 @@ public class EventsCrawler extends SCrawler implements ICrawler {
 //        test.writeJson(Config.EVENT_FILENAME, historicalEvents);
 //        test.writeHTML(Config.EVENT_HTML, historicalEvents);
 
-        EventsCrawler test = new EventsCrawler();
-        List<EventModel> myList = test.loader(Config.EVENT_FILENAME,  new TypeToken<List<EventModel>>() {});
+        SuKienCrawler test = new SuKienCrawler();
+        List<SuKienModel> myList = test.loader(Config.EVENT_FILENAME,  new TypeToken<List<SuKienModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);
         test.writeHTML(Config.EVENT_HTML, newList);

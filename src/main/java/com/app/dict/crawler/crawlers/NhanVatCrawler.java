@@ -1,11 +1,10 @@
 package com.app.dict.crawler.crawlers;
 
+import com.app.dict.base.Model;
+import com.app.dict.base.NhanVatModel;
+import com.app.dict.crawler.superCrawler.SCrawler;
+import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
-import com.oop2.interfaces.ICrawler;
-import com.oop2.models.FigureModel;
-import com.oop2.models.Model;
-import com.oop2.superCrawler.SCrawler;
-import com.oop2.util.Config;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,7 +13,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class FiguresCrawler extends SCrawler implements ICrawler {
+public class NhanVatCrawler extends SCrawler implements ICrawler {
 
     public List<Model> crawlPages(String page) {
         String baseUrl = page;
@@ -118,7 +117,7 @@ public class FiguresCrawler extends SCrawler implements ICrawler {
             }
 
             // Add scapred nhanvat to list
-            Model nhanVat = new FigureModel(name, description, historicalFigureCode, infobox,
+            Model nhanVat = new NhanVatModel(name, description, historicalFigureCode, infobox,
                     historicalFiguresLinked, historicalDestinationsLinked, historicalErasLinked);
             historicalFigureList.add(nhanVat);
 
@@ -210,13 +209,13 @@ public class FiguresCrawler extends SCrawler implements ICrawler {
 
 
     public static void main(String[] args) {
-//        HistoricalFiguresCrawler test = new HistoricalFiguresCrawler();
-//        List<Model> figures = test.crawlPages(Config.HISTORICAL_FIGURE_WEBPAGE);
-//        test.writeJson(Config.HISTORICAL_FIGURE_FILENAME, figures);
-//        test.writeHTML(Config.HISTORICAL_FIGURE_HTML, figures);
+        NhanVatCrawler test = new NhanVatCrawler();
+        List<Model> figures = test.crawlPages(Config.HISTORICAL_FIGURE_WEBPAGE);
+        test.writeJson(Config.HISTORICAL_FIGURE_FILENAME, figures);
+        test.writeHTML(Config.HISTORICAL_FIGURE_HTML, figures);
 
-        FiguresCrawler test = new FiguresCrawler();
-        List<FigureModel> myList = test.loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<FigureModel>>() {});
+//        NhanVatCrawler test = new NhanVatCrawler();
+        List<NhanVatModel> myList = test.loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);
         test.writeHTML(Config.HISTORICAL_FIGURE_HTML, newList);

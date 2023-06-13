@@ -1,7 +1,9 @@
-package com.app.dict.crawler.interfaces;
+package com.app.dict.crawler.crawlers;
 
 import java.util.List;
-import com.oop2.models.Model;
+
+import com.app.dict.base.Model;
+
 
 public interface ICrawler {
     public List<Model> crawlPages(String page);

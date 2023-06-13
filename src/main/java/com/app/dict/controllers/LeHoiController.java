@@ -12,7 +12,7 @@ public class LeHoiController extends GeneralController implements Initializable 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getLeHoi()) {
-            objectList.add(temp.getName());
+            objectList.add(temp.getTenModel());
         }
         listView.setItems(objectList);
     }
