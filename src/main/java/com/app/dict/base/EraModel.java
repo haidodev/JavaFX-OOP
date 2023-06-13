@@ -4,7 +4,6 @@ import java.util.*;
 
 public class EraModel extends Model
 {
-    private String code;
     private Set<String> relatedFigures;
     private Set<String> relatedPlaces;
 
@@ -20,15 +19,6 @@ public class EraModel extends Model
         setRelatedFigures(relatedFigures);
         setRelatedPlaces(relatedPlaces);
     }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public void setRelatedFigures(Set<String> relatedFigures) {
         this.relatedFigures = relatedFigures;
     }

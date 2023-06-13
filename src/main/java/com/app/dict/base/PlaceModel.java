@@ -4,23 +4,17 @@ import java.util.List;
 import java.util.Set;
 
 public class PlaceModel extends Model{
-    private String placeCode;
     private Set<String> relatedFigures;
     public PlaceModel(String name, List<String> description, String placeCode, Set<String> relatedFigures)
     {
         super(name, description);
-        setPlaceCode(placeCode);
+        setCode(placeCode);
         setRelatedFigures(relatedFigures);
     }
 
     public void setRelatedFigures(Set<String> relatedFigures)
     {
         this.relatedFigures = relatedFigures;
-    }
-
-    public void setPlaceCode(String placeCode)
-    {
-        this.placeCode = placeCode;
     }
 
     @Override
@@ -77,7 +71,7 @@ public class PlaceModel extends Model{
     public String toString() {
         return  "\n{ \"Id\":\"" + this.id + "\", "
                 + "\n\"Địa danh\":\"" + this.name + "\", "
-                + "\n\"Code\":\"" + this.placeCode + "\", "
+                + "\n\"Code\":\"" + this.code + "\", "
                 + "\n\"Miêu tả\":\"" + this.description + "\", "
                 + "\n\"Nhân vật liên quan code\":\"" + this.relatedFigures + "\" }" + "\n";
     }

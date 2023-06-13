@@ -93,4 +93,9 @@ public class GeneralController extends MainController implements Initializable {
             }
         }
     }
+    public void handleNhanVatLienQuanBtn(){
+        showNhanVatPane();
+
+
+    }
 }

@@ -56,33 +56,33 @@ public class MainController implements Initializable {
         diTichBtn.getStyleClass().removeAll("active");
         leHoiBtn.getStyleClass().removeAll("active");
     }
-    public void showThoiKyPane(ActionEvent actionEvent) {
+    public void showThoiKyPane() {
         resetStyleNav();
         thoiKyBtn.getStyleClass().add("active");
         setMainContent(thoiKyPane);
 
     }
 
-    public void showNhanVatPane(ActionEvent actionEvent) {
+    public void showNhanVatPane() {
         resetStyleNav();
         nhanVatBtn.getStyleClass().add("active");
         setMainContent(nhanVatPane);
 
     }
 
-    public void showSuKienPane(ActionEvent actionEvent) {
+    public void showSuKienPane() {
         resetStyleNav();
         suKienBtn.getStyleClass().add("active");
         setMainContent(suKienPane);
     }
 
-    public void showDiTichPane(ActionEvent actionEvent) {
+    public void showDiTichPane() {
         resetStyleNav();
         diTichBtn.getStyleClass().add("active");
         setMainContent(diTichPane);
     }
 
-    public void showLeHoiPane(ActionEvent actionEvent) {
+    public void showLeHoiPane() {
         resetStyleNav();
         leHoiBtn.getStyleClass().add("active");
         setMainContent(leHoiPane);
