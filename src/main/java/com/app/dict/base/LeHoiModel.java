@@ -10,17 +10,17 @@ public class LeHoiModel extends Model
     private String diaDiem;
     private String nhanVatLienQuan;
     private String toChucLanDau;
-    private String diaDanhCode;
+    private String diTichCode;
 
     public LeHoiModel(String tenModel, String thoiGian, String diaDiem,
-                      String nhanVatLienQuan, String toChucLanDau, List<String> description, String diaDanhCode)
+                      String nhanVatLienQuan, String toChucLanDau, List<String> description, String diTichCode)
     {
         super(tenModel, description);
         setThoiGian(thoiGian);
         setDiaDiem(diaDiem);
         setNhanVatLienQuan(nhanVatLienQuan);
         setToChucLanDau(toChucLanDau);
-        setDiaDanhCode(diaDanhCode);
+        setDiTichCode(diTichCode);
     }
 
     public void setToChucLanDau(String toChucLanDau)
@@ -43,9 +43,9 @@ public class LeHoiModel extends Model
         this.thoiGian = thoiGian.equals("") ? Config.nullRepresentation : thoiGian;
     }
 
-    public void setDiaDanhCode(String diaDanhCode)
+    public void setDiTichCode(String diTichCode)
     {
-        this.diaDanhCode = diaDanhCode;
+        this.diTichCode = diTichCode;
     }
 
     @Override
@@ -108,6 +108,6 @@ public class LeHoiModel extends Model
                 + "\"nhanVatLienQuan\": \"" + this.nhanVatLienQuan + "\",\n\t"
                 + "\"toChucLanDau\": \"" + this.toChucLanDau + "\",\n\t"
                 + "\"moTa\": \"" + this.moTa.toString() + "\",\n\t"
-                + "\"diaDanhCode\": \"" + this.diaDanhCode + "\" }\n";
+                + "\"diTichCode\": \"" + this.diTichCode + "\" }\n";
     }
 }
