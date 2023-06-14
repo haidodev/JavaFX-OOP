@@ -82,8 +82,8 @@ public class ThoiKyModel extends Model
 
     @Override
     public String toString() {
-        return "\n{ \"Tên thời kỳ\":\"" + this.tenModel + "\", "
-                + "\n\"Miêu tả\":\"" + this.moTa + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
+        return "\n{ \"tenModel\":\"" + this.tenModel + "\", "
+                + "\n\"moTa\":\"" + this.moTa + "\", "
+                + "\n\"cacNhanVatLienQuan\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
     }
 }

@@ -92,11 +92,9 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
             Elements desElements = doc.select("div.com-content-article__body > p");
             for(Element element : desElements) {
                 String text = element.text();
-                if (text.length() > 50) {
+                if (text.length() > 20) {
                     text = text.replaceAll("\"", "'");
-
                     texts.add(text);
-                    break;
                 }
             }
 
@@ -125,12 +123,12 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
 
     // Testing
     public static void main(String[] args) {
-//        HistoricalDestinationsCrawler test = new HistoricalDestinationsCrawler();
-//        List<Model> locationList = test.crawlPages(Config.HISTORICAL_DESTINATION_WEBPAGE);
-//        test.writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
-//        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, locationList);
-
         DiTichCrawler test = new DiTichCrawler();
+        List<Model> locationList = test.crawlPages(Config.HISTORICAL_DESTINATION_WEBPAGE);
+        test.writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
+        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, locationList);
+
+//        DiTichCrawler test = new DiTichCrawler();
         List<DiTichModel> myList = test.loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
         List<Model> newList = new ArrayList<>();
         newList.addAll(myList);

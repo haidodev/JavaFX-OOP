@@ -75,10 +75,10 @@ public class DiTichModel extends Model{
 
     @Override
     public String toString() {
-        return  "\n{ \"Id\":\"" + this.id + "\", "
-                + "\n\"Địa danh\":\"" + this.tenModel + "\", "
-                + "\n\"Code\":\"" + this.code + "\", "
-                + "\n\"Miêu tả\":\"" + this.moTa + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
+        return  "\n{ \"id\":\"" + this.id + "\", "
+                + "\n\"tenModel\":\"" + this.tenModel + "\", "
+                + "\n\"code\":\"" + this.code + "\", "
+                + "\n\"moTa\":\"" + this.moTa + "\", "
+                + "\n\"cacNhanVatLienQuan\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
     }
 }

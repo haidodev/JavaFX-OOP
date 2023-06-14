@@ -101,13 +101,13 @@ public class LeHoiModel extends Model
     @Override
     public String toString()
     {
-        return  "{ \t\"Id\": \"" + this.id + "\", \n\t"
-                + "\"Tên\": \"" + this.tenModel + "\",\n\t"
-                + "\"Thời Gian\": \"" + this.thoiGian + "\",\n\t"
-                + "\"Địa điểm\": \"" + this.diaDiem + "\",\n\t"
-                + "\"Nhân Vật Lịch Sử Liên Kết\": \"" + this.nhanVatLienQuan + "\",\n\t"
-                + "\"Lần Đầu Tổ Chức\": \"" + this.toChucLanDau + "\",\n\t"
-                + "\"Thông Tin Khác\": \"" + this.moTa.toString() + "\",\n\t"
-                + "\"Địa điểm code\": \"" + this.diaDanhCode + "\" }\n";
+        return  "{ \t\"id\": \"" + this.id + "\", \n\t"
+                + "\"tenModel\": \"" + this.tenModel + "\",\n\t"
+                + "\"thoiGian\": \"" + this.thoiGian + "\",\n\t"
+                + "\"diaDiem\": \"" + this.diaDiem + "\",\n\t"
+                + "\"nhanVatLienQuan\": \"" + this.nhanVatLienQuan + "\",\n\t"
+                + "\"toChucLanDau\": \"" + this.toChucLanDau + "\",\n\t"
+                + "\"moTa\": \"" + this.moTa.toString() + "\",\n\t"
+                + "\"diaDanhCode\": \"" + this.diaDanhCode + "\" }\n";
     }
 }

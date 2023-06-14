@@ -108,12 +108,12 @@ public class SuKienModel extends Model {
 
     @Override
     public String toString() {
-        return  "\n{ \"Id\":\"" + this.id + "\", "
-                + "\n\"Tên\":\"" + this.tenModel + "\", "
-                + "\n\"Thời gian\":\"" + this.thoiGian + "\", "
-                + "\n\"Địa điểm\":\"" + this.diaDiem + "\", "
-                + "\n\"kết quả\":\"" + this.ketQua + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\", "
-                + "\n\"Địa điểm liên quan code\":\"" + this.cacDiTichLienQuan + "\" }" + "\n";
+        return  "\n{ \"id\":\"" + this.id + "\", "
+                + "\n\"tenModel\":\"" + this.tenModel + "\", "
+                + "\n\"thoiGian\":\"" + this.thoiGian + "\", "
+                + "\n\"diaDiem\":\"" + this.diaDiem + "\", "
+                + "\n\"ketQuan\":\"" + this.ketQua + "\", "
+                + "\n\"cacNhanVatLienQuan\":\"" + this.cacNhanVatLienQuan + "\", "
+                + "\n\"cacDiTichLienQuan\":\"" + this.cacDiTichLienQuan + "\" }" + "\n";
     }
 }
