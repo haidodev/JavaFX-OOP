@@ -1,7 +1,7 @@
 package com.app.dict.base;
 
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 
 public class SuKienModel extends Model {
     private String thoiGian;

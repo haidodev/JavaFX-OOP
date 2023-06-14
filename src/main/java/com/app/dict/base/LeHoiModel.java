@@ -2,7 +2,7 @@ package com.app.dict.base;
 
 import com.app.dict.util.Config;
 
-import java.util.*;
+import java.util.List;
 
 public class LeHoiModel extends Model
 {

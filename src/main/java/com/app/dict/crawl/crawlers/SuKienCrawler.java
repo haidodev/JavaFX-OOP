@@ -1,10 +1,8 @@
-package com.app.dict.crawler.crawlers;
+package com.app.dict.crawl.crawlers;
 
-import com.app.dict.base.SuKienModel;
 import com.app.dict.base.Model;
-import com.app.dict.crawler.superCrawler.SCrawler;
+import com.app.dict.base.SuKienModel;
 import com.app.dict.util.Config;
-import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,15 +14,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
-
 import static com.app.dict.util.UrlDecode.getCodeFromUrl;
 
 public class SuKienCrawler extends SCrawler implements ICrawler {
     @Override
-    public List<Model> crawlPages(String page) {
+    public List<Model> crawlPages() {
         // the URL of the target website's home page
-        String baseUrl = page;
+        String baseUrl = Config.SU_KIEN_WEBPAGE;
 
         // initializing the list of SuKienModel` data objects
         // that will contain the scraped data
@@ -143,23 +139,16 @@ public class SuKienCrawler extends SCrawler implements ICrawler {
         return historicalEvents;
     }
 
-    public void createHistoricalEventsJson()
+    public void createSuKienJson()
     {
-        List<Model> historicalEvents = crawlPages(Config.EVENT_WEBPAGE);
-        writeJson(Config.EVENT_FILENAME, historicalEvents);
+        List<Model> historicalEvents = crawlPages();
+        writeJson(Config.SU_KIEN_FILENAME, historicalEvents);
     }
 
     // testing
     public static void main(String[] args) {
-//        HistoricalEventsCrawler test = new HistoricalEventsCrawler();
-//        List<Model> historicalEvents = test.crawlPages(Config.EVENT_WEBPAGE);
-//        test.writeJson(Config.EVENT_FILENAME, historicalEvents);
-//        test.writeHTML(Config.EVENT_HTML, historicalEvents);
-
         SuKienCrawler test = new SuKienCrawler();
-        List<SuKienModel> myList = test.loader(Config.EVENT_FILENAME,  new TypeToken<List<SuKienModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        test.writeHTML(Config.EVENT_HTML, newList);
+        List<Model> historicalEvents = test.crawlPages();
+        test.writeJson(Config.SU_KIEN_FILENAME, historicalEvents);
     }
 }

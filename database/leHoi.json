@@ -2,7 +2,7 @@
   {
     "thoiGian": "5/1",
     "diaDiem": "Hà Nội, quận Đống Đa",
-    "cacNhanVatLienQuan": "Nguyễn Huệ",
+    "nhanVatLienQuan": "Nguyễn Huệ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -14,7 +14,7 @@
   {
     "thoiGian": "5/1",
     "diaDiem": "Hà Nam, huyện Thanh Liêm",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -26,7 +26,7 @@
   {
     "thoiGian": "6/1",
     "diaDiem": "Hà Nội, Sóc Sơn",
-    "cacNhanVatLienQuan": "Thánh Gióng",
+    "nhanVatLienQuan": "Thánh Gióng",
     "toChucLanDau": "Nhà Tiền Lê",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -38,7 +38,7 @@
   {
     "thoiGian": "6/1",
     "diaDiem": "Hà Nội, Đông Anh",
-    "cacNhanVatLienQuan": "An Dương Vương",
+    "nhanVatLienQuan": "An Dương Vương",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -48,7 +48,7 @@
   {
     "thoiGian": "6/1",
     "diaDiem": "Ninh Bình, Gia Viễn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Nhà Lý",
     "diaDanhCode": "ninh-binh",
     "id": 0,
@@ -58,7 +58,7 @@
   {
     "thoiGian": "7/1",
     "diaDiem": "Nam Định, Vụ Bản",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Nhà Trần",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -70,7 +70,7 @@
   {
     "thoiGian": "7/1",
     "diaDiem": "Phú Yên, Ô Loan",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-yen",
     "id": 0,
@@ -82,7 +82,7 @@
   {
     "thoiGian": "Không rõ",
     "diaDiem": "Tây Ninh, Đạo Cao Đài",
-    "cacNhanVatLienQuan": "Đức Chí Tôn",
+    "nhanVatLienQuan": "Đức Chí Tôn",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tay-ninh",
     "id": 0,
@@ -92,7 +92,7 @@
   {
     "thoiGian": "10/1",
     "diaDiem": "Quảng Ninh, núi Yên Tử",
-    "cacNhanVatLienQuan": "Trần Nhân Tông",
+    "nhanVatLienQuan": "Trần Nhân Tông",
     "toChucLanDau": "thế kỷ 14",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -104,7 +104,7 @@
   {
     "thoiGian": "13/1",
     "diaDiem": "Phú Thọ, huyện Tam Nông",
-    "cacNhanVatLienQuan": "Thiều Hoa công chúa, tứ vị đại tần họ Hà (Hà Hắc Long, Hà Hiên Cương, Hà Thổ Lân và Hà Sơn Thắng), hai tướng công : Bùi Thạch Đa và Bùi Thạch Đê.",
+    "nhanVatLienQuan": "Thiều Hoa công chúa, tứ vị đại tần họ Hà (Hà Hắc Long, Hà Hiên Cương, Hà Thổ Lân và Hà Sơn Thắng), hai tướng công : Bùi Thạch Đa và Bùi Thạch Đê.",
     "toChucLanDau": "gần đây",
     "diaDanhCode": "phu-tho",
     "id": 0,
@@ -117,7 +117,7 @@
   {
     "thoiGian": "13/1",
     "diaDiem": "Bắc Ninh, huyện Tiên Du",
-    "cacNhanVatLienQuan": "Nguyễn Đình Diễn",
+    "nhanVatLienQuan": "Nguyễn Đình Diễn",
     "toChucLanDau": "Nhà Lê sơ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -129,7 +129,7 @@
   {
     "thoiGian": "6/1",
     "diaDiem": "Hà Nội, huyện Mỹ Đức",
-    "cacNhanVatLienQuan": "Quan Thế Âm Bồ Tát",
+    "nhanVatLienQuan": "Quan Thế Âm Bồ Tát",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -142,7 +142,7 @@
   {
     "thoiGian": "15/1",
     "diaDiem": "Hải Dương, huyện Chí Linh",
-    "cacNhanVatLienQuan": "Huyền Quang, Nguyễn Trãi",
+    "nhanVatLienQuan": "Huyền Quang, Nguyễn Trãi",
     "toChucLanDau": "từ thế kỷ 14",
     "diaDanhCode": "hai-duong",
     "id": 0,
@@ -154,7 +154,7 @@
   {
     "thoiGian": "14/1",
     "diaDiem": "Long An, thị trấn Tầm Vu",
-    "cacNhanVatLienQuan": "Đỗ Tường Phong, Đỗ Tường Tự",
+    "nhanVatLienQuan": "Đỗ Tường Phong, Đỗ Tường Tự",
     "toChucLanDau": "năm 1878",
     "diaDanhCode": "long-an",
     "id": 0,
@@ -167,7 +167,7 @@
   {
     "thoiGian": "15/1",
     "diaDiem": "Nhiều quốc gia",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nhieu-quoc-gia",
     "id": 0,
@@ -180,7 +180,7 @@
   {
     "thoiGian": "16/1",
     "diaDiem": "Vĩnh Phúc, huyện Lập Thạch",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "thế kỷ 2 trước CN",
     "diaDanhCode": "vinh-phuc",
     "id": 0,
@@ -193,7 +193,7 @@
   {
     "thoiGian": "4/1",
     "diaDiem": "Tây Ninh, Núi Bà Đen",
-    "cacNhanVatLienQuan": "Linh Sơn Thánh Mẫu",
+    "nhanVatLienQuan": "Linh Sơn Thánh Mẫu",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tay-ninh",
     "id": 0,
@@ -205,7 +205,7 @@
   {
     "thoiGian": "10/2",
     "diaDiem": "Hà Nội, Hồ Tây",
-    "cacNhanVatLienQuan": "Uy Linh Lang, Vương Duy, Vương Ba",
+    "nhanVatLienQuan": "Uy Linh Lang, Vương Duy, Vương Ba",
     "toChucLanDau": "thế kỷ 17",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -218,7 +218,7 @@
   {
     "thoiGian": "10/2",
     "diaDiem": "Hà Nội, Đông Anh",
-    "cacNhanVatLienQuan": "Minh Mỗ Đại vương Thượng đẳng thần",
+    "nhanVatLienQuan": "Minh Mỗ Đại vương Thượng đẳng thần",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -230,7 +230,7 @@
   {
     "thoiGian": "19/2",
     "diaDiem": "Đà Nẵng, Ngũ Hành Sơn",
-    "cacNhanVatLienQuan": "Quán Thế Âm Bồ Tát",
+    "nhanVatLienQuan": "Quán Thế Âm Bồ Tát",
     "toChucLanDau": "năm 1960",
     "diaDanhCode": "đa-nang",
     "id": 0,
@@ -243,7 +243,7 @@
   {
     "thoiGian": "23-25/4 âm lịch",
     "diaDiem": "An Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "an-giang",
     "id": 0,
@@ -255,7 +255,7 @@
   {
     "thoiGian": "10-12/2 âm lịch",
     "diaDiem": "Bà Rịa Vũng Tàu",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ba-ria-vung-tau",
     "id": 0,
@@ -267,7 +267,7 @@
   {
     "thoiGian": "17/2 âm lịch",
     "diaDiem": "Bà Rịa Vũng Tàu",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ba-ria-vung-tau",
     "id": 0,
@@ -279,7 +279,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Bạc Liêu",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-lieu",
     "id": 0,
@@ -291,7 +291,7 @@
   {
     "thoiGian": "5/1 âm lịch",
     "diaDiem": "Bắc Cạn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-can",
     "id": 0,
@@ -303,7 +303,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Bắc Cạn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-can",
     "id": 0,
@@ -315,7 +315,7 @@
   {
     "thoiGian": "20/1 âm lịch",
     "diaDiem": "Bắc Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-giang",
     "id": 0,
@@ -327,7 +327,7 @@
   {
     "thoiGian": "6/2 âm lịch",
     "diaDiem": "Bắc Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-giang",
     "id": 0,
@@ -339,7 +339,7 @@
   {
     "thoiGian": "13/2 âm lịch",
     "diaDiem": "Bắc Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-giang",
     "id": 0,
@@ -351,7 +351,7 @@
   {
     "thoiGian": "17/2 âm lịch",
     "diaDiem": "Bắc Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-giang",
     "id": 0,
@@ -363,7 +363,7 @@
   {
     "thoiGian": "16/3 dương lịch",
     "diaDiem": "Bắc Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-giang",
     "id": 0,
@@ -375,7 +375,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Bắc Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-giang",
     "id": 0,
@@ -387,7 +387,7 @@
   {
     "thoiGian": "4/1 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -399,7 +399,7 @@
   {
     "thoiGian": "4/1 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -411,7 +411,7 @@
   {
     "thoiGian": "13-14/1 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -423,7 +423,7 @@
   {
     "thoiGian": "15-16/2 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -435,7 +435,7 @@
   {
     "thoiGian": "23/3 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -447,7 +447,7 @@
   {
     "thoiGian": "8/4 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -459,7 +459,7 @@
   {
     "thoiGian": "tháng 12 và tháng 1 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -471,7 +471,7 @@
   {
     "thoiGian": "14/3 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -483,7 +483,7 @@
   {
     "thoiGian": "6-7/2 âm lịch",
     "diaDiem": "Bắc Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-ninh",
     "id": 0,
@@ -495,7 +495,7 @@
   {
     "thoiGian": "năm 1/7 dương lịch",
     "diaDiem": "Bến Tre",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ben-tre",
     "id": 0,
@@ -507,7 +507,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Bình Dương",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-duong",
     "id": 0,
@@ -519,7 +519,7 @@
   {
     "thoiGian": "5/1 âm lịch",
     "diaDiem": "Bình Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-đinh",
     "id": 0,
@@ -531,7 +531,7 @@
   {
     "thoiGian": "5/4 âm lịch",
     "diaDiem": "Bình Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-đinh",
     "id": 0,
@@ -543,7 +543,7 @@
   {
     "thoiGian": "3 vua Quang Trung, Nguyễn Nhạc, Nguyễn Lữ 15/1 âm lịch",
     "diaDiem": "Bình Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-đinh",
     "id": 0,
@@ -555,7 +555,7 @@
   {
     "thoiGian": "tháng 12 dương lịch",
     "diaDiem": "Bình Phước",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-phuoc",
     "id": 0,
@@ -567,7 +567,7 @@
   {
     "thoiGian": "tháng 7 dương lịch",
     "diaDiem": "Bình Thuận",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "id": 0,
@@ -579,7 +579,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Bình Thuận",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "id": 0,
@@ -591,7 +591,7 @@
   {
     "thoiGian": "tháng 6 âm lịch",
     "diaDiem": "Bình Thuận",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "id": 0,
@@ -603,7 +603,7 @@
   {
     "thoiGian": "tháng 7 âm lịch",
     "diaDiem": "Bình Thuận",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "id": 0,
@@ -615,7 +615,7 @@
   {
     "thoiGian": "14 đến 16 tháng 9 âm lịch",
     "diaDiem": "Bình Thuận",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "id": 0,
@@ -627,7 +627,7 @@
   {
     "thoiGian": "9/1 âm lịch",
     "diaDiem": "Cao Bằng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "cao-bang",
     "id": 0,
@@ -639,7 +639,7 @@
   {
     "thoiGian": "9/1 âm lịch",
     "diaDiem": "Cao Bằng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "cao-bang",
     "id": 0,
@@ -651,7 +651,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Cao Bằng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "cao-bang",
     "id": 0,
@@ -663,7 +663,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Cà Mau",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ca-mau",
     "id": 0,
@@ -675,7 +675,7 @@
   {
     "thoiGian": "13, 14 âm lịch tháng Giêng)",
     "diaDiem": "Cần Thơ",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "can-tho",
     "id": 0,
@@ -687,7 +687,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Cần Thơ",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "can-tho",
     "id": 0,
@@ -699,7 +699,7 @@
   {
     "thoiGian": "tháng 8-9-10 âm lịch",
     "diaDiem": "Đồng Nai",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đong-nai",
     "id": 0,
@@ -711,7 +711,7 @@
   {
     "thoiGian": "15/3 và 15/11 âm lịch",
     "diaDiem": "Đồng Tháp",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đong-thap",
     "id": 0,
@@ -723,7 +723,7 @@
   {
     "thoiGian": "19/2 âm lịch",
     "diaDiem": "Đà Nẵng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đa-nang",
     "id": 0,
@@ -735,7 +735,7 @@
   {
     "thoiGian": "tháng 3 dương lịch",
     "diaDiem": "Đắk Lắk",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đak-lak",
     "id": 0,
@@ -747,7 +747,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Đắk Lắk",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đak-lak",
     "id": 0,
@@ -759,7 +759,7 @@
   {
     "thoiGian": "7/5 dương lịch",
     "diaDiem": "Điện Biên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đien-bien",
     "id": 0,
@@ -771,7 +771,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Điện Biên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đien-bien",
     "id": 0,
@@ -783,7 +783,7 @@
   {
     "thoiGian": "24/2 âm lịch (khai hội)",
     "diaDiem": "Điện Biên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đien-bien",
     "id": 0,
@@ -795,7 +795,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Gia Lai",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "gia-lai",
     "id": 0,
@@ -807,7 +807,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Gia Lai",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "gia-lai",
     "id": 0,
@@ -819,7 +819,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Gia Lai",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "gia-lai",
     "id": 0,
@@ -831,7 +831,7 @@
   {
     "thoiGian": "2-5/1 âm lịch",
     "diaDiem": "Hà Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-giang",
     "id": 0,
@@ -843,7 +843,7 @@
   {
     "thoiGian": "7/1 âm lịch trở đi",
     "diaDiem": "Hà Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-giang",
     "id": 0,
@@ -855,7 +855,7 @@
   {
     "thoiGian": "5/1 âm lịch",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -867,7 +867,7 @@
   {
     "thoiGian": "19-21/3 âm lịch",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -879,7 +879,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -891,7 +891,7 @@
   {
     "thoiGian": "25 tháng Sáu và",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -903,7 +903,7 @@
   {
     "thoiGian": "25 tháng Tám âm lịch",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -915,7 +915,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -927,7 +927,7 @@
   {
     "thoiGian": "1-6/2 âm lịch",
     "diaDiem": "Hà Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-nam",
     "id": 0,
@@ -939,7 +939,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -951,7 +951,7 @@
   {
     "thoiGian": "12/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -963,7 +963,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -975,7 +975,7 @@
   {
     "thoiGian": "5-7/3 âm lịch (chính hội)",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -987,7 +987,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -999,7 +999,7 @@
   {
     "thoiGian": "5-6/3 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1011,7 +1011,7 @@
   {
     "thoiGian": "6/3 âm lịch (kết hội)",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1023,7 +1023,7 @@
   {
     "thoiGian": "16/3 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1035,7 +1035,7 @@
   {
     "thoiGian": "6/3 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1047,7 +1047,7 @@
   {
     "thoiGian": "4/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1059,7 +1059,7 @@
   {
     "thoiGian": "2/2 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1071,7 +1071,7 @@
   {
     "thoiGian": "6/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1083,7 +1083,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1095,7 +1095,7 @@
   {
     "thoiGian": "6/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1107,7 +1107,7 @@
   {
     "thoiGian": "6/2 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1119,7 +1119,7 @@
   {
     "thoiGian": "7/3 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1131,7 +1131,7 @@
   {
     "thoiGian": "23/3 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1143,7 +1143,7 @@
   {
     "thoiGian": "9/4 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1155,7 +1155,7 @@
   {
     "thoiGian": "14/5 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1167,7 +1167,7 @@
   {
     "thoiGian": "8/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1179,7 +1179,7 @@
   {
     "thoiGian": "3/3 và 13/8 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1191,7 +1191,7 @@
   {
     "thoiGian": "4-10/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1203,7 +1203,7 @@
   {
     "thoiGian": "11/1 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1215,7 +1215,7 @@
   {
     "thoiGian": "6-12/8 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1227,7 +1227,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1239,7 +1239,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1251,7 +1251,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1263,7 +1263,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1275,7 +1275,7 @@
   {
     "thoiGian": "9/2 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1287,7 +1287,7 @@
   {
     "thoiGian": "9-11/2 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1299,7 +1299,7 @@
   {
     "thoiGian": "6/3 âm lịch",
     "diaDiem": "Hà Nội",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "id": 0,
@@ -1311,7 +1311,7 @@
   {
     "thoiGian": "3/3 âm lịch, đền Lê Khôi (Thạch Hà) 2/5 âm lịch",
     "diaDiem": "Hà Tĩnh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-tinh",
     "id": 0,
@@ -1323,7 +1323,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hà Tĩnh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-tinh",
     "id": 0,
@@ -1335,7 +1335,7 @@
   {
     "thoiGian": "6/1 âm lịch (khai hội)",
     "diaDiem": "Hà Tĩnh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-tinh",
     "id": 0,
@@ -1347,7 +1347,7 @@
   {
     "thoiGian": "tháng giêng khoảng 7 ngày",
     "diaDiem": "Hải Dương",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hai-duong",
     "id": 0,
@@ -1359,7 +1359,7 @@
   {
     "thoiGian": "tháng Tám khoảng 7 ngày",
     "diaDiem": "Hải Dương",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hai-duong",
     "id": 0,
@@ -1371,7 +1371,7 @@
   {
     "thoiGian": "14/2 âm lịch chính hội",
     "diaDiem": "Hải Dương",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hai-duong",
     "id": 0,
@@ -1383,7 +1383,7 @@
   {
     "thoiGian": "10/6 âm lịch - 9/8 âm lịch",
     "diaDiem": "Hải Phòng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hai-phong",
     "id": 0,
@@ -1395,7 +1395,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hải Phòng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hai-phong",
     "id": 0,
@@ -1407,7 +1407,7 @@
   {
     "thoiGian": "1 tháng 4 dương lịch",
     "diaDiem": "Hải Phòng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hai-phong",
     "id": 0,
@@ -1419,7 +1419,7 @@
   {
     "thoiGian": "19/5 và 2/9 dương lịch",
     "diaDiem": "Hậu Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hau-giang",
     "id": 0,
@@ -1431,7 +1431,7 @@
   {
     "thoiGian": "15/1 - 15/2 âm lịch",
     "diaDiem": "Hòa Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hoa-binh",
     "id": 0,
@@ -1443,7 +1443,7 @@
   {
     "thoiGian": "1-4/2 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1455,7 +1455,7 @@
   {
     "thoiGian": "15/8 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1467,7 +1467,7 @@
   {
     "thoiGian": "11/1 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1479,7 +1479,7 @@
   {
     "thoiGian": "10-12/2 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1491,7 +1491,7 @@
   {
     "thoiGian": "10-12/2 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1503,7 +1503,7 @@
   {
     "thoiGian": "12/1 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1515,7 +1515,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1527,7 +1527,7 @@
   {
     "thoiGian": "10/3 âm lịch (khai hội)",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1539,7 +1539,7 @@
   {
     "thoiGian": "6 - 8 tháng 3 âm lịch",
     "diaDiem": "Hưng Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "hung-yen",
     "id": 0,
@@ -1551,7 +1551,7 @@
   {
     "thoiGian": "23/3 âm lịch",
     "diaDiem": "Khánh Hòa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "khanh-hoa",
     "id": 0,
@@ -1563,7 +1563,7 @@
   {
     "thoiGian": "28/8 âm lịch",
     "diaDiem": "Kiên Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kien-giang",
     "id": 0,
@@ -1575,7 +1575,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Kiên Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kien-giang",
     "id": 0,
@@ -1587,7 +1587,7 @@
   {
     "thoiGian": "15/10 âm lịch",
     "diaDiem": "Kiên Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kien-giang",
     "id": 0,
@@ -1599,7 +1599,7 @@
   {
     "thoiGian": "tháng 1 âm lịch",
     "diaDiem": "Kiên Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kien-giang",
     "id": 0,
@@ -1611,7 +1611,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Kon Tum",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kon-tum",
     "id": 0,
@@ -1623,7 +1623,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Lào Cai",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lao-cai",
     "id": 0,
@@ -1635,7 +1635,7 @@
   {
     "thoiGian": "tháng Giêng",
     "diaDiem": "Lào Cai",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lao-cai",
     "id": 0,
@@ -1647,7 +1647,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Lạng Sơn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lang-son",
     "id": 0,
@@ -1659,7 +1659,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Lạng Sơn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lang-son",
     "id": 0,
@@ -1671,7 +1671,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Lạng Sơn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lang-son",
     "id": 0,
@@ -1683,7 +1683,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Lạng Sơn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lang-son",
     "id": 0,
@@ -1695,7 +1695,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Lạng Sơn",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lang-son",
     "id": 0,
@@ -1707,7 +1707,7 @@
   {
     "thoiGian": "tháng 1 âm lịch, kéo dài 7 ngày",
     "diaDiem": "Lâm Đồng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lam-đong",
     "id": 0,
@@ -1719,7 +1719,7 @@
   {
     "thoiGian": "8/9 âm lịch",
     "diaDiem": "Long An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "long-an",
     "id": 0,
@@ -1731,7 +1731,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Long An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "long-an",
     "id": 0,
@@ -1743,7 +1743,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Nam Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -1755,7 +1755,7 @@
   {
     "thoiGian": "1-10/3 âm lịch",
     "diaDiem": "Nam Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -1767,7 +1767,7 @@
   {
     "thoiGian": "15-20/8 âm lịch",
     "diaDiem": "Nam Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -1779,7 +1779,7 @@
   {
     "thoiGian": "12-15/9 âm lịch",
     "diaDiem": "Nam Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -1791,7 +1791,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Nam Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -1803,7 +1803,7 @@
   {
     "thoiGian": "15-20/9 âm lịch",
     "diaDiem": "Nam Định",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nam-đinh",
     "id": 0,
@@ -1815,7 +1815,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1827,7 +1827,7 @@
   {
     "thoiGian": "15/2 âm lịch",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1839,7 +1839,7 @@
   {
     "thoiGian": "19/5 dương lịch",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1851,7 +1851,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1863,7 +1863,7 @@
   {
     "thoiGian": "13-15/1 âm lịch",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1875,7 +1875,7 @@
   {
     "thoiGian": "20, 21/1 âm lịch",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1887,7 +1887,7 @@
   {
     "thoiGian": "15 tháng 3 và 10 tháng 10 âm lịch.",
     "diaDiem": "Nghệ An",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "id": 0,
@@ -1899,7 +1899,7 @@
   {
     "thoiGian": "8-10/3 âm lịch",
     "diaDiem": "Ninh Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ninh-binh",
     "id": 0,
@@ -1911,7 +1911,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Ninh Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ninh-binh",
     "id": 0,
@@ -1923,7 +1923,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Ninh Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ninh-binh",
     "id": 0,
@@ -1935,7 +1935,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Ninh Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ninh-binh",
     "id": 0,
@@ -1947,7 +1947,7 @@
   {
     "thoiGian": "tháng 7-8 dương lịch",
     "diaDiem": "Ninh Thuận",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ninh-thuan",
     "id": 0,
@@ -1959,7 +1959,7 @@
   {
     "thoiGian": "3-10/3 âm lịch",
     "diaDiem": "Phú Thọ",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-tho",
     "id": 0,
@@ -1971,7 +1971,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Phú Thọ",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-tho",
     "id": 0,
@@ -1983,7 +1983,7 @@
   {
     "thoiGian": "12-13/1 âm lịch",
     "diaDiem": "Phú Thọ",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-tho",
     "id": 0,
@@ -1995,7 +1995,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Phú Thọ",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-tho",
     "id": 0,
@@ -2007,7 +2007,7 @@
   {
     "thoiGian": "7/1 âm lịch",
     "diaDiem": "Phú Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-yen",
     "id": 0,
@@ -2019,7 +2019,7 @@
   {
     "thoiGian": "tháng 3 âm lịch",
     "diaDiem": "Phú Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-yen",
     "id": 0,
@@ -2031,7 +2031,7 @@
   {
     "thoiGian": "27-30/12 âm lịch",
     "diaDiem": "Phú Yên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phu-yen",
     "id": 0,
@@ -2043,7 +2043,7 @@
   {
     "thoiGian": "2/9 dương lịch",
     "diaDiem": "Quảng Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-binh",
     "id": 0,
@@ -2055,7 +2055,7 @@
   {
     "thoiGian": "tháng 3 dương lịch",
     "diaDiem": "Quảng Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-nam",
     "id": 0,
@@ -2067,7 +2067,7 @@
   {
     "thoiGian": "tháng 4 dương lịch",
     "diaDiem": "Quảng Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-nam",
     "id": 0,
@@ -2079,7 +2079,7 @@
   {
     "thoiGian": "tháng 2 âm lịch",
     "diaDiem": "Quảng Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-nam",
     "id": 0,
@@ -2091,7 +2091,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Quảng Nam",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-nam",
     "id": 0,
@@ -2103,7 +2103,7 @@
   {
     "thoiGian": "5-7 /1 âm lịch",
     "diaDiem": "Quảng Ngãi",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ngai",
     "id": 0,
@@ -2115,7 +2115,7 @@
   {
     "thoiGian": "5-6/1 âm lịch",
     "diaDiem": "Quảng Ngãi",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ngai",
     "id": 0,
@@ -2127,7 +2127,7 @@
   {
     "thoiGian": "15/7 âm lịch",
     "diaDiem": "Quảng Ngãi",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ngai",
     "id": 0,
@@ -2139,7 +2139,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Quảng Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -2151,7 +2151,7 @@
   {
     "thoiGian": "2/2 âm lịch",
     "diaDiem": "Quảng Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -2163,7 +2163,7 @@
   {
     "thoiGian": "18/6 âm lịch",
     "diaDiem": "Quảng Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -2175,7 +2175,7 @@
   {
     "thoiGian": "4/1 âm lịch, 3 tháng",
     "diaDiem": "Quảng Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -2187,7 +2187,7 @@
   {
     "thoiGian": "1-8/6 âm lịch",
     "diaDiem": "Quảng Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -2199,7 +2199,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Quảng Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ninh",
     "id": 0,
@@ -2211,7 +2211,7 @@
   {
     "thoiGian": "tháng 2 đầu tháng 3 âm lịch",
     "diaDiem": "Quảng Trị",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-tri",
     "id": 0,
@@ -2223,7 +2223,7 @@
   {
     "thoiGian": "15/10 âm lịch",
     "diaDiem": "Sóc Trăng",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "soc-trang",
     "id": 0,
@@ -2235,7 +2235,7 @@
   {
     "thoiGian": "14/7 âm lịch",
     "diaDiem": "Sơn La",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "son-la",
     "id": 0,
@@ -2247,7 +2247,7 @@
   {
     "thoiGian": "tháng 10 âm lịch",
     "diaDiem": "Sơn La",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "son-la",
     "id": 0,
@@ -2259,7 +2259,7 @@
   {
     "thoiGian": "15/1 âm lịch)",
     "diaDiem": "Tây Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tay-ninh",
     "id": 0,
@@ -2271,7 +2271,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Tây Ninh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tay-ninh",
     "id": 0,
@@ -2283,7 +2283,7 @@
   {
     "thoiGian": "21-22/8 âm lịch",
     "diaDiem": "Thanh Hóa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "id": 0,
@@ -2295,7 +2295,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Thanh Hóa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "id": 0,
@@ -2307,7 +2307,7 @@
   {
     "thoiGian": "18-20/1 âm lịch",
     "diaDiem": "Thanh Hóa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "id": 0,
@@ -2319,7 +2319,7 @@
   {
     "thoiGian": "5/1 âm lịch",
     "diaDiem": "Thanh Hóa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "id": 0,
@@ -2331,7 +2331,7 @@
   {
     "thoiGian": "24- 26/2 âm lịch",
     "diaDiem": "Thanh Hóa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "id": 0,
@@ -2343,7 +2343,7 @@
   {
     "thoiGian": "20-22/2 âm lịch",
     "diaDiem": "Thanh Hóa",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "id": 0,
@@ -2355,7 +2355,7 @@
   {
     "thoiGian": "4/1 và 13-15/9 âm lịch",
     "diaDiem": "Thái Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-binh",
     "id": 0,
@@ -2367,7 +2367,7 @@
   {
     "thoiGian": "16/3 âm lịch",
     "diaDiem": "Thái Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-binh",
     "id": 0,
@@ -2379,7 +2379,7 @@
   {
     "thoiGian": "1/4 âm lịch",
     "diaDiem": "Thái Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-binh",
     "id": 0,
@@ -2391,7 +2391,7 @@
   {
     "thoiGian": "20/8 âm lịch",
     "diaDiem": "Thái Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-binh",
     "id": 0,
@@ -2403,7 +2403,7 @@
   {
     "thoiGian": "2/9 âm lịch",
     "diaDiem": "Thái Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-binh",
     "id": 0,
@@ -2415,7 +2415,7 @@
   {
     "thoiGian": "10/2 âm lịch (khai hội)",
     "diaDiem": "Thái Bình",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-binh",
     "id": 0,
@@ -2427,7 +2427,7 @@
   {
     "thoiGian": "6/1 âm lịch",
     "diaDiem": "Thái Nguyên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-nguyen",
     "id": 0,
@@ -2439,7 +2439,7 @@
   {
     "thoiGian": "18/1 âm lịch",
     "diaDiem": "Thái Nguyên",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-nguyen",
     "id": 0,
@@ -2451,7 +2451,7 @@
   {
     "thoiGian": "11-12 / 1 âm lịch (3 năm 1 lần)",
     "diaDiem": "Thừa Thiên Huế",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thua-thien-hue",
     "id": 0,
@@ -2463,7 +2463,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Thừa Thiên Huế",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thua-thien-hue",
     "id": 0,
@@ -2475,7 +2475,7 @@
   {
     "thoiGian": "tháng 3 và 7 âm lịch",
     "diaDiem": "Thừa Thiên Huế",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thua-thien-hue",
     "id": 0,
@@ -2487,7 +2487,7 @@
   {
     "thoiGian": "2/1 dương lịch, Rạch Gầm Xoài Mút 20/1 dương lịch",
     "diaDiem": "Tiền Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tien-giang",
     "id": 0,
@@ -2499,7 +2499,7 @@
   {
     "thoiGian": "19/5 dương lịch",
     "diaDiem": "Tiền Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tien-giang",
     "id": 0,
@@ -2511,7 +2511,7 @@
   {
     "thoiGian": "20/8 dương lịch",
     "diaDiem": "Tiền Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tien-giang",
     "id": 0,
@@ -2523,7 +2523,7 @@
   {
     "thoiGian": "23/11 dương lịch",
     "diaDiem": "Tiền Giang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tien-giang",
     "id": 0,
@@ -2535,7 +2535,7 @@
   {
     "thoiGian": "5/1 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2547,7 +2547,7 @@
   {
     "thoiGian": "15/1 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2559,7 +2559,7 @@
   {
     "thoiGian": "8/3 al",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2571,7 +2571,7 @@
   {
     "thoiGian": "10/3 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2583,7 +2583,7 @@
   {
     "thoiGian": "16/8 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2595,7 +2595,7 @@
   {
     "thoiGian": "29/8 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2607,7 +2607,7 @@
   {
     "thoiGian": "9/1 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2619,7 +2619,7 @@
   {
     "thoiGian": "23/3 âm lịch",
     "diaDiem": "TPHCM",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tphcm",
     "id": 0,
@@ -2631,7 +2631,7 @@
   {
     "thoiGian": "13-14-15 /4 dương lịch, Dolta",
     "diaDiem": "Trà Vinh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tra-vinh",
     "id": 0,
@@ -2643,7 +2643,7 @@
   {
     "thoiGian": "tháng 10 dương lịch, Okombok",
     "diaDiem": "Trà Vinh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tra-vinh",
     "id": 0,
@@ -2655,7 +2655,7 @@
   {
     "thoiGian": "tháng 11 hàng năm",
     "diaDiem": "Trà Vinh",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tra-vinh",
     "id": 0,
@@ -2667,7 +2667,7 @@
   {
     "thoiGian": "8/1 âm lịch",
     "diaDiem": "Tuyên Quang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tuyen-quang",
     "id": 0,
@@ -2679,7 +2679,7 @@
   {
     "thoiGian": "10/1 âm lịch",
     "diaDiem": "Tuyên Quang",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tuyen-quang",
     "id": 0,
@@ -2691,7 +2691,7 @@
   {
     "thoiGian": "16-17/3 âm lịch (thượng điền) 16-17 /1 âm lịch",
     "diaDiem": "Vĩnh Long",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "vinh-long",
     "id": 0,
@@ -2703,7 +2703,7 @@
   {
     "thoiGian": "4-5/7 âm lịch",
     "diaDiem": "Vĩnh Long",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "vinh-long",
     "id": 0,
@@ -2715,7 +2715,7 @@
   {
     "thoiGian": "12-13/10 âm lịch",
     "diaDiem": "Vĩnh Long",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "vinh-long",
     "id": 0,
@@ -2727,7 +2727,7 @@
   {
     "thoiGian": "15/2 âm lịch",
     "diaDiem": "Vĩnh Phúc",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "vinh-phuc",
     "id": 0,
@@ -2739,7 +2739,7 @@
   {
     "thoiGian": "không rõ",
     "diaDiem": "Vĩnh Phúc",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "vinh-phuc",
     "id": 0,
@@ -2751,7 +2751,7 @@
   {
     "thoiGian": "tháng 1 âm lịch",
     "diaDiem": "Yên Bái",
-    "cacNhanVatLienQuan": "Không rõ",
+    "nhanVatLienQuan": "Không rõ",
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "yen-bai",
     "id": 0,

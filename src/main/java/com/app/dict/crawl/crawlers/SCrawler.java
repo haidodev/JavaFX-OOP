@@ -1,16 +1,16 @@
-package com.app.dict.crawler.superCrawler;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
-import java.util.ArrayList;
+package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.Model;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class SCrawler
 {
@@ -33,18 +33,6 @@ public abstract class SCrawler
             e.printStackTrace();
         }
         return list;
-    }
-
-    public void writeHTML(String fileName, List<Model> models)
-    {
-        try (FileWriter writer = new FileWriter(fileName)) {
-            for (Model model : models)
-            {
-                writer.write(model.toHTML() + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void writeJson(String fileName, List<Model> models)

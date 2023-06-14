@@ -4,7 +4,8 @@ import com.app.dict.util.Config;
 import com.app.dict.util.Encode;
 import com.app.dict.util.VietnameseUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Model implements Comparable<Model>
 {
