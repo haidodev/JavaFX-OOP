@@ -1,12 +1,10 @@
 package com.app.dict.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,7 +40,7 @@ public class MainController implements Initializable {
     @FXML
     private SuKienController suKienController;
     @FXML
-    private DiTichController diTichController;
+    private DiaDanhController diaDanhController;
     @FXML
     private LeHoiController leHoiController;
 
@@ -114,7 +112,7 @@ public class MainController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/app/dict/di-tich.fxml"));
             diTichPane = loader.load();
-            diTichController = loader.getController();
+            diaDanhController = loader.getController();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,4 +1,4 @@
-package com.app.dict.crawler.superCrawler;
+package com.app.dict.crawl.crawlers;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,18 +33,6 @@ public abstract class SCrawler
             e.printStackTrace();
         }
         return list;
-    }
-
-    public void writeHTML(String fileName, List<Model> models)
-    {
-        try (FileWriter writer = new FileWriter(fileName)) {
-            for (Model model : models)
-            {
-                writer.write(model.toHTML() + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void writeJson(String fileName, List<Model> models)

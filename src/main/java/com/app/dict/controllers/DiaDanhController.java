@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class DiTichController extends GeneralController implements Initializable {
+public class DiaDanhController extends GeneralController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getDiTich()) {

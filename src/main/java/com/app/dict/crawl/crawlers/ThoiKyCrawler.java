@@ -1,10 +1,8 @@
-package com.app.dict.crawler.crawlers;
+package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.Model;
 import com.app.dict.base.ThoiKyModel;
-import com.app.dict.crawler.superCrawler.SCrawler;
 import com.app.dict.util.Config;
-import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,8 +15,8 @@ import java.util.*;
 
 
 public class ThoiKyCrawler extends SCrawler implements ICrawler {
-    public List<Model> crawlPages(String page) {
-        String baseUrl = page;
+    public List<Model> crawlPages() {
+        String baseUrl = Config.THOI_KY_WEBPAGE;
         String thoiKyUrl = "/dong-lich-su";
         List<Model> eraList = new ArrayList<>();
         Document doc;
@@ -129,29 +127,15 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
         return hrefs;
     }
 
-    public void createErasJson()
+    public void createThoiKyJson()
     {
-        List<Model> models = crawlPages(Config.ERA_WEBPAGE);
-        writeJson(Config.ERA_FILENAME, models);
+        List<Model> models = crawlPages();
+        writeJson(Config.THOI_KY_FILENAME, models);
     }
-
-    public void createErasHTML()
-    {
-        List<ThoiKyModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        writeHTML(Config.ERA_HTML, newList);
-    }
-
     // Testing
     public static void main(String[] args) {
         ThoiKyCrawler test = new ThoiKyCrawler();
-//        List<Model> models = test.crawlPages(Config.ERA_WEBPAGE);
-//        test.writeJson(Config.ERA_FILENAME, models);
-
-        List<ThoiKyModel> myList = test.loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        test.writeHTML(Config.ERA_HTML, newList);
+        List<Model> models = test.crawlPages();
+        test.writeJson(Config.THOI_KY_FILENAME, models);
     }
 }

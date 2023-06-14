@@ -80,6 +80,14 @@ public class ThoiKyModel extends Model
         return htmlBuilder.toString();
     }
 
+    public Set<String> getCacNhanVatLienQuan() {
+        return cacNhanVatLienQuan;
+    }
+
+    public Set<String> getCacDiTichLienQuan() {
+        return cacDiTichLienQuan;
+    }
+
     @Override
     public String toString() {
         return "\n{ \"Tên thời kỳ\":\"" + this.tenModel + "\", "

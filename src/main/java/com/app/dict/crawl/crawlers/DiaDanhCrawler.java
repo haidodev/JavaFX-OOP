@@ -1,11 +1,9 @@
-package com.app.dict.crawler.crawlers;
+package com.app.dict.crawl.crawlers;
 
 
-import com.app.dict.base.DiTichModel;
+import com.app.dict.base.DiaDanhModel;
 import com.app.dict.base.Model;
-import com.app.dict.crawler.superCrawler.SCrawler;
 import com.app.dict.util.Config;
-import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -20,10 +18,10 @@ import java.util.Set;
 import static com.app.dict.util.UrlDecode.getCodeFromUrl;
 
 
-public class DiTichCrawler extends SCrawler implements ICrawler {
+public class DiaDanhCrawler extends SCrawler implements ICrawler {
     @Override
-    public List<Model> crawlPages(String page) {
-        String baseUrl = page;
+    public List<Model> crawlPages() {
+        String baseUrl = Config.DIA_DANH_WEBPAGE;
         // List
         List<Model> destinationList = new ArrayList<>();
         Document doc;
@@ -108,7 +106,7 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
                 nhanVatLienQuan.add(getCodeFromUrl(name));
             }
 
-            Model destination =  new DiTichModel(title, texts, getCodeFromUrl(completeUrl), nhanVatLienQuan);
+            Model destination =  new DiaDanhModel(title, texts, getCodeFromUrl(completeUrl), nhanVatLienQuan);
             destination.setId(++id);
             destinationList.add(destination);
             nextElements = doc.select("a.btn.btn-sm.btn-secondary.next");
@@ -117,23 +115,16 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
         return destinationList;
     }
 
-    public void createHistoricalDestinationJson()
+    public void createDiaDanhJson()
     {
-        List<Model> locationList = crawlPages(Config.HISTORICAL_DESTINATION_WEBPAGE);
-        writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
+        List<Model> locationList = crawlPages();
+        writeJson(Config.DIA_DANH_FILENAME, locationList);
     }
 
     // Testing
     public static void main(String[] args) {
-//        HistoricalDestinationsCrawler test = new HistoricalDestinationsCrawler();
-//        List<Model> locationList = test.crawlPages(Config.HISTORICAL_DESTINATION_WEBPAGE);
-//        test.writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
-//        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, locationList);
-
-        DiTichCrawler test = new DiTichCrawler();
-        List<DiTichModel> myList = test.loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, newList);
+        DiaDanhCrawler test = new DiaDanhCrawler();
+        List<Model> locationList = test.crawlPages();
+        test.writeJson(Config.DIA_DANH_FILENAME, locationList);
     }
 }

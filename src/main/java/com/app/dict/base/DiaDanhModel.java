@@ -3,9 +3,11 @@ package com.app.dict.base;
 import java.util.List;
 import java.util.Set;
 
-public class DiTichModel extends Model{
+public class DiaDanhModel extends Model{
     private Set<String> cacNhanVatLienQuan;
-    public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
+    private Set<String> cacThoiKyLienQuan;
+
+    public DiaDanhModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
         super(tenModel, moTa);
         setCode(code);
@@ -15,6 +17,18 @@ public class DiTichModel extends Model{
     public void setcacNhanVatLienQuan(Set<String> cacNhanVatLienQuan)
     {
         this.cacNhanVatLienQuan = cacNhanVatLienQuan;
+    }
+
+    public Set<String> getCacNhanVatLienQuan() {
+        return cacNhanVatLienQuan;
+    }
+
+    public Set<String> getCacThoiKyLienQuan() {
+        return cacThoiKyLienQuan;
+    }
+
+    public void setCacThoiKyLienQuan(Set<String> cacThoiKyLienQuan) {
+        this.cacThoiKyLienQuan = cacThoiKyLienQuan;
     }
 
     @Override

@@ -1,10 +1,9 @@
-package com.app.dict.crawler.crawlers;
+package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.Model;
 import com.app.dict.base.NhanVatModel;
-import com.app.dict.crawler.superCrawler.SCrawler;
+import com.app.dict.crawl.linkers.NhanVatToThoiKy;
 import com.app.dict.util.Config;
-import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,8 +14,8 @@ import java.util.*;
 
 public class NhanVatCrawler extends SCrawler implements ICrawler {
 
-    public List<Model> crawlPages(String page) {
-        String baseUrl = page;
+    public List<Model> crawlPages() {
+        String baseUrl = Config.NHAN_VAT_LICH_SU_WEBPAGE;
         String figureURL = "/nhan-vat/an-duong-vuong";
         Document doc;
 
@@ -195,29 +194,17 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
 //        }
 //    }
 
-    public void createHistoricalFiguresJson()
+    public void createNhanVatJson()
     {
-        List<Model> figures = crawlPages(Config.HISTORICAL_FIGURE_WEBPAGE);
-        writeJson(Config.HISTORICAL_FIGURE_FILENAME, figures);
+        List<Model> figures = crawlPages();
+        writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, figures);
+        NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
+        nhanVatToThoiKy.linkNhanVatToThoiKy();
     }
-
-    public void linkToEra()
-    {
-
-    }
-
-
 
     public static void main(String[] args) {
         NhanVatCrawler test = new NhanVatCrawler();
-        List<Model> figures = test.crawlPages(Config.HISTORICAL_FIGURE_WEBPAGE);
-        test.writeJson(Config.HISTORICAL_FIGURE_FILENAME, figures);
-        test.writeHTML(Config.HISTORICAL_FIGURE_HTML, figures);
-
-//        NhanVatCrawler test = new NhanVatCrawler();
-        List<NhanVatModel> myList = test.loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        test.writeHTML(Config.HISTORICAL_FIGURE_HTML, newList);
+        List<Model> figures = test.crawlPages();
+        test.writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, figures);
     }
 }
