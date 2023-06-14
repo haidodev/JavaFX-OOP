@@ -2,6 +2,8 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
+import com.app.dict.base.ThoiKyModel;
+import com.app.dict.util.StringUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -52,9 +54,10 @@ public class GeneralController extends MainController implements Initializable {
         objectList.clear();
         String word = searchField.getText();
         int index = database.binaryLookup(0, resource.size() - 1, word, resource);
-        if (index < 0) {
-            index = database.binaryLookup(0, resource.size() -1, word, resource);
-        }
+//        if (index < 0) {
+//            System.out.println("Question ???");
+//            index = database.binaryLookup(0, resource.size() - 1, word, resource);
+//        }
         updateWordInListView(word, index, resource, searchTemp);
         setListViewItem(resource);
     }
@@ -66,8 +69,17 @@ public class GeneralController extends MainController implements Initializable {
         }
         int index = Collections.binarySearch(resource, new Model(spelling, ""));
         String meaning = resource.get(index).getHTML();
-        System.out.println(spelling);
         definitionView.getEngine().loadContent(meaning, "text/html");
+    }
+    public Model showDetail(ArrayList<Model> resource, boolean returnValue) {
+        String spelling = listView.getSelectionModel().getSelectedItem();
+        if (spelling == null) {
+            return null;
+        }
+        int index = Collections.binarySearch(resource, new Model(spelling, ""));
+        String meaning = resource.get(index).getHTML();
+        definitionView.getEngine().loadContent(meaning, "text/html");
+        return resource.get(index);
     }
     public void updateWordInListView(String word, int index, ArrayList<Model> res, ArrayList<Model> des) {
         if (index < 0) {
@@ -75,7 +87,7 @@ public class GeneralController extends MainController implements Initializable {
         }
         int j = index;
         while (j >= 0) {
-            if (LoadData.isContain(word, res.get(j).getTenModel()) == 0) {
+            if (StringUtility.isContain(word, res.get(j).getTenModel()) == 0) {
                 j--;
             } else {
                 break;
@@ -86,7 +98,7 @@ public class GeneralController extends MainController implements Initializable {
             des.add(temp);
         }
         for (int i = index + 1; i < res.size(); i++) {
-            if (LoadData.isContain(word, res.get(i).getTenModel()) == 0) {
+            if (StringUtility.isContain(word, res.get(i).getTenModel()) == 0) {
                 Model temp = new Model(res.get(i).getTenModel(), res.get(i).getHTML());
                 des.add(temp);
             } else {
@@ -99,7 +111,6 @@ public class GeneralController extends MainController implements Initializable {
 
         //showNhanVatPane();
         String spelling = "An Dương Vương";
-
         //listView.getSelectionModel().select(spelling);
         ArrayList<Model> resource = (ArrayList<Model>) database.getNhanVat();
         int index = Collections.binarySearch(resource, new Model(spelling, ""));

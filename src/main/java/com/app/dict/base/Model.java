@@ -2,7 +2,7 @@ package com.app.dict.base;
 
 import com.app.dict.util.Config;
 import com.app.dict.util.Encode;
-import com.app.dict.util.VietnameseUtil;
+import com.app.dict.util.StringUtility;
 
 import java.util.*;
 
@@ -76,8 +76,8 @@ public class Model implements Comparable<Model>
     }
     public int compareTo(Model o) {
 
-        String searchingNormalized = VietnameseUtil.generalizeVietnameseString(getTenModel());
-        String oSearchingNormalized = VietnameseUtil.generalizeVietnameseString(o.getTenModel());
+        String searchingNormalized = StringUtility.generalizeVietnameseString(getTenModel());
+        String oSearchingNormalized = StringUtility.generalizeVietnameseString(o.getTenModel());
         return searchingNormalized.compareTo(oSearchingNormalized);
     }
 }
