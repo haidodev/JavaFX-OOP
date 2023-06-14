@@ -13,6 +13,10 @@ public class ThoiKyModel extends Model
         return new ArrayList<>(this.cacNhanVatLienQuan);
     }
 
+    public Set<String> getCacDiTichLienQuan() {
+        return cacDiTichLienQuan;
+    }
+
     public ThoiKyModel(String name, List<String> moTa, String code, Set<String> cacNhanVatLienQuan
             , Set<String> cacDiTichLienQuan)
     {
@@ -21,6 +25,7 @@ public class ThoiKyModel extends Model
         setcacNhanVatLienQuan(cacNhanVatLienQuan);
         setcacDiTichLienQuan(cacDiTichLienQuan);
     }
+    
     public void setcacNhanVatLienQuan(Set<String> cacNhanVatLienQuan) {
         this.cacNhanVatLienQuan = cacNhanVatLienQuan;
     }

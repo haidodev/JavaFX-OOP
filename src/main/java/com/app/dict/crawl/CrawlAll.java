@@ -1,6 +1,7 @@
 package com.app.dict.crawl;
 
 import com.app.dict.crawl.crawlers.*;
+import com.app.dict.crawl.linkers.*;
 
 public class CrawlAll
 {
@@ -48,6 +49,10 @@ public class CrawlAll
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
+        nhanVatToThoiKy.linkFigureToEra();
+        DiTichToThoiKy diTichToThoiKy = new DiTichToThoiKy();
+        diTichToThoiKy.diaDanhToThoiKy();
     }
 
     // Test
