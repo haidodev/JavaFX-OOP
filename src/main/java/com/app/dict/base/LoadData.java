@@ -1,7 +1,7 @@
 package com.app.dict.base;
 
 import com.app.dict.util.Config;
-import com.app.dict.util.VietnameseUtil;
+import com.app.dict.util.StringUtility;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -145,27 +145,12 @@ public class LoadData
             }
         }
     }
-    public static int isContain(String str1, String str2) {
-        String normalizedStr1 = VietnameseUtil.generalizeVietnameseString(str1);
-        String normalizedStr2 = VietnameseUtil.generalizeVietnameseString(str2);
-        for (int i = 0; i < Math.min(normalizedStr1.length(), normalizedStr2.length()); i++) {
-            if (normalizedStr1.charAt(i) > normalizedStr2.charAt(i)) {
-                return 1;
-            } else if (normalizedStr1.charAt(i) < normalizedStr2.charAt(i)) {
-                return -1;
-            }
-        }
-        if (normalizedStr1.length() > normalizedStr2.length()) {
-            return 1;
-        }
-        return 0;
-    }
     public int binaryLookup(int start, int end, String dT, ArrayList<Model> temp) {
         if (end < start) {
             return -1;
         }
         int mid = start + (end - start) / 2;
-        int compare = isContain(dT, temp.get(mid).getTenModel());
+        int compare = StringUtility.isContain(dT, temp.get(mid).getTenModel());
         if (compare == -1) {
             return binaryLookup(start, mid - 1, dT, temp);
         } else if (compare == 1) {
@@ -177,8 +162,23 @@ public class LoadData
 
     public static void main(String[] args) {
         LoadData ld = new LoadData();
+
         for (Model m : ld.getThoiKy()) {
             System.out.println(m);
+        }
+    }
+    public static int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
+        if (end < start) {
+            return -1;
+        }
+        int mid = start + (end - start) / 2;
+        int compare = StringUtility.isContain(dT, temp.get(mid).getCode());
+        if (compare == -1) {
+            return binaryLookupByCode(start, mid - 1, dT, temp);
+        } else if (compare == 1) {
+            return binaryLookupByCode(mid + 1, end, dT, temp);
+        } else {
+            return mid;
         }
     }
 }

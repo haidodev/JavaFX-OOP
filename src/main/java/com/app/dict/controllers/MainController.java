@@ -40,7 +40,7 @@ public class MainController implements Initializable {
     @FXML
     private SuKienController suKienController;
     @FXML
-    private DiaDanhController diaDanhController;
+    private DiTichController diTichController;
     @FXML
     private LeHoiController leHoiController;
 
@@ -112,7 +112,7 @@ public class MainController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/app/dict/di-tich.fxml"));
             diTichPane = loader.load();
-            diaDanhController = loader.getController();
+            diTichController = loader.getController();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -124,6 +124,7 @@ public class MainController implements Initializable {
             throw new RuntimeException(e);
         }
         thoiKyBtn.getStyleClass().add("active");
+        System.out.println(thoiKyPane);
 
         setMainContent(thoiKyPane);
 

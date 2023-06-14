@@ -3,7 +3,7 @@ package com.app.dict.util;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 
-public class VietnameseUtil {
+public class StringUtility {
     public static String generalizeVietnameseString(String vietnameseString) {
         // Remove accents
         String normalizedString = Normalizer.normalize(vietnameseString, Normalizer.Form.NFD);
@@ -17,5 +17,20 @@ public class VietnameseUtil {
         String trimmedString = lowercaseString.trim();
 
         return trimmedString.replaceAll("\\s+", " ");
+    }
+    public static int isContain(String str1, String str2) {
+        String normalizedStr1 = StringUtility.generalizeVietnameseString(str1);
+        String normalizedStr2 = StringUtility.generalizeVietnameseString(str2);
+        for (int i = 0; i < Math.min(normalizedStr1.length(), normalizedStr2.length()); i++) {
+            if (normalizedStr1.charAt(i) > normalizedStr2.charAt(i)) {
+                return 1;
+            } else if (normalizedStr1.charAt(i) < normalizedStr2.charAt(i)) {
+                return -1;
+            }
+        }
+        if (normalizedStr1.length() > normalizedStr2.length()) {
+            return 1;
+        }
+        return 0;
     }
 }
