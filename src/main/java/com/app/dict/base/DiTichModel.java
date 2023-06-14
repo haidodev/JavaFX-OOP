@@ -3,9 +3,9 @@ package com.app.dict.base;
 import java.util.List;
 import java.util.Set;
 
-public class DiaDanhModel extends Model{
+public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
-    public DiaDanhModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
+    public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
         super(tenModel, moTa);
         setCode(code);

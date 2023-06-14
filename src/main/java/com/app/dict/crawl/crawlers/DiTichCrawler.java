@@ -1,9 +1,9 @@
-package com.app.dict.crawler.crawlers;
+package com.app.dict.crawl.crawlers;
 
 
 import com.app.dict.base.DiTichModel;
 import com.app.dict.base.Model;
-import com.app.dict.crawler.superCrawler.SCrawler;
+
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
@@ -22,8 +22,8 @@ import static com.app.dict.util.UrlDecode.getCodeFromUrl;
 
 public class DiTichCrawler extends SCrawler implements ICrawler {
     @Override
-    public List<Model> crawlPages(String page) {
-        String baseUrl = page;
+    public List<Model> crawlPages() {
+        String baseUrl = Config.DI_TICH_WEBPAGE;
         // List
         List<Model> destinationList = new ArrayList<>();
         Document doc;
@@ -84,7 +84,7 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
             String title = null;
             Element titleElement = doc.selectFirst("h2");
             if (titleElement != null) {
-                 title = titleElement.text();
+                title = titleElement.text();
             }
 
             List<String> texts = new ArrayList<>();
@@ -115,23 +115,25 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
         return destinationList;
     }
 
-    public void createHistoricalDestinationJson()
+    public void createDiTichJson()
     {
-        List<Model> locationList = crawlPages(Config.HISTORICAL_DESTINATION_WEBPAGE);
-        writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
+        List<Model> locationList = crawlPages();
+        writeJson(Config.DI_TICH_FILENAME, locationList);
     }
 
     // Testing
     public static void main(String[] args) {
         DiTichCrawler test = new DiTichCrawler();
-        List<Model> locationList = test.crawlPages(Config.HISTORICAL_DESTINATION_WEBPAGE);
-        test.writeJson(Config.HISTORICAL_DESTINATION_FILENAME, locationList);
-        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, locationList);
+        List<Model> locationList = test.crawlPages();
+        test.writeJson(Config.DI_TICH_FILENAME, locationList);
+//        test.writeHTML(Config.DI_TICH_HTML, locationList);
 
 //        DiTichCrawler test = new DiTichCrawler();
-        List<DiTichModel> myList = test.loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
-        List<Model> newList = new ArrayList<>();
-        newList.addAll(myList);
-        test.writeHTML(Config.HISTORICAL_DESTINATION_HTML, newList);
+        List<DiTichModel> myList = test.loader(Config.DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
+//        List<Model> newList = new ArrayList<>();
+//        newList.addAll(myList);
+//        test.writeHTML(Config.DI_TICH_HTML, newList);
     }
+
+
 }

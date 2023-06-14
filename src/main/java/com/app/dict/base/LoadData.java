@@ -72,7 +72,7 @@ public class LoadData
     }
     public List<Model> loadDiTich()
     {
-        List<DiaDanhModel> myList = loader(Config.DIA_DANH_FILENAME,  new TypeToken<List<DiaDanhModel>>() {});
+        List<DiTichModel> myList = loader(Config.DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);

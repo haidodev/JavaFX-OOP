@@ -1,8 +1,8 @@
 package com.app.dict.util;
 
 public class Config {
-    public static final String DIA_DANH_FILENAME = "database/diaDanh.json";
-    public static final String DIA_DANH_WEBPAGE = "https://nguoikesu.com/dia-danh/bien-dong";
+    public static final String DI_TICH_FILENAME = "database/diTich.json";
+    public static final String DI_TICH_WEBPAGE = "https://nguoikesu.com/dia-danh/bien-dong";
 
     public static final String THOI_KY_FILENAME = "database/thoiKy.json";
     public static final String THOI_KY_WEBPAGE = "https://nguoikesu.com";

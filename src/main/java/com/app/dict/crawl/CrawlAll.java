@@ -1,17 +1,14 @@
 package com.app.dict.crawl;
 
-import com.app.dict.crawl.crawlers.DiaDanhCrawler;
-import com.app.dict.crawl.crawlers.LeHoiCrawler;
-import com.app.dict.crawl.crawlers.NhanVatCrawler;
-import com.app.dict.crawl.crawlers.SuKienCrawler;
+import com.app.dict.crawl.crawlers.*;
 
-public class crawlAll
+public class CrawlAll
 {
-    public void Crawl()
+    public void crawl()
     {
         Thread thread1 = new Thread(() -> {
-            DiaDanhCrawler diaDanhCrawler = new DiaDanhCrawler();
-            diaDanhCrawler.createDiaDanhJson();
+            ThoiKyCrawler thoiKyCrawler = new ThoiKyCrawler();
+            thoiKyCrawler.createThoiKyJson();
         });
 
         Thread thread2 = new Thread(() -> {
@@ -20,8 +17,8 @@ public class crawlAll
         });
 
         Thread thread3 = new Thread(() -> {
-            DiaDanhCrawler diaDanhCrawler = new DiaDanhCrawler();
-            diaDanhCrawler.createDiaDanhJson();
+            DiTichCrawler diaDanhCrawler = new DiTichCrawler();
+            diaDanhCrawler.createDiTichJson();
         });
 
         Thread thread4 = new Thread(() -> {
@@ -51,5 +48,11 @@ public class crawlAll
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    // Test
+    public static void main(String[] args) {
+        CrawlAll crawlAll = new CrawlAll();
+        crawlAll.crawl();
     }
 }
