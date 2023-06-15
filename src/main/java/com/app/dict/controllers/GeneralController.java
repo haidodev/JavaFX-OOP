@@ -6,6 +6,7 @@ import com.app.dict.base.ThoiKyModel;
 import com.app.dict.util.StringUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-public class GeneralController extends MainController implements Initializable {
+public class GeneralController implements Initializable {
     protected final ObservableList<String> nhanVatList = FXCollections.observableArrayList();
     protected final ObservableList<String> objectList = FXCollections.observableArrayList();
     protected final ObservableList<String> suKienList = FXCollections.observableArrayList();
@@ -35,7 +36,7 @@ public class GeneralController extends MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        super.initialize(location, resources);
+        //super.initialize(location, resources);
     }
     public void setListViewItem(ArrayList<Model> resource) {
         objectList.clear();
@@ -81,6 +82,15 @@ public class GeneralController extends MainController implements Initializable {
         definitionView.getEngine().loadContent(meaning, "text/html");
         return resource.get(index);
     }
+    public Model showDetail(ArrayList<Model> resource, String spelling) {
+        if (spelling == null) {
+            return null;
+        }
+        int index = Collections.binarySearch(resource, new Model(spelling, ""));
+        String meaning = resource.get(index).getHTML();
+        definitionView.getEngine().loadContent(meaning, "text/html");
+        return resource.get(index);
+    }
     public void updateWordInListView(String word, int index, ArrayList<Model> res, ArrayList<Model> des) {
         if (index < 0) {
             return;
@@ -106,16 +116,10 @@ public class GeneralController extends MainController implements Initializable {
             }
         }
     }
-    public void handleNhanVatLienQuanBtn(){
-        System.out.println(listView);
-
-        //showNhanVatPane();
+    public void handleNhanVatLienQuanBtn(ActionEvent event){
+        //System.out.println(event.getTarget().getText());
         String spelling = "An Dương Vương";
-        //listView.getSelectionModel().select(spelling);
-        ArrayList<Model> resource = (ArrayList<Model>) database.getNhanVat();
-        int index = Collections.binarySearch(resource, new Model(spelling, ""));
-        String meaning = resource.get(index).getHTML();
-        System.out.println(spelling);
-        definitionView.getEngine().loadContent(meaning, "text/html");
+
+        MainController.getInstance().showNhanVatPane(spelling);
     }
 }

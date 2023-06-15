@@ -15,6 +15,12 @@ public class NhanVatController extends GeneralController implements Initializabl
             objectList.add(temp.getTenModel());
         }
         listView.setItems(objectList);
+
+    }
+    public void initializer(String spelling) {
+        listView.getSelectionModel().select(spelling);
+        showDetail((ArrayList<Model>) database.getNhanVat(), spelling);
+
     }
     @FXML
     public void nhanVatSearchFieldAction() {

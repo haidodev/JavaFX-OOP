@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -34,18 +35,17 @@ public class ThoiKyController extends GeneralController implements Initializable
     public void showThoiKyDetail() {
         contentVBox.getChildren().clear();
         ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy(), true);
-        String str = "";
-        if (item != null){
+        if (item == null) return;
+
             for (String nhanVat : item.getcacNhanVatLienQuan()){
                 List<Model> nvL = database.getNhanVat();
-                int idx = LoadData.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
+                int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
                 if (idx < 0) continue;
-                str += nvL.get(idx).getTenModel();
-                str += "\n";
+                Button btn = new Button(nvL.get(idx).getTenModel());
+                //btn.addEventHandler(handleButtonClick(null));
+                contentVBox.getChildren().add(btn);
+
             }
-        }
-        Label lb = new Label(str);
-        contentVBox.getChildren().add(lb);
     }
     @FXML
     public void thoiKySearchFieldAction() {
@@ -53,8 +53,6 @@ public class ThoiKyController extends GeneralController implements Initializable
     }
 
     public void handleButtonClick(ActionEvent actionEvent) {
-        Button btn = new Button("A new Btn created");
-        contentVBox.getChildren().add(btn);
 
     }
 

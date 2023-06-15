@@ -167,7 +167,7 @@ public class LoadData
             System.out.println(m);
         }
     }
-    public static int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
+    public int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
         if (end < start) {
             return -1;
         }

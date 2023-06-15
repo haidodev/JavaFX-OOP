@@ -1,22 +1,22 @@
 package com.app.dict.controllers;
 
-import com.app.dict.base.Model;
-import com.app.dict.base.NhanVatModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebView;
-
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    private static MainController instance;
+    public MainController(){
+        instance = this;
+    }
+    public static MainController getInstance(){
+        return instance;
+    }
     public AnchorPane mainContent;
     @FXML
     private Button thoiKyBtn;
@@ -72,6 +72,12 @@ public class MainController implements Initializable {
         nhanVatBtn.getStyleClass().add("active");
         setMainContent(nhanVatPane);
 
+    }
+    public void showNhanVatPane(String spelling) {
+        resetStyleNav();
+        nhanVatBtn.getStyleClass().add("active");
+        setMainContent(nhanVatPane);
+        nhanVatController.initializer(spelling);
     }
 
     public void showSuKienPane() {
@@ -133,7 +139,5 @@ public class MainController implements Initializable {
         System.out.println(thoiKyPane);
 
         setMainContent(thoiKyPane);
-
-
     }
 }
