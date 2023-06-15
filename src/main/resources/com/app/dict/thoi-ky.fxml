@@ -36,7 +36,6 @@
                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </AnchorPane>
-            <Button text="Chọn ADV" onAction="#handleNhanVatLienQuanBtn"/>
             <VBox fx:id="contentVBox" spacing="10.0"/>
 
         </VBox>

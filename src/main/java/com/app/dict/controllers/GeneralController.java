@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
@@ -116,10 +117,10 @@ public class GeneralController implements Initializable {
             }
         }
     }
-    public void handleNhanVatLienQuanBtn(ActionEvent event){
-        //System.out.println(event.getTarget().getText());
-        String spelling = "An Dương Vương";
-
-        MainController.getInstance().showNhanVatPane(spelling);
+    public void handleNhanVatLienQuanButton(ActionEvent event){
+        MainController.getInstance().showNhanVatPane(((Button) event.getSource()).getText());
+    }
+    public void handleDiTichLienQuanButton(ActionEvent event){
+        MainController.getInstance().showDiTichPane(((Button) event.getSource()).getText());
     }
 }

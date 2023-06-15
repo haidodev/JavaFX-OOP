@@ -16,6 +16,10 @@ public class DiTichController extends GeneralController implements Initializable
         }
         listView.setItems(objectList);
     }
+    public void preloadDiTich(String diTichName) {
+        listView.getSelectionModel().select(diTichName);
+        showDetail((ArrayList<Model>) database.getNhanVat(), diTichName);
+    }
     @FXML
     public void diTichSearchFieldAction(){
         searchFieldAction((ArrayList<Model>) database.getDiTich());

@@ -73,11 +73,9 @@ public class MainController implements Initializable {
         setMainContent(nhanVatPane);
 
     }
-    public void showNhanVatPane(String spelling) {
-        resetStyleNav();
-        nhanVatBtn.getStyleClass().add("active");
-        setMainContent(nhanVatPane);
-        nhanVatController.initializer(spelling);
+    public void showNhanVatPane(String nhanVatName) {
+        showNhanVatPane();
+        nhanVatController.preloadNhanVat(nhanVatName);
     }
 
     public void showSuKienPane() {
@@ -86,6 +84,10 @@ public class MainController implements Initializable {
         setMainContent(suKienPane);
     }
 
+    public void showDiTichPane(String diTichName) {
+        showDiTichPane();
+        diTichController.preloadDiTich(diTichName);
+    }
     public void showDiTichPane() {
         resetStyleNav();
         diTichBtn.getStyleClass().add("active");

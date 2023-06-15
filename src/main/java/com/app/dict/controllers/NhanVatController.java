@@ -17,9 +17,9 @@ public class NhanVatController extends GeneralController implements Initializabl
         listView.setItems(objectList);
 
     }
-    public void initializer(String spelling) {
-        listView.getSelectionModel().select(spelling);
-        showDetail((ArrayList<Model>) database.getNhanVat(), spelling);
+    public void preloadNhanVat(String nhanVatName) {
+        listView.getSelectionModel().select(nhanVatName);
+        showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName);
 
     }
     @FXML
