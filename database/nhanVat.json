@@ -19419,25 +19419,8 @@
         "Đông Kinh, Đại Việt"
       ]
     ],
-    "cacNhanVatLienQuan": [
-      "nguyen-hoang",
-      "nguyen-duy-thi",
-      "le-the-tong",
-      "nha-le",
-      "le-kinh-tong",
-      "mac-kinh-cung",
-      "nguyen-danh-the",
-      "bui-van-khue",
-      "le-bat-tu",
-      "nha-mac",
-      "le-anh-tong",
-      "le-than-tong"
-    ],
-    "cacDiTichLienQuan": [
-      "huyen-tho-xuan",
-      "tinh-thanh-hoa",
-      "thanh-thang-long"
-    ],
+    "cacNhanVatLienQuan": [],
+    "cacDiTichLienQuan": [],
     "thoiKyLienQuan": [],
     "id": 0,
     "tenModel": "Lê Duy Tân",
@@ -71775,6 +71758,7 @@
   },
   {
     "thongTin": [],
+<<<<<<< Updated upstream:database/nhanVat.json
     "cacNhanVatLienQuan": [
       "le-quat",
       "tran-minh-tong",
@@ -71797,6 +71781,11 @@
     "thoiKyLienQuan": [
       "nha-tran"
     ],
+=======
+    "cacNhanVatLienQuan": [],
+    "cacDiTichLienQuan": [],
+    "thoiKyLienQuan": [],
+>>>>>>> Stashed changes:database/nhanVatLichSu.json
     "id": 0,
     "tenModel": "Phạm Sư Mạnh",
     "moTa": [
@@ -83451,12 +83440,17 @@
       ]
     ],
     "cacNhanVatLienQuan": [],
+<<<<<<< Updated upstream:database/nhanVat.json
     "cacDiTichLienQuan": [
       "tinh-phuc-kien"
     ],
     "thoiKyLienQuan": [
       "trinh-nguyen-phan-tranh"
     ],
+=======
+    "cacDiTichLienQuan": [],
+    "thoiKyLienQuan": [],
+>>>>>>> Stashed changes:database/nhanVatLichSu.json
     "id": 0,
     "tenModel": "Trần Nghi",
     "moTa": [

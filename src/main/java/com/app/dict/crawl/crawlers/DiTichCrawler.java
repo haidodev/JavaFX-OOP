@@ -92,10 +92,8 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
             Elements desElements = doc.select("div.com-content-article__body > p");
             for(Element element : desElements) {
                 String text = element.text();
-                if (text.length() > 20) {
-                    text = text.replaceAll("\"", "'");
-                    texts.add(text);
-                }
+                text = text.replaceAll("\"", "'");
+                texts.add(text);
             }
 
             // Relative person

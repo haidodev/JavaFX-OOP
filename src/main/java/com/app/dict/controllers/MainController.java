@@ -1,5 +1,7 @@
 package com.app.dict.controllers;
 
+import com.app.dict.base.Model;
+import com.app.dict.base.NhanVatModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,7 @@ import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URL;
+
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -67,7 +70,6 @@ public class MainController implements Initializable {
         resetStyleNav();
         nhanVatBtn.getStyleClass().add("active");
         setMainContent(nhanVatPane);
-
     }
 
     public void showSuKienPane() {
@@ -126,9 +128,32 @@ public class MainController implements Initializable {
             throw new RuntimeException(e);
         }
         thoiKyBtn.getStyleClass().add("active");
+        System.out.println(thoiKyPane);
 
         setMainContent(thoiKyPane);
 
 
+    }
+
+
+
+    // Testing
+    private static MainController instance;
+    public MainController(){
+        instance = this;
+    }
+    public static MainController getInstance() {
+        return instance;
+    }
+
+    public void createPage(AnchorPane page, String url) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource(url));
+            mainContent.getChildren().clear();
+            mainContent.getChildren().add(pane);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
