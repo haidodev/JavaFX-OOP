@@ -2,6 +2,7 @@ package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.Model;
 import com.app.dict.base.NhanVatModel;
+import com.app.dict.crawl.linkers.NhanVatToThoiKy;
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
 
@@ -282,6 +283,8 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
     {
         List<Model> figures = crawlPages();
         writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, figures);
+        NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
+        nhanVatToThoiKy.linkNhanVatToThoiKy();
     }
 
     public static void main(String[] args) {

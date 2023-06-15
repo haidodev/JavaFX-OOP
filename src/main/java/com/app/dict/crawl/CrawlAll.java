@@ -49,10 +49,6 @@ public class CrawlAll
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
-        nhanVatToThoiKy.linkFigureToEra();
-        DiTichToThoiKy diTichToThoiKy = new DiTichToThoiKy();
-        diTichToThoiKy.diaDanhToThoiKy();
     }
 
     // Test

@@ -4,6 +4,7 @@ package com.app.dict.crawl.crawlers;
 import com.app.dict.base.DiTichModel;
 import com.app.dict.base.Model;
 
+import com.app.dict.crawl.linkers.DiTichToThoiKy;
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
@@ -117,6 +118,8 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
     {
         List<Model> locationList = crawlPages();
         writeJson(Config.DI_TICH_FILENAME, locationList);
+        DiTichToThoiKy diTichToThoiKy = new DiTichToThoiKy();
+        diTichToThoiKy.diaDanhToThoiKy();
     }
 
     // Testing

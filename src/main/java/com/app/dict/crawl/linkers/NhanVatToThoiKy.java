@@ -5,56 +5,59 @@ import com.app.dict.base.NhanVatModel;
 import com.app.dict.base.ThoiKyModel;
 import com.app.dict.crawl.crawlers.NhanVatCrawler;
 import com.app.dict.crawl.crawlers.ThoiKyCrawler;
-import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
-
+import com.app.dict.util.Config;
 import java.util.*;
 
 
 public class NhanVatToThoiKy
 {
-    private Map<String, String> generateHashMap()
+    private Map<String, List<String>> generateHashMap()
     {
-        Map<String, String> hashMap = new HashMap<>();
-        ThoiKyCrawler periodsCrawler = new ThoiKyCrawler();
-        List<ThoiKyModel> eraList = periodsCrawler.loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
+        Map<String, List<String>> hashMap = new HashMap<>();
+        ThoiKyCrawler thoiKyCrawler = new ThoiKyCrawler();
+        List<ThoiKyModel> thoiKyList = thoiKyCrawler.loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
 
-        for (ThoiKyModel era : eraList)
+        for (ThoiKyModel thoiKy : thoiKyList)
         {
-            for (String element : era.getcacNhanVatLienQuan())
+            for (String nhanVat : thoiKy.getcacNhanVatLienQuan())
             {
-                hashMap.put(element, era.getCode());
+                if (!hashMap.containsKey(nhanVat))
+                {
+                    hashMap.put(nhanVat, new ArrayList<>());
+                }
+                hashMap.get(nhanVat).add(thoiKy.getCode());
             }
         }
 
         return hashMap;
     }
 
-    public void linkFigureToEra()
+    public void linkNhanVatToThoiKy()
     {
-        Map<String, String> figureToEra = generateHashMap();
-        NhanVatCrawler figuresCrawler = new NhanVatCrawler();
-        List<NhanVatModel> figureList = figuresCrawler
+        Map<String, List<String>> nhanVatToThoiKy = generateHashMap();
+        System.out.println(nhanVatToThoiKy);
+        NhanVatCrawler nhanVatCrawler = new NhanVatCrawler();
+        List<NhanVatModel> nhanVatList = nhanVatCrawler
                 .loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<>() {});
 
-        for (NhanVatModel figure : figureList)
+        for (NhanVatModel nhanVat : nhanVatList)
         {
-            figure.setCacThoiKyLienQuan(new HashSet<>());
-            if (figureToEra.containsKey(figure.getCode()))
+            if (nhanVatToThoiKy.containsKey(nhanVat.getCode()))
             {
-                figure.getCacThoiKyLienQuan().add(figureToEra.get(figure.getCode()));
-                System.out.println(figure.getCode());
+                Set<String> set = new HashSet<>(nhanVatToThoiKy.get(nhanVat.getCode()));
+                nhanVat.setCacThoiKyLienQuan(set);
             }
         }
 
         List<Model> models = new ArrayList<>();
-        models.addAll(figureList);
-        figuresCrawler.writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, models);
+        models.addAll(nhanVatList);
+        nhanVatCrawler.writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, models);
     }
 
     public static void main(String[] args)
     {
         NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
-        nhanVatToThoiKy.linkFigureToEra();
+        nhanVatToThoiKy.linkNhanVatToThoiKy();
     }
 }

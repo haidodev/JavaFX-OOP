@@ -2,7 +2,7 @@ package com.app.dict.base;
 
 import com.app.dict.util.Config;
 
-import java.util.List;
+import java.util.*;
 
 public class LeHoiModel extends Model
 {
@@ -10,17 +10,17 @@ public class LeHoiModel extends Model
     private String diaDiem;
     private String nhanVatLienQuan;
     private String toChucLanDau;
-    private String diTichCode;
+    private String diaDanhCode;
 
     public LeHoiModel(String tenModel, String thoiGian, String diaDiem,
-                      String nhanVatLienQuan, String toChucLanDau, List<String> description, String diTichCode)
+                      String nhanVatLienQuan, String toChucLanDau, List<String> description, String diaDanhCode)
     {
         super(tenModel, description);
         setThoiGian(thoiGian);
         setDiaDiem(diaDiem);
         setNhanVatLienQuan(nhanVatLienQuan);
         setToChucLanDau(toChucLanDau);
-        setDiTichCode(diTichCode);
+        setDiaDanhCode(diaDanhCode);
     }
 
     public void setToChucLanDau(String toChucLanDau)
@@ -43,9 +43,9 @@ public class LeHoiModel extends Model
         this.thoiGian = thoiGian.equals("") ? Config.nullRepresentation : thoiGian;
     }
 
-    public void setDiTichCode(String diTichCode)
+    public void setDiaDanhCode(String diaDanhCode)
     {
-        this.diTichCode = diTichCode;
+        this.diaDanhCode = diaDanhCode;
     }
 
     @Override
@@ -58,7 +58,6 @@ public class LeHoiModel extends Model
         htmlBuilder.append("<head>");
         htmlBuilder.append("</head>");
         htmlBuilder.append("<body contenteditable=\"true\">");
-        htmlBuilder.append("<i>").append(this.tenModel).append("</i>");
         htmlBuilder.append("<meta charset=\"UTF-8\">");
         // htmlBuilder.append("<title>").append(getName()).append("</title>");
         htmlBuilder.append("<style>");
@@ -73,14 +72,22 @@ public class LeHoiModel extends Model
         // htmlBuilder.append("<p><strong>Code:</strong> ").append(getCode()).append("</p>");
 
         // Add the infobox
-        if (this.moTa != null)
-        {
-            htmlBuilder.append("<h2>Thông tin thời kỳ</h2>");
+        htmlBuilder.append("<h2>Tên Lễ Hội</h2>");
+        htmlBuilder.append("<p>").append(this.tenModel).append("</p>");
 
-            // Add the description
-            for (String desc : this.moTa) {
-                htmlBuilder.append("<p>").append(desc).append("</p>");
-            }
+        htmlBuilder.append("<h2>Địa điểm</h2>");
+        htmlBuilder.append("<p>").append(this.diaDiem).append("</p>");
+
+        htmlBuilder.append("<h2>Thời gian</h2>");
+        htmlBuilder.append("<p>").append(this.thoiGian).append("</p>");
+
+        htmlBuilder.append("<h2>Tổ chức lần đầu</h2>");
+        htmlBuilder.append("<p>").append(this.toChucLanDau).append("</p>");
+
+        htmlBuilder.append("<h2>Miêu tả</h2>");
+        // Add the description
+        for (String desc : this.moTa) {
+            htmlBuilder.append("<p>").append(desc).append("</p>");
         }
 
         // Add the related figures
@@ -101,13 +108,13 @@ public class LeHoiModel extends Model
     @Override
     public String toString()
     {
-        return  "{ \t\"id\": \"" + this.id + "\", \n\t"
-                + "\"tenModel\": \"" + this.tenModel + "\",\n\t"
-                + "\"thoiGian\": \"" + this.thoiGian + "\",\n\t"
-                + "\"diaDiem\": \"" + this.diaDiem + "\",\n\t"
-                + "\"nhanVatLienQuan\": \"" + this.nhanVatLienQuan + "\",\n\t"
-                + "\"toChucLanDau\": \"" + this.toChucLanDau + "\",\n\t"
-                + "\"moTa\": \"" + this.moTa.toString() + "\",\n\t"
-                + "\"diTichCode\": \"" + this.diTichCode + "\" }\n";
+        return  "{ \t\"Id\": \"" + this.id + "\", \n\t"
+                + "\"Tên\": \"" + this.tenModel + "\",\n\t"
+                + "\"Thời Gian\": \"" + this.thoiGian + "\",\n\t"
+                + "\"Địa điểm\": \"" + this.diaDiem + "\",\n\t"
+                + "\"Nhân Vật Lịch Sử Liên Kết\": \"" + this.nhanVatLienQuan + "\",\n\t"
+                + "\"Lần Đầu Tổ Chức\": \"" + this.toChucLanDau + "\",\n\t"
+                + "\"Thông Tin Khác\": \"" + this.moTa.toString() + "\",\n\t"
+                + "\"Địa điểm code\": \"" + this.diaDanhCode + "\" }\n";
     }
 }
