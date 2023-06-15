@@ -257,8 +257,8 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
                 if (table1.get(i).get(0).equalsIgnoreCase(table2.get(j).get(0))) {
                     if (table2.get(j).size() == 1 || table2.get(j).get(1).isEmpty()) break;
                     if (shouldMerge(table1.get(i), table2.get(j)) ){
-                        table1.get(i).add("(Theo wikipedia.org)");
-                        table2.get(j).add("(Theo nguoikesu.com)");
+                        table1.get(i).add("(Theo nguoikesu.com)");
+                        table2.get(j).add("(Theo wikipedia.org)");
                         table2.get(j).set(0, "</td> <td>");
                         table1.get(i).addAll(table2.get(j));
                     }
