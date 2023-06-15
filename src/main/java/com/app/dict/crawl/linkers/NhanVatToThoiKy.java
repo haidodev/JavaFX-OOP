@@ -39,10 +39,10 @@ public class NhanVatToThoiKy
 
         for (NhanVatModel figure : figureList)
         {
-            figure.setThoiKyLienQuan(new HashSet<>());
+            figure.setCacThoiKyLienQuan(new HashSet<>());
             if (figureToEra.containsKey(figure.getCode()))
             {
-                figure.getThoiKyLienQuan().add(figureToEra.get(figure.getCode()));
+                figure.getCacThoiKyLienQuan().add(figureToEra.get(figure.getCode()));
                 System.out.println(figure.getCode());
             }
         }

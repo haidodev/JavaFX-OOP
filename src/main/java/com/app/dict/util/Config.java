@@ -17,7 +17,7 @@ public class Config {
             "_Vi%E1%BB%87t_Nam#L%E1%BB%85_h%E1%BB%99i" +
             "_l%E1%BB%9Bn_c%C3%A1c_t%E1%BB%89nh_th%C3%A0nh";
 
-    public static final String NHAN_VAT_LICH_SU_FILENAME = "database/nhanVatLichSu.json";
+    public static final String NHAN_VAT_LICH_SU_FILENAME = "database/nhanVat.json";
     public static final String NHAN_VAT_LICH_SU_WEBPAGE = "https://nguoikesu.com";
 
     public static final String nullRepresentation = "Không rõ";

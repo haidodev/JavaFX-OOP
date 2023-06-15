@@ -1,6 +1,8 @@
 package com.app.dict.base;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 public class NhanVatModel extends Model
@@ -8,20 +10,42 @@ public class NhanVatModel extends Model
     private List<List<String>> thongTin;
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
-    private Set<String> thoiKyLienQuan;
+    private Set<String> cacThoiKyLienQuan;
 
 
     public NhanVatModel(String tenModel, List<String> moTa, String code, List<List<String>> thongTin
-            , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan, Set<String> thoiKyLienQuan)
+            , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan, Set<String> cacThoiKyLienQuan)
     {
         super(tenModel, moTa);
         setCode(code);
         setThongTin(thongTin);
         setCacNhanVatLienQuan(cacNhanVatLienQuan);
         setCacDiTichLienQuan(cacDiTichLienQuan);
-        setThoiKyLienQuan(thoiKyLienQuan);
+        setCacThoiKyLienQuan(cacThoiKyLienQuan);
+    }
+    public NhanVatModel(String tenModel)
+    {
+        super(tenModel);
+        setCode(new String());
+        setMoTa(new ArrayList<>());
+        setThongTin(new ArrayList<>());
+        setCacNhanVatLienQuan(new HashSet<>());
+        setCacDiTichLienQuan(new HashSet<>());
+        setCacThoiKyLienQuan(new HashSet<>());
     }
 
+    public List<List<String>> getThongTin() {
+        return thongTin;
+    }
+    public Set<String> getCacNhanVatLienQuan() {
+        return cacNhanVatLienQuan;
+    }
+    public Set<String> getCacThoiKyLienQuan() {
+        return cacThoiKyLienQuan;
+    }
+    public Set<String> getCacDiTichLienQuan() {
+        return cacDiTichLienQuan;
+    }
     public void setThongTin(List<List<String>> thongTin) {
         this.thongTin = thongTin;
     }
@@ -34,17 +58,9 @@ public class NhanVatModel extends Model
         this.cacDiTichLienQuan = cacDiTichLienQuan;
     }
 
-    public void setThoiKyLienQuan(Set<String> thoiKyLienQuan) {
-        this.thoiKyLienQuan = thoiKyLienQuan;
+    public void setCacThoiKyLienQuan(Set<String> cacThoiKyLienQuan) {
+        this.cacThoiKyLienQuan = cacThoiKyLienQuan;
     }
-
-    public Set<String> getThoiKyLienQuan() {
-        return thoiKyLienQuan;
-    }
-    public Set<String> getCacNhanVatLienQuan() {
-        return cacNhanVatLienQuan;
-    }
-
 
     @Override
     public String toHTML() {
@@ -63,15 +79,6 @@ public class NhanVatModel extends Model
         htmlBuilder.append("table { font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:14px; }");
         htmlBuilder.append(".table-container { text-align: left; }");
         htmlBuilder.append("</style>");
-
-
-
-        // Add the name as a heading
-        // htmlBuilder.append("<h1>").append("NHÂN VẬT").append("</h1>");
-        // htmlBuilder.append("<h1>").append(getName()).append("</h1>");
-
-        // Add the code
-        // htmlBuilder.append("<p><strong>Code:</strong> ").append(getCode()).append("</p>");
 
         // Add the infobox
         if (this.thongTin != null)
@@ -101,40 +108,6 @@ public class NhanVatModel extends Model
                 htmlBuilder.append("<p>").append(desc).append("</p>");
             }
         }
-
-
-        // Add the related figures
-        htmlBuilder.append("<h2>Related Figures</h2>");
-        if (this.cacNhanVatLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String figure : this.cacNhanVatLienQuan) {
-                htmlBuilder.append("<li>").append(figure).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
-
-
-        // Add the related places
-        htmlBuilder.append("<h2>Related Places</h2>");
-        if (this.cacDiTichLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String place : this.cacDiTichLienQuan) {
-                htmlBuilder.append("<li>").append(place).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
-
-
-        // Add the related time periods
-        htmlBuilder.append("<h2>Related Time Periods</h2>");
-        if (this.thoiKyLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String timePeriod : this.thoiKyLienQuan) {
-                htmlBuilder.append("<li>").append(timePeriod).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
-
 
         // Close the HTML structure
         htmlBuilder.append("</body>");

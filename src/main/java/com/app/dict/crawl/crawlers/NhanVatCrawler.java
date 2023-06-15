@@ -3,6 +3,8 @@ package com.app.dict.crawl.crawlers;
 import com.app.dict.base.Model;
 import com.app.dict.base.NhanVatModel;
 import com.app.dict.util.Config;
+import com.google.gson.reflect.TypeToken;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -10,192 +12,271 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
 public class NhanVatCrawler extends SCrawler implements ICrawler {
 
-    public List<Model> crawlPages() {
-        String baseUrl = Config.NHAN_VAT_LICH_SU_WEBPAGE;
-        String figureURL = "/nhan-vat/an-duong-vuong";
+    public static List<List<String>> crawlTable(Element table)  {
+        List<List<String>> infobox = new ArrayList<>();
+        Elements rows = table.select("tr");
+        for (Element row : rows) {
+            String label = row.select("th[scope=row], th[colspan=2]").text();
+            List<String> info = new ArrayList<>();
+            if (label.isEmpty()) {
+                Elements case2td = row.select("td");
+                if (case2td.size() == 2) {
+                    for (Element td : case2td) {
+                        info.add(td.text());
+                    }
+                    infobox.add(info);
+                }  
+                continue; 
+            } 
+
+            info.add(label);   // Set info[0] as label
+
+            //  Add information to info[1..]
+            Elements tabElements = row.select("table");
+            if (tabElements.size() > 0) {
+                Elements liElements = row.select("td li");
+                if (liElements.size() > 0) {
+                    // if there are li elements, get their text and concatenate with line breaks
+                    for (Element li : liElements) {
+                        info.add(li.text());
+                    }
+                } else {
+                    Elements tdElements = tabElements.select("tr td");
+                    if (tdElements.size() > 0) info.add(tdElements.text());
+                }
+            } else {
+                Elements brElements = row.select("td br");
+                if (brElements.size() > 0) {
+                    row = row.select("td").get(row.select("td").size()-1);
+                    String tdContent = row.select("td").html();
+                    String lines[] = tdContent.split("<br>");
+                    for (String line : lines) {
+                        info.add(Jsoup.parse(line).text());
+                    } 
+                } else {
+                    Element tdElement = row.selectFirst("td");
+                    if (tdElement != null) info.add(tdElement.text());
+                }
+            }
+                    
+            infobox.add(info);
+        }     
+        return infobox;
+    }
+
+    public void crawlNguoiKeSu() {
+        String baseUrl = "https://nguoikesu.com";
+        String nhanVatUrl = "/nhan-vat/an-duong-vuong";
         Document doc;
 
-        List<Model> historicalFigureList = new ArrayList<>();
+        ArrayList<Model> nhanVatList = new ArrayList<>();
 
-        while (figureURL != null) {
-            System.out.println(baseUrl + figureURL);
+        while (nhanVatUrl != null) {
+            System.out.println(baseUrl + nhanVatUrl);
             try {
-                doc =  Jsoup.connect(baseUrl+figureURL).timeout(200000).get();
+                doc =  Jsoup.connect(baseUrl+nhanVatUrl).get();
             } catch (IOException e ){
                 throw new RuntimeException(e);
             }
-
+            
             // Collecting data
             String name = doc.selectFirst("div.page-header > h2").text();
+            NhanVatModel nhanVat = new NhanVatModel(name);
 
-            int lastSlashIndex = figureURL.lastIndexOf("/");   // Get the text after last slash of url as historicalFigureCode
-            String historicalFigureCode = figureURL.substring(lastSlashIndex + 1);
+            int lastSlashIndex = nhanVatUrl.lastIndexOf("/");   // Get the text after last slash of url as nhanVatCode
+            String nhanVatCode = nhanVatUrl.substring(lastSlashIndex + 1);
+            nhanVat.setCode(nhanVatCode);
 
             // Get table
-            List<List<String>> infobox = new ArrayList<>();
+            
             Element table = doc.selectFirst("table.infobox"); // select the table element with class "infobox"
             if (table != null) {
                 // Map<String, ArrayList<String>> infoMap = new HashMap<String, ArrayList<String>>();
-                Elements rows = table.select("tr");
-                for (Element row : rows) {
-                    String label = row.select("th[scope=row], th[colspan=2]").text();
-                    if (label.isEmpty()) {
-                        continue;
-                    }
-
-                    List<String> info = new ArrayList<>();
-                    info.add(label);   // Set description[0] as label
-
-                    //  Add information to description[1..]
-                    Elements tabElements = row.select("table");
-                    if (tabElements.size() > 0) {
-                        Elements liElements = row.select("td li");
-                        if (liElements.size() > 0) {
-                            // if there are li elements, get their text and concatenate with line breaks
-                            for (Element li : liElements) {
-                                info.add(li.text());
-                            }
-                        } else {
-                            Elements tdElements = tabElements.select("tr td");
-                            if (tdElements.size() > 0) info.add(tdElements.text());
-                        }
-                    } else {
-                        Elements brElements = row.select("td br");
-                        if (brElements.size() > 0) {
-                            row = row.select("td").get(row.select("td").size()-1);;
-                            String tdContent = row.select("td").html();
-                            String lines[] = tdContent.split("<br>");
-                            for (String line : lines) {
-                                info.add(Jsoup.parse(line).text());
-                            }
-                        } else {
-                            Element tdElement = row.selectFirst("td");
-                            if (tdElement != null) info.add(tdElement.text());
-                        }
-                    }
-
-                    infobox.add(info);
-                }
+                nhanVat.setThongTin(crawlTable(table));
             }
-
+            
 
             //  Scrape description
-            List<String> description = new ArrayList<String>();
+            List<String> info = new ArrayList<>();
             Element firstPTag = doc.selectFirst("p");
             if (firstPTag != null)  {
                 String text = firstPTag.wholeText();
-                description.add(text);
+                info.add(text);
                 Element nextPTag = firstPTag.nextElementSibling();
                 while (nextPTag != null && !nextPTag.tagName().equals("h2")) {
                     text = nextPTag.wholeText();
-                    if (!text.isEmpty()) description.add(text);
+                    if (!text.isEmpty()) info.add(text);
                     nextPTag = nextPTag.nextElementSibling();
                 }
+                nhanVat.setMoTa(info);
             }
 
             //  Search for relative figures
-            Set<String> historicalFiguresLinked = new HashSet<>();
-            Set<String> historicalDestinationsLinked = new HashSet<>();
-            Set<String> historicalErasLinked = new HashSet<>();;
+            Set<String> nhanVatLienQuan = new HashSet<>();
+            Set<String> diaDanhLienQuan = new HashSet<>();
+            Set<String> thoiKyLienQuan = new HashSet<>();
             Elements aTags = doc.select("div[itemprop=articleBody].com-content-article__body a");
             for (Element aTag : aTags) {
                 String href = aTag.attr("href");
                 if (href.isEmpty() || href.startsWith("#")) continue;
                 String code = href.substring(href.lastIndexOf("/") + 1);
                 if (href.contains("nhan-vat")) {
-                    historicalFiguresLinked.add(code);
+                    nhanVatLienQuan.add(code);
                 } else if (href.contains("dia-danh")) {
-                    historicalDestinationsLinked.add(code);
+                    diaDanhLienQuan.add(code);
                 } else if (href.contains("dong-lich-su")) {
-                    historicalErasLinked.add(code);
+                    thoiKyLienQuan.add(code);
                 }
             }
+            nhanVat.setCacNhanVatLienQuan(nhanVatLienQuan);
+            nhanVat.setCacDiTichLienQuan(diaDanhLienQuan);
+            nhanVat.setCacThoiKyLienQuan(thoiKyLienQuan);
 
             // Add scapred nhanvat to list
-            Model nhanVat = new NhanVatModel(name, description, historicalFigureCode, infobox,
-                    historicalFiguresLinked, historicalDestinationsLinked, historicalErasLinked);
-            historicalFigureList.add(nhanVat);
+            nhanVatList.add(nhanVat);
 
             // visit next page
             Element nextPage = doc.selectFirst("a.btn.btn-sm.btn-secondary.next");
             if (nextPage != null) {
-                figureURL = nextPage.attr("href");
+                nhanVatUrl = nextPage.attr("href");
             } else {
-                figureURL = null;
+                nhanVatUrl = null;
                 System.out.println("Next page link not found.");
+            }
+        }
+        
+        // Write to JSON file
+        writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, nhanVatList);
+    }
+
+    public void crawlWiki()  {
+        //  Input from JSON back to Objects
+        List<NhanVatModel> nhanVatList = loader(Config.NHAN_VAT_LICH_SU_FILENAME, new TypeToken<List<NhanVatModel>>() {});
+        String baseUrl = "https://vi.wikipedia.org/wiki/";
+        String nhanVatUrl = "";
+        Document doc;
+
+        for (NhanVatModel nhanVat : nhanVatList) {
+            System.out.println(baseUrl+nhanVatUrl);
+            nhanVatUrl = nhanVat.getTenModel().replace(" ", "_");
+            try {
+                doc =  Jsoup.connect(baseUrl+nhanVatUrl).get();
+            } catch (IOException e ){
+                continue;
+            }
+
+            Element table = doc.selectFirst("div.mw-parser-output table.infobox");
+            if (table != null) {
+                List<List<String>> infoBox = crawlTable(table);
+                infoBox = merge(nhanVat.getThongTin(), infoBox);
+                nhanVat.setThongTin(infoBox);
             }
         }
 
         // Write to JSON file
-        return historicalFigureList;
+        List<Model> modelList = new ArrayList<>(nhanVatList);
+        writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, nhanVatList);
     }
 
-    public void crawlWiki()  {
+    public static boolean shouldMerge(List<String> info1, List<String> info2) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 1; i < info1.size(); i++) {
+            stringBuilder.append(info1.get(i));
+        }
+        String str1 = stringBuilder.toString();
+        stringBuilder = new StringBuilder();
+        for (int i = 1; i < info2.size(); i++) {
+            stringBuilder.append(info2.get(i));
+        }
+        String str2 = stringBuilder.toString();
 
-//        //  Input from JSON back to Objects
-//        ArrayList<NhanVatModel> nhanVatList = Utility.loader(Config.NHAN_VAT_FILENAME, new TypeToken<ArrayList<NhanVatModel>>() {});
-//
-//        String targetCode = "an-duong-vuong";
-//        NhanVatModel targetNhanVat = null;
-//
-//        for (NhanVatModel nhanVat : nhanVatList) {
-//            if (nhanVat.getCode().equals(targetCode)) {
-//                targetNhanVat = nhanVat;
-//                break; // Exit the loop once the target is found
-//            }
-//        }
-//        String html = targetNhanVat.toHtml();
-//        String filePathOutput = "./htmlOutput/NhanVat.html";
-//        try (FileWriter writer = new FileWriter(filePathOutput)) {
-//            // Write the JSON string to the file
-//            writer.write(html);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        // Tạo một HashMap để lưu số lần xuất hiện của chữ cái và số trong str1
+        Map<Character, Integer> occurrencesMap = new HashMap<>();
 
-        // String baseUrl = "https://vi.wikipedia.org/wiki/";
-        // String nhanVatUrl = "";
-        // Document doc;
+        // Đếm số lần xuất hiện của chữ cái và số trong str1
+        for (char ch : str1.toCharArray()) {
+            if (Character.isLetter(ch) || Character.isDigit(ch)) {
+                occurrencesMap.put(ch, occurrencesMap.getOrDefault(ch, 0) + 1);
+            }
+        }
 
+        int str1Count = 0;
+        int str2Count = 0;
 
-        // for (NhanVatModel nhanVat : nhanVatList) {
-        //     nhanVatUrl = nhanVat.getName().replace(" ", "_");
-        //     try {
-        //         doc =  Jsoup.connect(baseUrl+nhanVatUrl).get();
-        //     } catch (IOException e ){
-        //         throw new RuntimeException(e);
-        //     }
-        //     Element table = doc.selectFirst("div.infobox:not([id])");
-        //     if (table != null) {
-        //         System.out.println("HTML contains infobox without id attribute");
-        //     } else {
-        //         System.out.println("HTML does not contain infobox without id attribute");
-        //     }
-        // }
+        // Đếm số lần xuất hiện của chữ cái và số trong str2
+        for (char ch : str2.toCharArray()) {
+            if (Character.isLetter(ch) || Character.isDigit(ch)) {
+                occurrencesMap.put(ch, occurrencesMap.getOrDefault(ch, 0) - 1);
+            }
+        }
+
+        // Tính tổng số lần xuất hiện của chữ cái và số còn lại trong str1
+        for (int count : occurrencesMap.values()) {
+            if (count > 0) str1Count += count;
+            else str2Count -= count;
+        }
+
+        float rate = (float) 0.3;
+        if (Math.max(str1.length(),str2.length()) < 20) rate = (float) 0.8;
+        if ((float)str1Count > (float)(rate*str2.length())) return true;
+        if ((float)str2Count > (float)(rate*str1.length())) return true;
+        return false;
     }
 
-//    public void outputTxt () {
-//        ArrayList<NhanVatModel> nhanVatList = Utility.loader(Config.NHAN_VAT_FILENAME, new TypeToken<ArrayList<NhanVatModel>>() {});
-//        StringBuilder stringBuilder = new StringBuilder();
-//        for (NhanVatModel nhanVat : nhanVatList) {
-//            stringBuilder.append(Utility.removeAccentsAndToLowercase(nhanVat.getName())).append(nhanVat.toHtml()).append("\n");
-//        }
-//        String filePathOutput = "./txtOutput/NhanVat.txt";
-//        String outputTxt = stringBuilder.toString();
-//        try (FileWriter writer = new FileWriter(filePathOutput)) {
-//            // Write the JSON string to the file
-//            writer.write(outputTxt);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public static List<List<String>> merge(List<List<String>> table1, List<List<String>> table2) {
+        if (table1.isEmpty()) return table2;
+        int ttcIndex1 = -1;
+        int ttcIndex2 = -1;
+        for (int i = 0; i < table1.size(); i++)  
+            if (table1.get(i).get(0).contains("Thông tin")) {
+                ttcIndex1 = i;
+                break;
+            } 
+        for (int i = 0; i < table2.size(); i++)  
+            if (table2.get(i).get(0).contains("Thông tin")) {
+                ttcIndex2 = i;
+                break;
+            }
+        if (ttcIndex2>ttcIndex1+1 && Math.min(ttcIndex1, ttcIndex2) > 0) {
+            table1.subList(0, ttcIndex1-1).clear();
+            table1.addAll(0, table2.subList(0, ttcIndex2-1));
+            ttcIndex1 = ttcIndex2;
+        }
+        for (int i = ttcIndex1+1; i < table1.size(); i++) {
+            if (table1.get(i).size() == 1 || table1.get(i).get(1).isEmpty()) continue;
+            for (int j = ttcIndex2+1; j < table2.size(); j++) {
+                if (table1.get(i).get(0).equalsIgnoreCase(table2.get(j).get(0))) {
+                    if (table2.get(j).size() == 1 || table2.get(j).get(1).isEmpty()) break;
+                    if (shouldMerge(table1.get(i), table2.get(j)) ){
+                        table1.get(i).add("(Theo nguoikesu.com)");
+                        table2.get(j).add("(Theo wikipedia.org)");
+                        table2.get(j).set(0, "</td> <td>");
+                        table1.get(i).addAll(table2.get(j));
+                    }
+                    break;
+                }
+            }
+        }
+        return table1;     
+    }
+
+    public List<Model> crawlPages() {
+        crawlNguoiKeSu();
+        crawlWiki();
+        List<NhanVatModel> nhanVatList = loader(Config.NHAN_VAT_LICH_SU_FILENAME, new TypeToken<List<NhanVatModel>>() {});
+        List<Model> modelList = new ArrayList<>(nhanVatList);
+        // Write to JSON file
+        return modelList;
+    }
 
     public void createNhanVatJson()
     {
