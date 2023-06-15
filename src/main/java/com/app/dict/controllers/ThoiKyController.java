@@ -19,8 +19,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ThoiKyController extends GeneralController implements Initializable {
-    public ScrollPane scbar;
-    public AnchorPane outerAnchorPane;
     public VBox contentVBox;
 
     @Override
@@ -30,7 +28,10 @@ public class ThoiKyController extends GeneralController implements Initializable
         }
         listView.setItems(objectList);
     }
-
+    public void preloadThoiKy(String thoiKyName) {
+        listView.getSelectionModel().select(thoiKyName);
+        showDetail((ArrayList<Model>) database.getThoiKy(), thoiKyName);
+    }
     @FXML
     public void showThoiKyDetail() {
         contentVBox.getChildren().clear();
@@ -42,6 +43,14 @@ public class ThoiKyController extends GeneralController implements Initializable
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
+            contentVBox.getChildren().add(btn);
+        }
+        for (String diTich : item.getcacDiTichLienQuan()) {
+            List<Model> dtL = database.getDiTich();
+            int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
+            if (idx < 0) continue;
+            Button btn = new Button(dtL.get(idx).getTenModel());
+            btn.setOnAction(this::handleDiTichLienQuanButton);
             contentVBox.getChildren().add(btn);
 
         }

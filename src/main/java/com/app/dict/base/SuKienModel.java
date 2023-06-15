@@ -1,5 +1,6 @@
 package com.app.dict.base;
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.List;
 
@@ -10,7 +11,12 @@ public class SuKienModel extends Model {
 
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
-
+    public List<String> getcacNhanVatLienQuan() {
+        return new ArrayList<>(this.cacNhanVatLienQuan);
+    }
+    public List<String> getcacDiTichLienQuan() {
+        return new ArrayList<>(this.cacDiTichLienQuan);
+    }
     public SuKienModel(String tenModel, String code, List<String> moTa, String thoiGian, String diaDiem, String ketQua
             , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan) {
         super(tenModel, moTa);

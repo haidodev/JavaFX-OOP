@@ -66,7 +66,10 @@ public class MainController implements Initializable {
         setMainContent(thoiKyPane);
 
     }
-
+    public void showThoiKyPane(String thoiKyName) {
+        showThoiKyPane();
+        thoiKyController.preloadThoiKy(thoiKyName);
+    }
     public void showNhanVatPane() {
         resetStyleNav();
         nhanVatBtn.getStyleClass().add("active");
@@ -82,6 +85,10 @@ public class MainController implements Initializable {
         resetStyleNav();
         suKienBtn.getStyleClass().add("active");
         setMainContent(suKienPane);
+    }
+    public void showSuKienPane(String suKienName) {
+        showSuKienPane();
+        suKienController.preloadSuKien(suKienName);
     }
 
     public void showDiTichPane(String diTichName) {
@@ -99,7 +106,10 @@ public class MainController implements Initializable {
         leHoiBtn.getStyleClass().add("active");
         setMainContent(leHoiPane);
     }
-
+//    public void showLeHoiPane(String leHoiName) {
+//        showLeHoiPane();
+//        leHoiController.preloadLeHoi(leHoiName);
+//    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
