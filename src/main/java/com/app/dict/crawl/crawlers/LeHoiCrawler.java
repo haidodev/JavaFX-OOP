@@ -67,6 +67,8 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
             } else if (location.equals("Lâm Đồng")) {
                 provinceFestivals = new String[1];
                 provinceFestivals[0] = texts[1].replaceFirst("lễ", "").trim();
+            } else if (location.equals("Hà Nam")) {
+                continue;
             } else if (texts[1].contains("khai hội") || texts[1].contains("chính hội")
                     || texts[1].contains("kết hội")) {
                 provinceFestivals = texts[1].split("\\b((?<!khai\\s)(?<!kết\\s)(?<!chính\\s))(lễ hội|Hội|hội)\\b");

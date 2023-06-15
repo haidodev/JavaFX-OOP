@@ -39,7 +39,7 @@ public class NhanVatToThoiKy
         System.out.println(nhanVatToThoiKy);
         NhanVatCrawler nhanVatCrawler = new NhanVatCrawler();
         List<NhanVatModel> nhanVatList = nhanVatCrawler
-                .loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<>() {});
+                .loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
 
         for (NhanVatModel nhanVat : nhanVatList)
         {

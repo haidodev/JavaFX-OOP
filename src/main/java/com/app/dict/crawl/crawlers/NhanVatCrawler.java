@@ -77,16 +77,27 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
     public void crawlNguoiKeSu() {
         String baseUrl = "https://nguoikesu.com";
         String nhanVatUrl = "/nhan-vat/an-duong-vuong";
-        Document doc;
+        Document doc = null;
 
         ArrayList<Model> nhanVatList = new ArrayList<>();
 
         while (nhanVatUrl != null) {
             System.out.println(baseUrl + nhanVatUrl);
-            try {
-                doc =  Jsoup.connect(baseUrl+nhanVatUrl).get();
-            } catch (IOException e ){
-                throw new RuntimeException(e);
+            boolean isConnected = false;
+            while (!isConnected) {
+                try {
+                    doc = Jsoup.connect(baseUrl+nhanVatUrl)
+                            .timeout(2000000).get();
+                    isConnected = true; // Connection successful, exit the loop
+                } catch (IOException e) {
+                    System.err.println("Failed to connect: " + e.getMessage());
+                    // Wait for a while before trying again
+                    try {
+                        Thread.sleep(5000); // 5 seconds
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
             }
             
             // Collecting data
