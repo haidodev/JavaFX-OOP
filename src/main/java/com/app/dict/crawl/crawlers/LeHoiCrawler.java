@@ -181,7 +181,7 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
             }
 
             String locationCode = convertToCode(location.split(",")[0]);
-            Model festival = new LeHoiModel("Lễ hội " + name, time, location, historicalFigureLinked, fistTimeHolding, others, locationCode);
+            Model festival = new LeHoiModel("Lễ hội " + name, time, location, convertToCode(historicalFigureLinked), fistTimeHolding, others, locationCode);
             festivals.add(festival);
         }
 
@@ -255,6 +255,10 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
         String[] briefInfos = briefInfo.split("tại|ở", 2);
 
         String name = briefInfos[0].trim();
+        if (name .equals("Đại tiệc âm nhạc ánh sáng Heineken Countdown Party 2018"))
+        {
+            return null;
+        }
         String location = url.replaceFirst("http://lehoi.info/", "").split("/")[0];
         if (map.containsKey(location)) {
             if (map.get(location).contains(name)) {
