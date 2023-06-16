@@ -10,10 +10,13 @@ public class LeHoiModel extends Model
     private String diaDiem;
     private String nhanVatLienQuan;
     private String toChucLanDau;
+
     private String diaDanhCode;
 
+    private List<String> diTichLienQuan;
+
     public LeHoiModel(String tenModel, String thoiGian, String diaDiem,
-                      String nhanVatLienQuan, String toChucLanDau, List<String> description, String diaDanhCode)
+                      String nhanVatLienQuan, String toChucLanDau, List<String> description, String diaDanhCode, String code)
     {
         super(tenModel, description);
         setThoiGian(thoiGian);
@@ -21,6 +24,11 @@ public class LeHoiModel extends Model
         setNhanVatLienQuan(nhanVatLienQuan);
         setToChucLanDau(toChucLanDau);
         setDiaDanhCode(diaDanhCode);
+        setCode(code);
+    }
+
+    public void setDiTichLienQuan(List<String> diTichLienQuan) {
+        this.diTichLienQuan = diTichLienQuan;
     }
 
     public void setToChucLanDau(String toChucLanDau)
@@ -46,6 +54,9 @@ public class LeHoiModel extends Model
     public void setDiaDanhCode(String diaDanhCode)
     {
         this.diaDanhCode = diaDanhCode;
+    }
+    public String getDiaDanhCode() {
+        return diaDanhCode;
     }
 
     @Override

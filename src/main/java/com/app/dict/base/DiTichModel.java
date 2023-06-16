@@ -3,10 +3,12 @@ package com.app.dict.base;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
 
 public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacThoiKyLienQuan;
+    private List<String> cacLeHoiLienQuan;
 
     public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
@@ -14,6 +16,11 @@ public class DiTichModel extends Model{
         setCode(code);
         setCacNhanVatLienQuan(cacNhanVatLienQuan);
         setCacThoiKyLienQuan(new HashSet<>());
+        setCacLeHoiLienQuan(new ArrayList<>());
+    }
+
+    public void setCacLeHoiLienQuan(List<String> cacLeHoiLienQuan) {
+        this.cacLeHoiLienQuan = cacLeHoiLienQuan;
     }
 
     public Set<String> getCacNhanVatLienQuan() {
@@ -62,7 +69,31 @@ public class DiTichModel extends Model{
 
 
         // Add the description
-        if (this.moTa != null)
+
+        if (this.cacThoiKyLienQuan != null)
+        {
+            htmlBuilder.append("<h2>Related Periods</h2>");
+            htmlBuilder.append("<ul>");
+
+            for (String desc : this.cacThoiKyLienQuan) {
+                htmlBuilder.append("<li>").append(desc).append("</li>");
+            }
+
+            htmlBuilder.append("</ul>");
+        }
+
+        if (this.cacLeHoiLienQuan != null)
+        {
+            htmlBuilder.append("<h2>Related Festivals</h2>");
+            htmlBuilder.append("<ul>");
+
+            for (String desc : this.cacLeHoiLienQuan) {
+                htmlBuilder.append("<li>").append(desc).append("</li>");
+            }
+
+            htmlBuilder.append("</ul>");
+        }
+
         {
             htmlBuilder.append("<h2>Description</h2>");
             for (String desc : this.moTa) {

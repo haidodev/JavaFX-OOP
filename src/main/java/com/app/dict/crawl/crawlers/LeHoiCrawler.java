@@ -98,7 +98,8 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
                 }
                 List<String> description = new ArrayList<>();
                 description.add("không rõ");
-                Model festival = new LeHoiModel("Lễ hội " + name, time, location, "", "", description, locationCode);
+                Model festival = new LeHoiModel("Lễ hội " + name, time, location, ""
+                        , "", description, locationCode, convertToCode(name));
                 festivals.add(festival);
             }
         }
@@ -181,7 +182,8 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
             }
 
             String locationCode = convertToCode(location.split(",")[0]);
-            Model festival = new LeHoiModel("Lễ hội " + name, time, location, convertToCode(historicalFigureLinked), fistTimeHolding, others, locationCode);
+            Model festival = new LeHoiModel("Lễ hội " + name, time, location
+                    , convertToCode(historicalFigureLinked), fistTimeHolding, others, locationCode, convertToCode(name));
             festivals.add(festival);
         }
 
@@ -273,9 +275,10 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
         if (timeContainer != null) {
             time = doc.selectFirst("b.lehoi-time").text().trim();
         }
-        String code = convertToCode(location);
+        String locationCode = convertToCode(location);
 
-        Model festival = new LeHoiModel(name, time, location, "", "", description, code);
+        Model festival = new LeHoiModel(name, time, location, "", ""
+                , description, locationCode, convertToCode(name));
 
         return festival;
     }
