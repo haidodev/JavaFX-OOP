@@ -58,7 +58,6 @@ public class LeHoiModel extends Model
         htmlBuilder.append("<head>");
         htmlBuilder.append("</head>");
         htmlBuilder.append("<body contenteditable=\"true\">");
-        htmlBuilder.append("<i>").append(this.tenModel).append("</i>");
         htmlBuilder.append("<meta charset=\"UTF-8\">");
         // htmlBuilder.append("<title>").append(getName()).append("</title>");
         htmlBuilder.append("<style>");
@@ -73,14 +72,22 @@ public class LeHoiModel extends Model
         // htmlBuilder.append("<p><strong>Code:</strong> ").append(getCode()).append("</p>");
 
         // Add the infobox
-        if (this.moTa != null)
-        {
-            htmlBuilder.append("<h2>Thông tin thời kỳ</h2>");
+        htmlBuilder.append("<h2>Tên Lễ Hội</h2>");
+        htmlBuilder.append("<p>").append(this.tenModel).append("</p>");
 
-            // Add the description
-            for (String desc : this.moTa) {
-                htmlBuilder.append("<p>").append(desc).append("</p>");
-            }
+        htmlBuilder.append("<h2>Địa điểm</h2>");
+        htmlBuilder.append("<p>").append(this.diaDiem).append("</p>");
+
+        htmlBuilder.append("<h2>Thời gian</h2>");
+        htmlBuilder.append("<p>").append(this.thoiGian).append("</p>");
+
+        htmlBuilder.append("<h2>Tổ chức lần đầu</h2>");
+        htmlBuilder.append("<p>").append(this.toChucLanDau).append("</p>");
+
+        htmlBuilder.append("<h2>Miêu tả</h2>");
+        // Add the description
+        for (String desc : this.moTa) {
+            htmlBuilder.append("<p>").append(desc).append("</p>");
         }
 
         // Add the related figures

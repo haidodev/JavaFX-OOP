@@ -42,5 +42,7 @@
                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         </AnchorPane>
+        <VBox fx:id="contentVBox" spacing="10.0"/>
+
     </AnchorPane>
 </AnchorPane>

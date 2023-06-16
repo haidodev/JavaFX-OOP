@@ -25,7 +25,7 @@ public class NhanVatController extends GeneralController implements Initializabl
     }
     public void preloadNhanVat(String nhanVatName) {
         listView.getSelectionModel().select(nhanVatName);
-        showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName);
+        showNhanVatDetail(nhanVatName);
 
     }
     @FXML
@@ -34,18 +34,23 @@ public class NhanVatController extends GeneralController implements Initializabl
     }
     @FXML
     public void showNhanVatDetail() {
+        showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat()));
+    }
+    public void showNhanVatDetail(String nhanVatName) {
+        showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName));
+    }
+    private void showDanhSachLienQuan(NhanVatModel nhanVat){
         contentVBox.getChildren().clear();
-        NhanVatModel item = (NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat(), true);
-        if (item == null) return;
-        for (String nhanVat : item.getcacNhanVatLienQuan()) {
+        if (nhanVat == null) return;
+        for (String nv : nhanVat.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
-            int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
+            int idx = database.binaryLookupByCode(0, nvL.size() - 1, nv, (ArrayList<Model>) nvL);
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
             contentVBox.getChildren().add(btn);
         }
-        for (String diTich : item.getcacDiTichLienQuan()) {
+        for (String diTich : nhanVat.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
             int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
             if (idx < 0) continue;
@@ -54,7 +59,7 @@ public class NhanVatController extends GeneralController implements Initializabl
             contentVBox.getChildren().add(btn);
 
         }
-        for (String thoiKy : item.getcacThoiKyLienQuan()) {
+        for (String thoiKy : nhanVat.getcacThoiKyLienQuan()) {
             List<Model> tkL = database.getThoiKy();
             int idx = database.binaryLookupByCode(0, tkL.size() - 1, thoiKy, (ArrayList<Model>) tkL);
             if (idx < 0) continue;

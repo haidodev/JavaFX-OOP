@@ -33,7 +33,7 @@ public class DiTichController extends GeneralController implements Initializable
     @FXML
     public void showDiTichDetail(){
         contentVBox.getChildren().clear();
-        DiTichModel item = (DiTichModel) showDetail((ArrayList<Model>) database.getDiTich(), true);
+        DiTichModel item = (DiTichModel) showDetail((ArrayList<Model>) database.getDiTich());
         if (item == null) return;
         for (String nhanVat : item.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();

@@ -33,7 +33,7 @@ public class SuKienController extends GeneralController implements Initializable
     @FXML
     public void showSuKienDetail(){
         contentVBox.getChildren().clear();
-        SuKienModel item = (SuKienModel) showDetail((ArrayList<Model>) database.getSuKien(), true);
+        SuKienModel item = (SuKienModel) showDetail((ArrayList<Model>) database.getSuKien());
         if (item == null) return;
         for (String nhanVat : item.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();

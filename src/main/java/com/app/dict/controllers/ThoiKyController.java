@@ -30,14 +30,21 @@ public class ThoiKyController extends GeneralController implements Initializable
     }
     public void preloadThoiKy(String thoiKyName) {
         listView.getSelectionModel().select(thoiKyName);
-        showDetail((ArrayList<Model>) database.getThoiKy(), thoiKyName);
+        showThoiKyDetail(thoiKyName);
     }
     @FXML
     public void showThoiKyDetail() {
+        ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy());
+        showDanhSachLienQuan(item);
+    }
+    public void showThoiKyDetail(String thoiKyName) {
+        ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy(), thoiKyName);
+        showDanhSachLienQuan(item);
+    }
+    private void showDanhSachLienQuan(ThoiKyModel thoiKy){
         contentVBox.getChildren().clear();
-        ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy(), true);
-        if (item == null) return;
-        for (String nhanVat : item.getcacNhanVatLienQuan()) {
+        if (thoiKy == null) return;
+        for (String nhanVat : thoiKy.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
             int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
             if (idx < 0) continue;
@@ -45,14 +52,13 @@ public class ThoiKyController extends GeneralController implements Initializable
             btn.setOnAction(this::handleNhanVatLienQuanButton);
             contentVBox.getChildren().add(btn);
         }
-        for (String diTich : item.getcacDiTichLienQuan()) {
+        for (String diTich : thoiKy.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
             int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
             if (idx < 0) continue;
             Button btn = new Button(dtL.get(idx).getTenModel());
             btn.setOnAction(this::handleDiTichLienQuanButton);
             contentVBox.getChildren().add(btn);
-
         }
     }
 
