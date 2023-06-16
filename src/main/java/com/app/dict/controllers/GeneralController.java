@@ -123,4 +123,13 @@ public class GeneralController implements Initializable {
     public void handleDiTichLienQuanButton(ActionEvent event){
         MainController.getInstance().showDiTichPane(((Button) event.getSource()).getText());
     }
+    public void handleThoiKyLienQuanButton(ActionEvent event){
+        MainController.getInstance().showThoiKyPane(((Button) event.getSource()).getText());
+    }
+    public void handleSuKienLienQuanButton(ActionEvent event){
+        MainController.getInstance().showSuKienPane(((Button) event.getSource()).getText());
+    }
+//    public void handleLeHoiLienQuanButton(ActionEvent event){
+//        MainController.getInstance().showLeHoiPane(((Button) event.getSource()).getText());
+//    }
 }

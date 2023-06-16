@@ -11,6 +11,9 @@ public class ThoiKyModel extends Model
     public List<String> getcacNhanVatLienQuan() {
         return new ArrayList<>(this.cacNhanVatLienQuan);
     }
+    public List<String> getcacDiTichLienQuan() {
+        return new ArrayList<>(this.cacDiTichLienQuan);
+    }
 
     public ThoiKyModel(String name, List<String> moTa, String code, Set<String> cacNhanVatLienQuan
             , Set<String> cacDiTichLienQuan)

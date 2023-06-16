@@ -43,11 +43,8 @@
                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </AnchorPane>
+            <VBox fx:id="contentVBox" spacing="10.0"/>
         </VBox>
 
     </ScrollPane>
-<!--    <AnchorPane  AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="254.0"-->
-<!--                AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="14.0">-->
-<!--        -->
-<!--    </AnchorPane>-->
 </AnchorPane>

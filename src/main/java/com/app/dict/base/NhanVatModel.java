@@ -1,5 +1,6 @@
 package com.app.dict.base;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -9,7 +10,15 @@ public class NhanVatModel extends Model
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
     private Set<String> thoiKyLienQuan;
-
+    public List<String> getcacNhanVatLienQuan() {
+        return new ArrayList<>(this.cacNhanVatLienQuan);
+    }
+    public List<String> getcacDiTichLienQuan() {
+        return new ArrayList<>(this.cacDiTichLienQuan);
+    }
+    public List<String> getcacThoiKyLienQuan() {
+        return new ArrayList<>(this.thoiKyLienQuan);
+    }
 
     public NhanVatModel(String tenModel, List<String> moTa, String code, List<List<String>> thongTin
             , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan, Set<String> thoiKyLienQuan)

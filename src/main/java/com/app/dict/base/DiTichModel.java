@@ -1,10 +1,14 @@
 package com.app.dict.base;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
+    public List<String> getcacNhanVatLienQuan() {
+        return new ArrayList<>(this.cacNhanVatLienQuan);
+    }
     public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
         super(tenModel, moTa);
