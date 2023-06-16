@@ -38,6 +38,7 @@ public class DiTichToLeHoi
     public void LinkDiTichToLeHoi()
     {
         Map<String, List<String>> hashMap = DiTichToLeHoi();
+        System.out.println(hashMap);
         DiTichCrawler diTichCrawler = new DiTichCrawler();
         List<DiTichModel> diTichList = diTichCrawler
                 .loader(Config.DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});

@@ -101,6 +101,13 @@ public class NhanVatModel extends Model
             htmlBuilder.append("</table>");
         }
 
+        htmlBuilder.append("<h2>Related Periods</h2>");
+        htmlBuilder.append("<ul>");
+        for (String figure : this.cacThoiKyLienQuan) {
+            htmlBuilder.append("<li>").append(figure).append("</li>");
+        }
+        htmlBuilder.append("</ul>");
+
         // Add the description
         htmlBuilder.append("<h2>Description</h2>");
         if (this.moTa != null) {
