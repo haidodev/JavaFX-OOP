@@ -8104,29 +8104,8 @@
         "Hoa Lư"
       ]
     ],
-    "cacNhanVatLienQuan": [
-      "nha-ngo",
-      "nha-tong",
-      "ngo-nhat-khanh",
-      "ngo-xuong-van",
-      "le-hoan",
-      "tran-lam",
-      "dinh-bo-linh",
-      "ngo-xuong-ngap",
-      "dinh-liet",
-      "duong-van-nga",
-      "dinh-hang-lang",
-      "dinh-phe-de",
-      "dinh-toan",
-      "nha-hau-le",
-      "nha-dinh",
-      "do-thich",
-      "dinh-tien-hoang"
-    ],
-    "cacDiTichLienQuan": [
-      "huyen-hoa-lu",
-      "tinh-ninh-binh"
-    ],
+    "cacNhanVatLienQuan": [],
+    "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "Đinh Liễn",
@@ -9162,8 +9141,19 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-tran",
+      "le-quy-don",
+      "le-loi",
+      "nha-hau-tran",
+      "nha-ho",
+      "le-thai-to",
+      "tran-phong"
+    ],
+    "cacDiTichLienQuan": [
+      "thanh-to",
+      "tinh-bac-giang"
+    ],
     "cacThoiKyLienQuan": [
       "nha-hau-tran",
       "bac-thuoc-lan-thu-tu"
@@ -19570,7 +19560,7 @@
         "Lê Đại Cương"
       ],
       [
-        "Cai Trị Cao Miên"
+        "Bảo hộ Cao Miên"
       ],
       [
         "Trị vì",
@@ -40170,8 +40160,21 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "trieu-viet-vuong",
+      "le-tac",
+      "duong-vuong",
+      "nha-tan",
+      "ngo-si-lien",
+      "trieu-da"
+    ],
+    "cacDiTichLienQuan": [
+      "nuoc-thuc",
+      "nuoc-trinh",
+      "quan-nam-hai",
+      "huyen-dong-anh",
+      "nuoc-quac"
+    ],
     "cacThoiKyLienQuan": [
       "au-lac-va-nam-viet"
     ],
@@ -63294,7 +63297,9 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nguyen-thai"
+    ],
     "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [
       "nha-hau-le",
@@ -63489,8 +63494,28 @@
         "Nguyễn Thị Mai Anh"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "tran-van-minh",
+      "vo-nguyen-giap",
+      "tran-van-don",
+      "nguyen-van-hao",
+      "tran-thien-khiem",
+      "nguyen-ba-can",
+      "nguyen-khanh",
+      "tran-van-huong",
+      "dang-van-quang",
+      "phan-huy-quat",
+      "nguyen-tien-hung",
+      "ngo-dinh-diem",
+      "ho-chi-minh",
+      "duong-van-minh"
+    ],
+    "cacDiTichLienQuan": [
+      "tinh-ninh-thuan",
+      "tinh-tien-giang",
+      "tinh-dinh-tuong",
+      "phan-rang"
+    ],
     "cacThoiKyLienQuan": [
       "viet-nam-dan-chu-cong-hoa"
     ],
@@ -63583,8 +63608,15 @@
         "Trường Đại học Y khoa Đông Dương Y Khoa Đại học đường Paris, Pháp"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nguyen-van-tam",
+      "bui-thi-xuan",
+      "nguyen-van-xuan",
+      "phan-chu-trinh"
+    ],
+    "cacDiTichLienQuan": [
+      "thanh-sai-gon"
+    ],
     "cacThoiKyLienQuan": [
       "viet-nam-dan-chu-cong-hoa"
     ],
@@ -63889,7 +63921,14 @@
         "(Theo wikipedia.org)"
       ]
     ],
-    "cacNhanVatLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "hoang-dieu",
+      "ngo-du",
+      "ly-tong-ba",
+      "pham-van-phu",
+      "hoang-xuan-lam",
+      "tran-hung-dao"
+    ],
     "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [],
     "id": 0,
@@ -63901,8 +63940,13 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-thanh",
+      "le-chat"
+    ],
+    "cacDiTichLienQuan": [
+      "tran-nghe-an"
+    ],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "Nguyễn Văn Trị",
@@ -64534,8 +64578,39 @@
         "Đại Vương Nhà Nguyễn (1465-1467)"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-minh",
+      "le-quy-don",
+      "le-loi",
+      "bui-bi",
+      "le-sat",
+      "nguyen-thai",
+      "le-thanh-tong",
+      "nha-le",
+      "pham-van-xao",
+      "trinh-kha",
+      "le-nghi-dan",
+      "tran-hiep",
+      "le-le",
+      "le-lai",
+      "hoang-phuc",
+      "le-trien",
+      "phan-huy-chu",
+      "nha-hau-le",
+      "le-thai-tong",
+      "do-bi",
+      "le-thu",
+      "le-nhan-tong",
+      "le-than",
+      "le-niem"
+    ],
+    "cacDiTichLienQuan": [
+      "tinh-nghe-an",
+      "huyen-nghi-loc",
+      "thanh-pho-ho-chi-minh",
+      "nui-chi-linh",
+      "huyen-nghi-xuan"
+    ],
     "cacThoiKyLienQuan": [
       "nha-hau-le"
     ],
@@ -65045,18 +65120,8 @@
         "Nguyễn Đạo diễn (trưởng nam)"
       ]
     ],
-    "cacNhanVatLienQuan": [
-      "le-quy-don",
-      "nguyen-duc-luong",
-      "nguyen-nhan-thiep",
-      "nha-han"
-    ],
-    "cacDiTichLienQuan": [
-      "chau-vu-ninh",
-      "huyen-chi-linh",
-      "huyen-tu-son",
-      "tinh-bac-ninh"
-    ],
+    "cacNhanVatLienQuan": [],
+    "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [
       "nha-hau-le"
     ],
@@ -65399,8 +65464,35 @@
         "Giao tử, Cối Tử, Tiền xu"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-minh",
+      "hoang-ha",
+      "nha-tong",
+      "ngo-hung",
+      "nha-nguyen-mong-co",
+      "trieu-hang",
+      "hoang-long",
+      "trieu-khuong-dan",
+      "nha-nam-tong",
+      "phan-my",
+      "nha-duong",
+      "trieu-cau",
+      "trieu-binh",
+      "tran-kieu",
+      "nha-kim",
+      "nha-han"
+    ],
+    "cacDiTichLienQuan": [
+      "tran-giang",
+      "nuoc-tong",
+      "ho-bac",
+      "chau-phi",
+      "dao-hai-nam",
+      "thanh-do",
+      "chau-au",
+      "song-duong-tu",
+      "ho-nam"
+    ],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "nhà Bắc Tống",
@@ -65451,8 +65543,20 @@
         "Tiền cổ Trung Quốc"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-ha",
+      "nha-thuong",
+      "vu-vuong",
+      "nha-tan",
+      "thanh-vuong"
+    ],
+    "cacDiTichLienQuan": [
+      "song-hoang-ha",
+      "nuoc-tran",
+      "tinh-ha-nam",
+      "nuoc-lo",
+      "song-vi"
+    ],
     "cacThoiKyLienQuan": [
       "nha-tran",
       "nha-ngo",
@@ -65592,8 +65696,34 @@
         "Tiền xu"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "ly-hung",
+      "ngo-hung",
+      "nha-tong",
+      "ly-mat",
+      "do-thao",
+      "do-tue-do",
+      "ly-ton",
+      "nha-thanh",
+      "vu-de",
+      "ton-hao",
+      "nha-han",
+      "vu-hoang-de",
+      "nha-nguy"
+    ],
+    "cacDiTichLienQuan": [
+      "nuoc-so",
+      "tran-giang",
+      "nuoc-thuc",
+      "vu-xuong",
+      "song-truong-giang",
+      "ho-bac",
+      "thanh-do",
+      "chau-au",
+      "song-hoang-ha",
+      "nuoc-ngo",
+      "song-hoai"
+    ],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "nhà Đông Tấn",
@@ -65798,8 +65928,36 @@
         "Tiền xu"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "tran-binh",
+      "hoang-ha",
+      "tran-luu",
+      "nha-ha",
+      "nha-tong",
+      "hoang-long",
+      "nha-tan",
+      "tran-thang",
+      "vu-de",
+      "vu-hoang-de",
+      "trieu-da"
+    ],
+    "cacDiTichLienQuan": [
+      "chau-au",
+      "thanh-do",
+      "thanh-hoang",
+      "nuoc-ngo",
+      "nuoc-nguy",
+      "nuoc-so",
+      "tinh-quy-chau",
+      "nuoc-thuc",
+      "ho-bac",
+      "tinh-van-nam",
+      "chau-phi",
+      "ho-dong-dinh",
+      "nuoc-luong",
+      "ho-nam",
+      "song-duong-tu"
+    ],
     "cacThoiKyLienQuan": [
       "nha-tran",
       "nha-ngo",
@@ -66078,8 +66236,15 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-duong",
+      "nha-hau-duong",
+      "ngo-viet"
+    ],
+    "cacDiTichLienQuan": [
+      "nuoc-so",
+      "nuoc-yen"
+    ],
     "cacThoiKyLienQuan": [
       "thoi-ky-xay-nen-tu-chu"
     ],
@@ -66092,7 +66257,12 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-minh",
+      "nha-hau-duong",
+      "ngo-viet",
+      "ly-tu-nguyen"
+    ],
     "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [],
     "id": 0,
@@ -67220,8 +67390,25 @@
         ""
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-minh",
+      "nha-duong",
+      "nha-tong",
+      "ly-hong-chuong",
+      "nha-thanh",
+      "nha-han",
+      "ton-dat-tien"
+    ],
+    "cacDiTichLienQuan": [
+      "vu-xuong",
+      "song-truong-giang",
+      "tinh-van-nam",
+      "nuoc-anh",
+      "ho-bac",
+      "tinh-quang-dong",
+      "chau-au",
+      "thanh-cong"
+    ],
     "cacThoiKyLienQuan": [
       "trinh-nguyen-phan-tranh"
     ],
@@ -67546,8 +67733,45 @@
         ""
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "duong-tam-kha",
+      "nha-hau-duong",
+      "duong-cat-loi",
+      "ngo-vuong",
+      "nguyen-thu-tiep",
+      "ngo-viet",
+      "nha-luong",
+      "ngo-nhat-khanh",
+      "pham-lenh-cong",
+      "ngo-quyen",
+      "ngo-xuong-van",
+      "duong-binh-vuong",
+      "tran-lam",
+      "dinh-cong-tru",
+      "khuc-thua-my",
+      "dinh-lien",
+      "nha-dinh",
+      "pham-bach-ho",
+      "nha-tuy",
+      "duong-dinh-nghe",
+      "khuc-hao",
+      "ly-khue",
+      "ngo-xuong-xi",
+      "nguyen-sieu",
+      "nha-duong",
+      "khuc-thua-du",
+      "dinh-bo-linh",
+      "ngo-xuong-ngap",
+      "do-canh-thac",
+      "nguyen-khac-thuan",
+      "nguyen-khoan"
+    ],
+    "cacDiTichLienQuan": [
+      "song-bach-dang",
+      "chau-hoan",
+      "thanh-dai-la",
+      "vu-an"
+    ],
     "cacThoiKyLienQuan": [
       "nha-ngo",
       "bac-thuoc-lan-thu-hai",
@@ -67671,8 +67895,27 @@
         "(Theo wikipedia.org)"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "tran-huu-luong",
+      "hoang-ha",
+      "trieu-binh",
+      "vu-tong",
+      "tran-thanh-tong",
+      "ho-quang",
+      "thanh-cat-tu-han",
+      "tran-thai-tong",
+      "tran-hung-dao"
+    ],
+    "cacDiTichLienQuan": [
+      "bien-dong",
+      "tran-giang",
+      "vu-xuong",
+      "ho-bac",
+      "dao-hai-nam",
+      "chau-au",
+      "thanh-tong",
+      "ho-nam"
+    ],
     "cacThoiKyLienQuan": [
       "nha-tran",
       "nha-ho",
@@ -71759,8 +72002,30 @@
         "Phạm Thị Viên."
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "tran-trong-kim",
+      "tran-huy-lieu",
+      "nguyen-huu-bai",
+      "dang-van-viet",
+      "phan-boi-chau",
+      "pham-tuan",
+      "trieu-da",
+      "tran-dinh-nam",
+      "pham-tuyen",
+      "huynh-thuc-khang",
+      "ngo-dinh-diem",
+      "ho-chi-minh",
+      "phan-chau-trinh",
+      "pham-khac-hoe"
+    ],
+    "cacDiTichLienQuan": [
+      "nuoc-viet",
+      "song-huong",
+      "nuoc-nam",
+      "nui-ngu-binh",
+      "nuoc-phap",
+      "tinh-hai-duong"
+    ],
     "cacThoiKyLienQuan": [
       "nam-bac-trieu"
     ],
@@ -78106,8 +78371,29 @@
         "Vạn An lăng"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "trieu-viet-vuong",
+      "nha-tran",
+      "pham-tu",
+      "trieu-quang-phuc",
+      "ly-phat-tu",
+      "ngo-hung",
+      "ly-nam-de",
+      "trieu-tuc",
+      "nha-luong",
+      "ly-thien-bao",
+      "vu-de",
+      "ly-bi"
+    ],
+    "cacDiTichLienQuan": [
+      "song-to-lich",
+      "vu-binh",
+      "song-tich",
+      "nuoc-van-xuan",
+      "nuoc-luong",
+      "song-duong-tu",
+      "ho-nam"
+    ],
     "cacThoiKyLienQuan": [
       "nha-ly-va-nha-trieu"
     ],
@@ -78145,8 +78431,22 @@
   },
   {
     "thongTin": [],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "truong-phu",
+      "nha-tan",
+      "tran-thang",
+      "vu-de",
+      "nha-han"
+    ],
+    "cacDiTichLienQuan": [
+      "nuoc-so",
+      "tinh-son-tay",
+      "song-hoang-ha",
+      "tinh-ha-nam",
+      "nuoc-trieu",
+      "nuoc-te",
+      "nuoc-yen"
+    ],
     "cacThoiKyLienQuan": [
       "bac-thuoc-lan-thu-nhat",
       "phap-thuoc",
@@ -79254,8 +79554,15 @@
         "..."
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nha-nuoc-viet-nam",
+      "ho-chi-minh",
+      "le-thanh-nghi"
+    ],
+    "cacDiTichLienQuan": [
+      "tinh-quang-nam",
+      "tinh-vinh-long"
+    ],
     "cacThoiKyLienQuan": [
       "viet-nam-dan-chu-cong-hoa"
     ],
@@ -79505,8 +79812,18 @@
         "Đại tướng"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "nguyen-thi-thanh",
+      "tran-quoc-hoan",
+      "nguyen-ai-quoc",
+      "ho-chi-minh"
+    ],
+    "cacDiTichLienQuan": [
+      "huyen-hoa-lu",
+      "thanh-pho-ha-noi",
+      "thanh-pho-ninh-binh",
+      "tinh-ninh-binh"
+    ],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "Trần Đại Quang",
@@ -86510,8 +86827,80 @@
         "Phật giáo"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "tran-minh-tong",
+      "tran-thua",
+      "phan-phu-tien",
+      "pham-van-son",
+      "ngo-thi-si",
+      "tran-nhat-duat",
+      "dang-ma-la",
+      "le-phu-tran",
+      "nha-tran",
+      "tran-thi-bang-thanh",
+      "ho-nguyen-trung",
+      "le-manh-that",
+      "le-van-huu",
+      "tran-thai-to",
+      "tran-chu-pho",
+      "tran-canh",
+      "phan-huy-chu",
+      "ly-te-xuyen",
+      "ho-chi-minh",
+      "dinh-xuan-lam",
+      "ngo-si-lien",
+      "ly-hue-tong",
+      "nguyen-hue-chi",
+      "tran-khanh-du",
+      "tran-quang-khai",
+      "tran-nhan-tong",
+      "tran-ich-tac",
+      "tran-trong-kim",
+      "ly-chieu-hoang",
+      "tran-du-tong",
+      "pham-ngu-lao",
+      "nha-tong",
+      "le-tung",
+      "tran-thanh-tong",
+      "tran-hoang",
+      "tran-thu-do",
+      "nha-ly",
+      "tran-anh-tong",
+      "tran-lieu",
+      "tran-quoc-tuan",
+      "nguyen-hien",
+      "tran-tu-khanh",
+      "le-tac",
+      "tran-quoc-khang",
+      "hoang-binh",
+      "thanh-cat-tu-han",
+      "tran-binh-trong"
+    ],
+    "cacDiTichLienQuan": [
+      "song-cai",
+      "nuoc-tong",
+      "chau-au",
+      "vu-lam",
+      "song-len",
+      "song-ca-lo",
+      "huyen-khoai-chau",
+      "song-to-lich",
+      "tinh-hung-yen",
+      "nui-yen-tu",
+      "chua-pho-minh",
+      "huyen-hoa-lu",
+      "tinh-vinh-phuc",
+      "huyen-my-loc",
+      "den-dong-co",
+      "song-ma",
+      "den-thai-vi",
+      "huyen-vu-ban",
+      "den-tran",
+      "tinh-ha-nam",
+      "chua-dien-huu",
+      "thanh-dai-la",
+      "thanh-thang-long"
+    ],
     "cacThoiKyLienQuan": [
       "nha-tran",
       "nha-ly",
@@ -87517,22 +87906,7 @@
         "Phật giáo"
       ]
     ],
-    "cacNhanVatLienQuan": [
-      "tran-nghe-tong",
-      "duong-tam-kha",
-      "duong-nhat-le",
-      "tran-phe-de",
-      "ho-hung-dat",
-      "tran-an",
-      "tran-khat-chan",
-      "nguyen-da-phuong",
-      "ho-quy-ly",
-      "tran-thieu-de",
-      "nha-tran",
-      "le-quy-ly",
-      "tran-ngung",
-      "pham-su-on"
-    ],
+    "cacNhanVatLienQuan": [],
     "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [
       "nha-tran",
@@ -88481,33 +88855,8 @@
         "Nhà Trần"
       ]
     ],
-    "cacNhanVatLienQuan": [
-      "tran-nhan-tong",
-      "dinh-la-quy",
-      "tran-quoc-tung",
-      "tran-thanh-tong",
-      "ly-anh-tong",
-      "nha-nguyen-mong-co",
-      "tran-thai-tong",
-      "do-anh-vu",
-      "tran-lieu",
-      "tran-quoc-tuan",
-      "ly-thai-tong",
-      "nha-tran",
-      "le-manh-that",
-      "ly-cao-tong",
-      "ly-thanh-tong",
-      "ho-chi-minh",
-      "tran-quoc-tang",
-      "ngo-si-lien",
-      "nguyen-hue-chi"
-    ],
-    "cacDiTichLienQuan": [
-      "tinh-nam-dinh",
-      "phu-thien-truong",
-      "song-nhu-nguyet",
-      "song-cau"
-    ],
+    "cacNhanVatLienQuan": [],
+    "cacDiTichLienQuan": [],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "Trần Tung",
@@ -100818,8 +101167,16 @@
         "Nhà văn, nhà sưu tập, nhà khảo cứu"
       ]
     ],
-    "cacNhanVatLienQuan": [],
-    "cacDiTichLienQuan": [],
+    "cacNhanVatLienQuan": [
+      "le-quy-don",
+      "nha-nuoc-viet-nam",
+      "nguyen-thien-thuat",
+      "ho-chi-minh"
+    ],
+    "cacDiTichLienQuan": [
+      "nuoc-viet",
+      "tinh-quang-dong"
+    ],
     "cacThoiKyLienQuan": [],
     "id": 0,
     "tenModel": "Vương Hồng Sển",

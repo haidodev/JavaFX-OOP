@@ -51,9 +51,27 @@ public class CrawlAll
         }
     }
 
+    public void link()
+    {
+        DiTichToThoiKy diTichToThoiKy = new DiTichToThoiKy();
+        diTichToThoiKy.diaDanhToThoiKy();
+
+        DiTichToLeHoi diTichToLeHoi = new DiTichToLeHoi();
+        diTichToLeHoi.DiTichToLeHoi();
+
+        LeHoiToDiTich leHoiToDiTich = new LeHoiToDiTich();
+        leHoiToDiTich.LinkLeHoiToDiTich();
+
+        NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
+        nhanVatToThoiKy.linkNhanVatToThoiKy();
+
+
+    }
+
     // Test
     public static void main(String[] args) {
         CrawlAll crawlAll = new CrawlAll();
         crawlAll.crawl();
+        crawlAll.link();
     }
 }

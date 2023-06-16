@@ -104,11 +104,23 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
     // Lay thong tin nhan vat tu trang gom nhieu trang con
     private ArrayList<String> getRelatives(String url) {
         ArrayList<String> hrefs = new ArrayList<>();
-        Document doc;
-        try {
-            doc = Jsoup.connect(url).get();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        Document doc = null;
+
+        boolean isConnected = false;
+        while (!isConnected) {
+            try {
+                doc = Jsoup.connect(url)
+                        .timeout(2000000).get();
+                isConnected = true; // Connection successful, exit the loop
+            } catch (IOException e) {
+                System.err.println("Failed to connect: " + e.getMessage());
+                // Wait for a while before trying again
+                try {
+                    Thread.sleep(5000); // 5 seconds
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+            }
         }
 
         //  Find in article body

@@ -39,6 +39,10 @@ public class DiTichModel extends Model{
         this.cacThoiKyLienQuan = cacThoiKyLienQuan;
     }
 
+    public List<String> getCacLeHoiLienQuan() {
+        return cacLeHoiLienQuan;
+    }
+
     @Override
     public String toHTML() {
         StringBuilder htmlBuilder = new StringBuilder();

@@ -236,7 +236,12 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
         Document doc = null;
 
         boolean isConnected = false;
+        int i = 0;
         while (!isConnected) {
+            if (i == 5)
+            {
+                return null;
+            }
             try {
                 doc = Jsoup.connect(url)
                         .timeout(2000000).get();
@@ -250,6 +255,8 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
                     ex.printStackTrace();
                 }
             }
+
+            i++;
         }
 
 
