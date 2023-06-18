@@ -24,16 +24,23 @@ public class SuKienController extends GeneralController implements Initializable
     }
     public void preloadSuKien(String suKienName) {
         listView.getSelectionModel().select(suKienName);
-        showDetail((ArrayList<Model>) database.getSuKien(), suKienName);
+        showSuKienDetail(suKienName);
+    }
+    @FXML
+    public void showSuKienDetail() {
+        SuKienModel item = (SuKienModel) showDetail((ArrayList<Model>) database.getSuKien());
+        showDanhSachLienQuan(item);
+    }
+    public void showSuKienDetail(String suKienName) {
+        SuKienModel item = (SuKienModel) showDetail((ArrayList<Model>) database.getSuKien(), suKienName);
+        showDanhSachLienQuan(item);
     }
     @FXML
     public void suKienSearchFieldAction(){
         searchFieldAction((ArrayList<Model>) database.getSuKien());
     }
-    @FXML
-    public void showSuKienDetail(){
+    private void showDanhSachLienQuan(SuKienModel item){
         contentVBox.getChildren().clear();
-        SuKienModel item = (SuKienModel) showDetail((ArrayList<Model>) database.getSuKien());
         if (item == null) return;
         for (String nhanVat : item.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
