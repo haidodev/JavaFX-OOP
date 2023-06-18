@@ -2,7 +2,6 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.DiTichModel;
 import com.app.dict.base.Model;
-import com.app.dict.base.NhanVatModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,16 +23,24 @@ public class DiTichController extends GeneralController implements Initializable
     }
     public void preloadDiTich(String diTichName) {
         listView.getSelectionModel().select(diTichName);
-        showDetail((ArrayList<Model>) database.getDiTich(), diTichName);
+        showDiTichDetail(diTichName);
+    }
+    @FXML
+    public void showDiTichDetail() {
+        DiTichModel item = (DiTichModel) showDetail((ArrayList<Model>) database.getDiTich());
+        showDanhSachLienQuan(item);
+    }
+    public void showDiTichDetail(String diTichName) {
+        DiTichModel item = (DiTichModel) showDetail((ArrayList<Model>) database.getDiTich(), diTichName);
+        showDanhSachLienQuan(item);
     }
     @FXML
     public void diTichSearchFieldAction(){
         searchFieldAction((ArrayList<Model>) database.getDiTich());
     }
     @FXML
-    public void showDiTichDetail(){
+    private void showDanhSachLienQuan(DiTichModel item){
         contentVBox.getChildren().clear();
-        DiTichModel item = (DiTichModel) showDetail((ArrayList<Model>) database.getDiTich());
         if (item == null) return;
         for (String nhanVat : item.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();

@@ -66,7 +66,7 @@ public class MainController implements Initializable {
         setMainContent(thoiKyPane);
 
     }
-    public void showThoiKyPane(String thoiKyName) {
+    public void linkThoiKyPane(String thoiKyName) {
         showThoiKyPane();
         thoiKyController.preloadThoiKy(thoiKyName);
     }
@@ -76,7 +76,7 @@ public class MainController implements Initializable {
         setMainContent(nhanVatPane);
 
     }
-    public void showNhanVatPane(String nhanVatName) {
+    public void linkNhanVatPane(String nhanVatName) {
         showNhanVatPane();
         nhanVatController.preloadNhanVat(nhanVatName);
     }
@@ -86,12 +86,12 @@ public class MainController implements Initializable {
         suKienBtn.getStyleClass().add("active");
         setMainContent(suKienPane);
     }
-    public void showSuKienPane(String suKienName) {
+    public void linkSuKienPane(String suKienName) {
         showSuKienPane();
         suKienController.preloadSuKien(suKienName);
     }
 
-    public void showDiTichPane(String diTichName) {
+    public void linkDiTichPane(String diTichName) {
         showDiTichPane();
         diTichController.preloadDiTich(diTichName);
     }
@@ -106,7 +106,7 @@ public class MainController implements Initializable {
         leHoiBtn.getStyleClass().add("active");
         setMainContent(leHoiPane);
     }
-//    public void showLeHoiPane(String leHoiName) {
+//    public void linkLeHoiPane(String leHoiName) {
 //        showLeHoiPane();
 //        leHoiController.preloadLeHoi(leHoiName);
 //    }

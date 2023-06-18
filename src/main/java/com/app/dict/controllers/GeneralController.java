@@ -2,7 +2,6 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
-import com.app.dict.base.ThoiKyModel;
 import com.app.dict.util.StringUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -101,18 +100,18 @@ public class GeneralController implements Initializable {
         }
     }
     public void handleNhanVatLienQuanButton(ActionEvent event){
-        MainController.getInstance().showNhanVatPane(((Button) event.getSource()).getText());
+        MainController.getInstance().linkNhanVatPane(((Button) event.getSource()).getText());
     }
     public void handleDiTichLienQuanButton(ActionEvent event){
-        MainController.getInstance().showDiTichPane(((Button) event.getSource()).getText());
+        MainController.getInstance().linkDiTichPane(((Button) event.getSource()).getText());
     }
     public void handleThoiKyLienQuanButton(ActionEvent event){
-        MainController.getInstance().showThoiKyPane(((Button) event.getSource()).getText());
+        MainController.getInstance().linkThoiKyPane(((Button) event.getSource()).getText());
     }
     public void handleSuKienLienQuanButton(ActionEvent event){
-        MainController.getInstance().showSuKienPane(((Button) event.getSource()).getText());
+        MainController.getInstance().linkSuKienPane(((Button) event.getSource()).getText());
     }
 //    public void handleLeHoiLienQuanButton(ActionEvent event){
-//        MainController.getInstance().showLeHoiPane(((Button) event.getSource()).getText());
+//        MainController.getInstance().linkLeHoiPane(((Button) event.getSource()).getText());
 //    }
 }
