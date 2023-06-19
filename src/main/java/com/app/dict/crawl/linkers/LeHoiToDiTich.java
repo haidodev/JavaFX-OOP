@@ -49,11 +49,20 @@ public class LeHoiToDiTich
 
         for (LeHoiModel leHoi : leHoiList)
         {
-            if (hashMap.containsKey(leHoi.getCode()))
-            {
-                leHoi.setDiTichLienQuan(hashMap.get(leHoi.getCode()));
-                System.out.println(leHoi.getCode());
-            }
+//            if (hashMap.containsKey(leHoi.getCode()))
+//            {
+//                leHoi.setDiTichLienQuan(hashMap.get(leHoi.getCode()));
+//                System.out.println(leHoi.getCode());
+//                System.out.println(hashMap.get(leHoi.getCode()));
+//            }
+            hashMap.forEach((key, value) -> {
+                if (key.contains(leHoi.getCode()) || leHoi.getCode().contains(key))
+                {
+                    leHoi.setDiTichLienQuan(value);
+                    System.out.println(key + value);
+
+                }
+            });
         }
 
         List<Model> models = new ArrayList<>();

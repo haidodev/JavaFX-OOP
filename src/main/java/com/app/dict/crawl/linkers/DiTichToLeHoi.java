@@ -48,6 +48,8 @@ public class DiTichToLeHoi
                 if (key.contains(diTich.getCode()) || diTich.getCode().contains(key))
                 {
                     diTich.setCacLeHoiLienQuan(value);
+                    System.out.println(diTich.getCode() + value);
+
                 }
             });
         }
