@@ -19,7 +19,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ThoiKyController extends GeneralController implements Initializable {
-    public VBox contentVBox;
+    public VBox contentVBox1;
+    public VBox contentVBox2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,7 +43,7 @@ public class ThoiKyController extends GeneralController implements Initializable
         showDanhSachLienQuan(item);
     }
     private void showDanhSachLienQuan(ThoiKyModel thoiKy){
-        contentVBox.getChildren().clear();
+        contentVBox1.getChildren().clear();
         if (thoiKy == null) return;
         for (String nhanVat : thoiKy.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
@@ -50,7 +51,7 @@ public class ThoiKyController extends GeneralController implements Initializable
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
-            contentVBox.getChildren().add(btn);
+            contentVBox1.getChildren().add(btn);
         }
         for (String diTich : thoiKy.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
@@ -58,7 +59,7 @@ public class ThoiKyController extends GeneralController implements Initializable
             if (idx < 0) continue;
             Button btn = new Button(dtL.get(idx).getTenModel());
             btn.setOnAction(this::handleDiTichLienQuanButton);
-            contentVBox.getChildren().add(btn);
+            contentVBox2.getChildren().add(btn);
         }
     }
 
