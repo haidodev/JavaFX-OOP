@@ -6,6 +6,7 @@ import com.app.dict.base.ThoiKyModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -14,7 +15,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class NhanVatController extends GeneralController implements Initializable {
-    public VBox contentVBox;
+    public VBox cacNhanVatLienQuan;
+    public VBox cacDiTichLienQuan;
+    public VBox cacThoiKyLienQuan;
+    public Label diTichLienQuanLabel;
+    public Label nhanVatLienQuanLabel;
+    public Label thoiKyLienQuanLabel;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getNhanVat()) {
@@ -40,15 +46,23 @@ public class NhanVatController extends GeneralController implements Initializabl
         showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName));
     }
     private void showDanhSachLienQuan(NhanVatModel nhanVat){
-        contentVBox.getChildren().clear();
+        nhanVatLienQuanLabel.setVisible(true);
+        diTichLienQuanLabel.setVisible(true);
+        thoiKyLienQuanLabel.setVisible(true);
+
+        cacNhanVatLienQuan.getChildren().clear();
+        cacDiTichLienQuan.getChildren().clear();
+        cacThoiKyLienQuan.getChildren().clear();
+
         if (nhanVat == null) return;
+
         for (String nv : nhanVat.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
             int idx = database.binaryLookupByCode(0, nvL.size() - 1, nv, (ArrayList<Model>) nvL);
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
-            contentVBox.getChildren().add(btn);
+            cacNhanVatLienQuan.getChildren().add(btn);
         }
         for (String diTich : nhanVat.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
@@ -56,8 +70,7 @@ public class NhanVatController extends GeneralController implements Initializabl
             if (idx < 0) continue;
             Button btn = new Button(dtL.get(idx).getTenModel());
             btn.setOnAction(this::handleDiTichLienQuanButton);
-            contentVBox.getChildren().add(btn);
-
+            cacDiTichLienQuan.getChildren().add(btn);
         }
         for (String thoiKy : nhanVat.getcacThoiKyLienQuan()) {
             List<Model> tkL = database.getThoiKy();
@@ -65,7 +78,7 @@ public class NhanVatController extends GeneralController implements Initializabl
             if (idx < 0) continue;
             Button btn = new Button(tkL.get(idx).getTenModel());
             btn.setOnAction(this::handleThoiKyLienQuanButton);
-            contentVBox.getChildren().add(btn);
+            cacThoiKyLienQuan.getChildren().add(btn);
         }
     }
 }
