@@ -76,7 +76,7 @@ public class DiTichModel extends Model{
 
         if (this.cacThoiKyLienQuan != null)
         {
-            htmlBuilder.append("<h2>Related Periods</h2>");
+            htmlBuilder.append("<h2>Thời kỳ liên quan</h2>");
             htmlBuilder.append("<ul>");
 
             for (String desc : this.cacThoiKyLienQuan) {
@@ -88,7 +88,7 @@ public class DiTichModel extends Model{
 
         if (this.cacLeHoiLienQuan != null)
         {
-            htmlBuilder.append("<h2>Related Festivals</h2>");
+            htmlBuilder.append("<h2>Lễ hội liên quan</h2>");
             htmlBuilder.append("<ul>");
 
             for (String desc : this.cacLeHoiLienQuan) {
@@ -99,7 +99,7 @@ public class DiTichModel extends Model{
         }
 
         {
-            htmlBuilder.append("<h2>Description</h2>");
+            htmlBuilder.append("<h2>Mô tả</h2>");
             for (String desc : this.moTa) {
                 htmlBuilder.append("<p>").append(desc).append("</p>");
             }

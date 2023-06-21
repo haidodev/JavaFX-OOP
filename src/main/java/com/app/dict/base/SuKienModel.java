@@ -71,14 +71,14 @@ public class SuKienModel extends Model {
 
 
         // Add the description
-        htmlBuilder.append("<h2>Description</h2>");
+        htmlBuilder.append("<h2>Mô tả</h2>");
         htmlBuilder.append("<p>").append(this.thoiGian).append("</p>");
         htmlBuilder.append("<p>").append(this.diaDiem).append("</p>");
         htmlBuilder.append("<p>").append(this.ketQua).append("</p>");
 
 
         // Add the related figures
-        htmlBuilder.append("<h2>Related Figures</h2>");
+        htmlBuilder.append("<h2>Nhân vật liên quan</h2>");
         if (this.cacNhanVatLienQuan != null) {
             htmlBuilder.append("<ul>");
             for (String figure : this.cacNhanVatLienQuan) {
@@ -89,7 +89,7 @@ public class SuKienModel extends Model {
 
 
         // Add the related places
-        htmlBuilder.append("<h2>Related Places</h2>");
+        htmlBuilder.append("<h2>Di tích liên quan</h2>");
         if (this.cacDiTichLienQuan != null) {
             htmlBuilder.append("<ul>");
             for (String place : this.cacDiTichLienQuan) {
