@@ -264,7 +264,7 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
         String[] briefInfos = briefInfo.split("tại|ở", 2);
 
         String name = briefInfos[0].trim();
-        if (name .equals("Đại tiệc âm nhạc ánh sáng Heineken Countdown Party 2018"))
+        if (name .equals("Đại tiệc âm nhạc ánh sáng Heineken Countdown Party 2018") || name.contains("Festival"))
         {
             return null;
         }
