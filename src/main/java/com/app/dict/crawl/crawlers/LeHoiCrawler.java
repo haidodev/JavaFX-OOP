@@ -17,9 +17,12 @@ import java.text.Normalizer;
 
 public class LeHoiCrawler extends SCrawler implements ICrawler {
     private Map<String, List<String>> map;
+    private List<String> listLeHoiCode;
 
-    public LeHoiCrawler() {
+    public LeHoiCrawler()
+    {
         map = new HashMap<>();
+        listLeHoiCode = new ArrayList<>();
     }
 
 
@@ -202,14 +205,31 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
     }
 
     public List<Model> crawlLeHoiInfoFestivals(String page) {
-        Document doc;
+        Document doc = null;
         List<Model> models = new ArrayList<>();
 
-        try {
-            doc = Jsoup.connect(page)
-                    .get();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        boolean isConnected = false;
+        int i = 0;
+        while (!isConnected) {
+            if (i == 5)
+            {
+                return null;
+            }
+            try {
+                doc = Jsoup.connect(page)
+                        .timeout(2000000).get();
+                isConnected = true; // Connection successful, exit the loop
+            } catch (IOException e) {
+                System.err.println("Failed to connect: " + e.getMessage());
+                // Wait for a while before trying again
+                try {
+                    Thread.sleep(5000); // 5 seconds
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            i++;
         }
 
         Element listview = doc.selectFirst("div.listview");
@@ -283,9 +303,19 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
             time = doc.selectFirst("b.lehoi-time").text().trim();
         }
         String locationCode = convertToCode(location);
+        String code = convertToCode(name);
+        if (listLeHoiCode.contains(code))
+        {
+            code += "-" + locationCode;
+            name += " " + location;
+        }
+        else
+        {
+            listLeHoiCode.add(code);
+        }
 
         Model festival = new LeHoiModel(name, time, location, "", ""
-                , description, locationCode, convertToCode(name));
+                , description, locationCode,code);
 
         return festival;
     }

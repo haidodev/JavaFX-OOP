@@ -845,7 +845,7 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-ben-tre"
     ],
     "id": 51,
     "tenModel": "Lễ hội Nghinh Ông",
@@ -2802,9 +2802,7 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-nam",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-binh-thuan"
     ],
     "id": 166,
     "tenModel": "Lễ hội cầu Ngư",
@@ -5082,8 +5080,6 @@
     "diaDanhCode": "son-la",
     "diTichLienQuan": [
       "thi-xa-son-la",
-      "thi-xa-son-la",
-      "tinh-son-la",
       "tinh-son-la"
     ],
     "id": 303,
@@ -6025,22 +6021,8 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lao-cai",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
-      "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
       "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
-      "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-bac-kan"
     ],
     "id": 360,
     "tenModel": "Lễ hội Lồng Tồng",
@@ -6850,7 +6832,9 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "diTichLienQuan": [
-      "tinh-quang-nam"
+      "thanh-ha-noi",
+      "thanh-pho-ha-noi",
+      "tinh-ha-noi"
     ],
     "id": 408,
     "tenModel": "Hội đình Giàn",
@@ -10394,7 +10378,8 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tp-ho-chi-minh",
     "diTichLienQuan": [
-      "tinh-binh-duong"
+      "thi-xa-kon-tum",
+      "tinh-kon-tum"
     ],
     "id": 618,
     "tenModel": "Lễ hội chùa Bà Thiên Hậu",
@@ -10816,11 +10801,11 @@
       "tinh-ha-giang"
     ],
     "id": 643,
-    "tenModel": "Lễ hội khèn Mông",
+    "tenModel": "Lễ hội khèn Mông huyện Đồng Văn - Hà Giang",
     "moTa": [
       "Lễ hội khèn Mông là một trong những lễ hội truyền thống độc đáo của vùng đất cao nguyên đá Đồng Văn. Lễ hội này được tổ chức thường niên vào dịp tết độc lập (2/9) và thu hút rất đông đảo nghệ nhân Khèn..."
     ],
-    "code": "le-hoi-khen-mong"
+    "code": "le-hoi-khen-mong-huyen-đong-van---ha-giang"
   },
   {
     "thoiGian": "10/8- 15/8 Âm lịch",
@@ -10926,9 +10911,7 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-nam",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-binh-thuan"
     ],
     "id": 650,
     "tenModel": "Lễ hội Cầu Ngư",
@@ -11013,16 +10996,14 @@
     "diaDanhCode": "son-la",
     "diTichLienQuan": [
       "thi-xa-son-la",
-      "thi-xa-son-la",
-      "tinh-son-la",
       "tinh-son-la"
     ],
     "id": 655,
-    "tenModel": "Lễ hội Đền thờ Vua Lê Thái Tông",
+    "tenModel": "Lễ hội Đền thờ Vua Lê Thái Tông Sơn La",
     "moTa": [
       "Lễ hội Đền thờ Vua Lê Thái Tông được tổ chức từ ngày 15/1 đến 17/1 âm lịch tại phường Chiềng Lề, Thành phố Sơn La nhằm tưởng nhớ công ơn của vua Lê Thái Tông đã hai lần chỉ huy quân sĩ lên Sơn La dẹp..."
     ],
-    "code": "le-hoi-đen-tho-vua-le-thai-tong"
+    "code": "le-hoi-đen-tho-vua-le-thai-tong-son-la"
   },
   {
     "thoiGian": "13/3- 15/3 Dương lịch",
@@ -12566,29 +12547,16 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tuyen-quang",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
       "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
-      "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
       "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-lao-cai"
     ],
     "id": 747,
-    "tenModel": "Lễ hội Lồng Tông",
+    "tenModel": "Lễ hội Lồng Tông Tuyên Quang",
     "moTa": [
       "Lễ hội Lồng Tông được tổ chức ngay tại thị trấn Vĩnh Lộc, Chiêm Hoá, Tuyên Quang. Lễ hội diễn ra vào ngày mùng 8 tháng Giêng hàng năm. Đây là một lễ hội mang đậm bản sắc văn hoá của người dân tộc Tày..."
     ],
-    "code": "le-hoi-long-tong"
+    "code": "le-hoi-long-tong-tuyen-quang"
   },
   {
     "thoiGian": "2/1 Âm lịch",
@@ -12713,22 +12681,9 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tuyen-quang",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
       "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
-      "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
       "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-lao-cai"
     ],
     "id": 755,
     "tenModel": "Đặc sắc Lễ hội Lồng tông Bản Cuống",
@@ -12744,7 +12699,7 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "tp-ho-chi-minh",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-ben-tre"
     ],
     "id": 756,
     "tenModel": "Lễ hội nghinh Ông",
@@ -12843,11 +12798,11 @@
       "xa-vinh-long"
     ],
     "id": 762,
-    "tenModel": "Lễ hội Kỳ Yên",
+    "tenModel": "Lễ hội Kỳ Yên Gò Công Tây tại Tiền Giang",
     "moTa": [
       "Lễ hội Kỳ Yên (hay lễ hội Cầu An) được tổ chức trong các ngày từ ngày 14 đến ngày 16 tháng chạp hằng năm ở tại đình Vĩnh Lợi, thị trấn Vĩnh Bình, Gò Công Tây , Tiền Giang . Lễ..."
     ],
-    "code": "le-hoi-ky-yen"
+    "code": "le-hoi-ky-yen-go-cong-tay-tai-tien-giang"
   },
   {
     "thoiGian": "9/3- 11/3 Âm lịch",
@@ -12889,16 +12844,15 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "cua-hoi-tai-thua-thien-hue",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "thi-xa-kon-tum",
+      "tinh-kon-tum"
     ],
     "id": 765,
-    "tenModel": "Lễ hội Cầu ngư",
+    "tenModel": "Lễ hội Cầu ngư Cửa Hội tại Thừa Thiên Huế",
     "moTa": [
       "Lễ hội Cầu Ngư ở Của Hội là một trong những sinh hoạt văn hóa mang đậm yếu tố tâm linh của ngư dân vùng cửa biển. Nó gắn liền với các tín ngưỡng thờ cá - là vật tổ từ thời xa xưa của cha ông ta..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-cua-hoi-tai-thua-thien-hue"
   },
   {
     "thoiGian": "15/4 Âm lịch",
@@ -12988,16 +12942,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thai-duong-ha-tai-thua-thien-hue",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "duong-ha"
     ],
     "id": 771,
-    "tenModel": "Lễ Hội Cầu Ngư",
+    "tenModel": "Lễ Hội Cầu Ngư Thái Dương Hạ tại Thừa Thiên Huế",
     "moTa": [
       "Lễ Hội Cầu Ngư là hội của những người dân làng Thai Dương Hạ xã Hương Hải làng Thai Dương Hạ, thị trấn Thuận An, Phú Vang, Thừa Thiên Huế. Hội thường được tổ chức vào ngày 12 tháng Giêng âm lịch để tưởng..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-thai-duong-ha-tai-thua-thien-hue"
   },
   {
     "thoiGian": "2/3- 3/3 Âm lịch",
@@ -13218,16 +13170,18 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "thanh-hoa",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "thanh-hoa-lu",
+      "thanh-hoang",
+      "thanh-pho-thanh-hoa",
+      "tinh-thanh-hoa",
+      "xu-thanh-hoa"
     ],
     "id": 785,
-    "tenModel": "Lễ hội Cầu ngư",
+    "tenModel": "Lễ hội Cầu ngư Thanh Hóa",
     "moTa": [
       "Lễ hội cầu ngư là một lễ hội truyền thống của ngư dân địa phương có từ rất lâu đời, lễ hội được tổ chức hàng năm tại làng Diêm Phố, xã Ngư Lộc, Hậu Lộc, Thanh Hóa vào cuối tháng 2 âm lịch, lễ hội kéo..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-thanh-hoa"
   },
   {
     "thoiGian": "18/1- 20/1 Âm lịch",
@@ -13702,14 +13656,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "soc-trang",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-binh-thuan"
     ],
     "id": 813,
-    "tenModel": "Lễ hội Nghinh ông",
+    "tenModel": "Lễ hội Nghinh ông Sóc Trăng",
     "moTa": [
       "(lehoi.org) - Lễ hội Nghinh ông được tổ chức hàng năm vào ngày 22 tháng 3 âm lịch, tại xã Trung Bình, Long Phú, Sóc Trăng với ý nguyện và với lòng thành kính cầu xin cho quốc thái dân an,..."
     ],
-    "code": "le-hoi-nghinh-ong"
+    "code": "le-hoi-nghinh-ong-soc-trang"
   },
   {
     "thoiGian": "15/3 Âm lịch",
@@ -14005,16 +13959,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-ngai",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-quang-nam"
     ],
     "id": 831,
-    "tenModel": "Lễ hội Cầu Ngư",
+    "tenModel": "Lễ hội Cầu Ngư Quảng Ngãi",
     "moTa": [
       "Lễ hội Cầu ngư là một lễ hội dân gian truyền thống của các ngư dân (hay còn gọi là “Lễ ra quân đánh bắt thủy sản\", hoặc \"Lễ ra quân nghề cá\") lễ hội thường được tổ chức vào dịp đầu năm mới với ý nghĩa..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-quang-ngai"
   },
   {
     "thoiGian": "1/1- 7/1 Âm lịch",
@@ -14363,16 +14315,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "quang-binh",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-quang-nam"
     ],
     "id": 853,
-    "tenModel": "Lễ hội cầu ngư",
+    "tenModel": "Lễ hội cầu ngư Quảng Bình",
     "moTa": [
       "(lehoi.org) - Lễ hội cầu ngư được tổ chức vào dịp rằm tháng 4 hàng năm, tại xã Bảo Ninh, Đồng Hới, Quảng Bình. Đây là một trong những lễ hội truyền thống nhằm cầu tài, cầu an, cầu mưa thuận gió hòa cho..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-quang-binh"
   },
   {
     "thoiGian": "Không rõ",
@@ -14776,15 +14726,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "nghe-an",
     "diTichLienQuan": [
-      "thi-xa-kon-tum",
-      "tinh-kon-tum"
+      "tinh-quang-nam"
     ],
     "id": 877,
-    "tenModel": "Lễ hội đền Cuông",
+    "tenModel": "Lễ hội đền Cuông Nghệ An",
     "moTa": [
       "Nối tiếp lễ hội Cổ Loa được diễn ra tại Đông Anh - Hà Nội, là lễ hội Đền Cuông được tổ chức long trọng từ ngày 12 đến ngày 16 tháng 2 âm lịch, trong đó ngày chính lễ là ngày 14 và ngày 15 tháng 2 tại..."
     ],
-    "code": "le-hoi-đen-cuong"
+    "code": "le-hoi-đen-cuong-nghe-an"
   },
   {
     "thoiGian": "30/4- 1/5 Dương lịch",
@@ -15300,8 +15249,8 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lao-cai",
     "diTichLienQuan": [
-      "thi-xa-kon-tum",
-      "tinh-kon-tum"
+      "thi-xa-lai-chau",
+      "tinh-lai-chau"
     ],
     "id": 907,
     "tenModel": "Lễ hội Gầu tào",
@@ -15489,29 +15438,16 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lang-son",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
       "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
-      "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
       "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-lao-cai"
     ],
     "id": 918,
-    "tenModel": "Lễ hội Lồng Tồng",
+    "tenModel": "Lễ hội Lồng Tồng Lạng Sơn",
     "moTa": [
       "Lễ hội được tổ chức hàng năm vào ngày mùng 4 tháng giêng âm lịch, là một trong những lễ hội lớn nhất vùng với nghi lễ tín ngưỡng cầu thành hoàng và cầu thần nông. Qua khảo sa..."
     ],
-    "code": "le-hoi-long-tong"
+    "code": "le-hoi-long-tong-lang-son"
   },
   {
     "thoiGian": "7/1 Âm lịch",
@@ -15731,15 +15667,15 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "lai-chau",
     "diTichLienQuan": [
-      "thi-xa-kon-tum",
-      "tinh-kon-tum"
+      "thi-xa-lai-chau",
+      "tinh-lai-chau"
     ],
     "id": 931,
-    "tenModel": "Lễ hội Gầu Tào",
+    "tenModel": "Lễ hội Gầu Tào Lai Châu",
     "moTa": [
       "(lehoi.org)-Ngày xưa, lễ hội Gầu Tào là một hình thức tâm linh của người dân tộc Mông cúng thần đất mong năm mới có nhiều con, nhiều cháu. Ngày nay, cứ đến ngày mùng 4 - 5 âm lịch, lễ hội Gầu Tào trở..."
     ],
-    "code": "le-hoi-gau-tao"
+    "code": "le-hoi-gau-tao-lai-chau"
   },
   {
     "thoiGian": "1/11- 30/11 Âm lịch",
@@ -15768,11 +15704,11 @@
       "tinh-quang-nam"
     ],
     "id": 933,
-    "tenModel": "Lễ hội Nàng Han",
+    "tenModel": "Lễ hội Nàng Han Lai Châu",
     "moTa": [
       "(lehoi.org)- Lễ hội Nàng Han tôn vinh nữ anh hùng đã có công đánh đuổi giặc ngoại xâm của đồng bào người dân tộc Thái trắng, được tổ chức vừa là để tri ân Nàng Han, vừa là để mong cầu sự no ấm, cuộc sống..."
     ],
-    "code": "le-hoi-nang-han"
+    "code": "le-hoi-nang-han-lai-chau"
   },
   {
     "thoiGian": "13/2 Âm lịch",
@@ -15902,14 +15838,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kien-giang",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-binh-thuan"
     ],
     "id": 941,
-    "tenModel": "Lễ hội Nghinh Ông",
+    "tenModel": "Lễ hội Nghinh Ông Kiên Giang",
     "moTa": [
       "(lehoi.org)- Hàng năm cứ vào các ngày 15 và ngày 16 tháng 10 âm lịch, chính quyền xã Lại Sơn, huyện Kiên Hải, tỉnh Kiên Giang và ngư dân địa phương nơi đây lại long trọng tổ chức Lễ hội Nghinh..."
     ],
-    "code": "le-hoi-nghinh-ong"
+    "code": "le-hoi-nghinh-ong-kien-giang"
   },
   {
     "thoiGian": "26/8- 28/8 Âm lịch",
@@ -17403,14 +17339,16 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ha-noi",
     "diTichLienQuan": [
-      "tinh-quang-nam"
+      "thanh-ha-noi",
+      "thanh-pho-ha-noi",
+      "tinh-ha-noi"
     ],
     "id": 1030,
-    "tenModel": "Hội đình Giàn",
+    "tenModel": "Hội đình Giàn Hà Nội",
     "moTa": [
       "Đội nữ đang rước kiệu bà Hội đình Giàn mở đầu bằng một cuộc rước nước linh đình từ một giếng nước cổ truyền đã có từ thời Hai Bà Trưng về đình để làm lễ tiến cúng thần hoàng. Ngày mồng 10 sẽ tiến hành..."
     ],
-    "code": "hoi-đinh-gian"
+    "code": "hoi-đinh-gian-ha-noi"
   },
   {
     "thoiGian": "Không rõ",
@@ -18105,11 +18043,11 @@
       "tinh-lai-chau"
     ],
     "id": 1072,
-    "tenModel": "Lễ hội Hạn Khuống",
+    "tenModel": "Lễ hội Hạn Khuống Điện Biên",
     "moTa": [
       "Hạn khuống là một lễ hội văn hóa truyền thống của đồng bào người Thái ở Điện Biên. Lễ hội này thường được tổ chức sau vụ thu hoạch diễn ra vào tháng 11 hàng năm. Hạn Khuống là lễ hội do bên nhà gái tổ..."
     ],
-    "code": "le-hoi-han-khuong"
+    "code": "le-hoi-han-khuong-đien-bien"
   },
   {
     "thoiGian": "Không rõ",
@@ -18201,11 +18139,11 @@
       "tinh-quang-nam"
     ],
     "id": 1078,
-    "tenModel": "Lễ hội Quan Thế Âm",
+    "tenModel": "Lễ hội Quan Thế Âm Đà Nẵng",
     "moTa": [
       "Lễ hội Quán Thế Âm diễn ra vào ngày 19 tháng Hai âm lịch hàng năm, tại khu du lịch Ngũ Hành Sơn của thành phố Đà Nẵng . Năm 1960, lễ hội này được tổ chức lần đầu tiên nhân ngày khánh thành pho tượng Bồ..."
     ],
-    "code": "le-hoi-quan-the-am"
+    "code": "le-hoi-quan-the-am-đa-nang"
   },
   {
     "thoiGian": "Không rõ",
@@ -18263,16 +18201,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đa-nang",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-quang-nam"
     ],
     "id": 1082,
-    "tenModel": "Lễ hội Cầu ngư",
+    "tenModel": "Lễ hội Cầu ngư Đà Nẵng",
     "moTa": [
       "Lễ hội cầu ngư hay lễ hội Cá Ông, lễ tế Cá Voi, là lễ hội truyền thống lớn nhất của ngư dân biển thành phố Đà Nẵng. Đối với ngư dân Đà Nẵng, việc thờ phụng Cá Ông không chỉ là tín ngưỡng hay bày tỏ sự..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-đa-nang"
   },
   {
     "thoiGian": "12/1 Âm lịch",
@@ -18326,14 +18262,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đa-nang",
     "diTichLienQuan": [
-      "thanh-pho-hai-phong"
+      "tinh-quang-nam"
     ],
     "id": 1086,
-    "tenModel": "Lễ hội đua thuyền",
+    "tenModel": "Lễ hội đua thuyền Đà Nẵng",
     "moTa": [
       "Lễ hội đua thuyền tại Quận Lien Chiểu, thành phố Đà Nẵng thường diễn ra vào tháng Giêng âm lịch hàng năm, với mong cầu cho mong mưa thuận gió hòa. Theo tục truyền, ngày xưa ông cha ta đã tổ chức Lễ..."
     ],
-    "code": "le-hoi-đua-thuyen"
+    "code": "le-hoi-đua-thuyen-đa-nang"
   },
   {
     "thoiGian": "Không rõ",
@@ -18429,29 +18365,16 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "cao-bang",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
       "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
-      "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
       "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-lao-cai"
     ],
     "id": 1092,
-    "tenModel": "Lễ hội Lồng Tồng",
+    "tenModel": "Lễ hội Lồng Tồng Cao Bằng",
     "moTa": [
       "Lễ hội Lồng tồng còn được biết đến với tên khác là lễ xuống đồng, là một lễ hội lớn nhất vào dịp đầu năm mới của những người dân sinh sống bằng nghệ nông nghiệp trồng trọt. Lễ được tổ chức tại các bản..."
     ],
-    "code": "le-hoi-long-tong"
+    "code": "le-hoi-long-tong-cao-bang"
   },
   {
     "thoiGian": "Không rõ",
@@ -18524,14 +18447,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ca-mau",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-binh-thuan"
     ],
     "id": 1097,
-    "tenModel": "Lễ hội Nghinh Ông",
+    "tenModel": "Lễ hội Nghinh Ông Cà Mau",
     "moTa": [
       "Nghinh Ông là một lễ hội cổ truyền lớn nhất ở tỉnh Cà Mau. Lễ hội này có nguồn gốc bắt nguồn từ một nghi lễ của người Chăm và được người Việt tiếp thu say đó phát triển thành lễ hội như ngày nay. Nghinh..."
     ],
-    "code": "le-hoi-nghinh-ong"
+    "code": "le-hoi-nghinh-ong-ca-mau"
   },
   {
     "thoiGian": "19/7- 20/7 Âm lịch",
@@ -18572,15 +18495,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "can-tho",
     "diTichLienQuan": [
-      "thanh-pho-can-tho",
-      "tinh-can-tho"
+      "tinh-quang-nam"
     ],
     "id": 1100,
-    "tenModel": "Lễ Kỳ Yên",
+    "tenModel": "Lễ Kỳ Yên Cần Thơ",
     "moTa": [
       "Tại Cần Thơ, các ngôi đình thường tổ chức lễ hội Kỳ Yên, có nơi cúng vào 3 ngày của giữa tháng Ba, tháng Tư âm lịch. Cũng có nơi lại cúng vào tháng Bảy âm lịch, như ngôi đình thần Vĩnh Trinh. Còn lễ Kỳ..."
     ],
-    "code": "le-ky-yen"
+    "code": "le-ky-yen-can-tho"
   },
   {
     "thoiGian": "14/6- 16/6 Âm lịch",
@@ -18589,16 +18511,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "phuoc-loc-tai-binh-thuan",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-quang-nam"
     ],
     "id": 1101,
-    "tenModel": "Lễ hội Cầu ngư",
+    "tenModel": "Lễ hội Cầu ngư Phước Lộc tại Bình Thuận",
     "moTa": [
       "Lễ hội Cầu Ngư tại phường Phước Lộc ở thị xã La gi, tỉnh Bình Thuận diễn ra từ ngày 14 đến 16 tháng Sáu âm lịch hàng năm. Đây được xem là lễ hội tưng bừng nhất của người dân biển nơi đây và những người..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-phuoc-loc-tai-binh-thuan"
   },
   {
     "thoiGian": "19/6- 22/6 Âm lịch",
@@ -18607,16 +18527,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-thuan",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "tinh-binh-thuan"
     ],
     "id": 1102,
-    "tenModel": "Lễ hội Cầu ngư",
+    "tenModel": "Lễ hội Cầu ngư Bình Thuận",
     "moTa": [
       "Hàng năm, tại Vạn Thủy Tú - một điểm du lịch nổi tiếng của tỉnh Bình Thuận, nơi trưng bày bộ xương cốt của loài cá Ông (cá voi) thuộc loài cá lớn nhất, sẽ tổ chức Lễ hội cầu ngư. Vạn Thủy Tú tọa lạc trên..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-binh-thuan"
   },
   {
     "thoiGian": "10/5- 11/5 Âm lịch",
@@ -18723,14 +18641,15 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-duong",
     "diTichLienQuan": [
-      "tinh-binh-duong"
+      "thi-xa-kon-tum",
+      "tinh-kon-tum"
     ],
     "id": 1109,
-    "tenModel": "Lễ hội chùa Bà Thiên Hậu",
+    "tenModel": "Lễ hội chùa Bà Thiên Hậu Bình Dương",
     "moTa": [
       "Lễ hội chùa Bà Thiên Hậu diễn ra trong 3 ngày, từ ngày 13 đến 15 tháng Giêng âm lịch hàng năm, tại Chùa Bà Thiên Hậu ở thị xã Thủ Dầu, tỉnh Bình Dương. N gôi chùa này thờ Thiên Hậu Thánh Mẫu, vị..."
     ],
-    "code": "le-hoi-chua-ba-thien-hau"
+    "code": "le-hoi-chua-ba-thien-hau-binh-duong"
   },
   {
     "thoiGian": "13/3- 15/3 Âm lịch",
@@ -18822,16 +18741,15 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "binh-đinh",
     "diTichLienQuan": [
-      "thanh-co-quang-tri",
-      "thi-xa-quang-tri",
-      "tinh-quang-tri"
+      "thi-xa-kon-tum",
+      "tinh-kon-tum"
     ],
     "id": 1115,
-    "tenModel": "Lễ hội cầu ngư",
+    "tenModel": "Lễ hội cầu ngư Bình Định",
     "moTa": [
       "Lễ hội cầu ngư là một trong những lễ hội dân gian đã gắn liền với cuộc sống của những người dân ven biển từ tỉnh Quảng Bình đến Nam bộ. Ở tỉnh Bình Định, lễ hội cầu ngư được ngư dân của các vùng ven biển..."
     ],
-    "code": "le-hoi-cau-ngu"
+    "code": "le-hoi-cau-ngu-binh-đinh"
   },
   {
     "thoiGian": "12/2- 14/2 Âm lịch",
@@ -19048,29 +18966,15 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "bac-kan",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
-      "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
       "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
-      "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-bac-kan"
     ],
     "id": 1129,
-    "tenModel": "Lễ hội Lồng tồng",
+    "tenModel": "Lễ hội Lồng tồng Bắc Kạn",
     "moTa": [
       "Lễ hội Lồng tồng (còn được gọi với cái tên lễ xuống đồng)- là một lễ hội quan trọng bậc nhất của người dân Bắc Kạn vào dịp đầu năm mới. Lễ hội này gắn liền với nền nông nghiệp của nước ta, và được..."
     ],
-    "code": "le-hoi-long-tong"
+    "code": "le-hoi-long-tong-bac-kan"
   },
   {
     "thoiGian": "8/1- 10/1 Âm lịch",
@@ -19262,14 +19166,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "ben-tre",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-ben-tre"
     ],
     "id": 1141,
-    "tenModel": "Lễ hội Nghinh Ông",
+    "tenModel": "Lễ hội Nghinh Ông Bến Tre",
     "moTa": [
       "Lễ hội Nghinh Ông còn được gọi là lễ rước, lễ tế, lễ cúng cá Ông, vẫn thường diễn ra vào trước mùa đánh bắt cá trên biển. Người dân biển tại nhiều nơi khác cũng như tại Bến Tre từ lâu đã lập..."
     ],
-    "code": "le-hoi-nghinh-ong"
+    "code": "le-hoi-nghinh-ong-ben-tre"
   },
   {
     "thoiGian": "30/1- 2/2 Âm lịch",
@@ -19345,22 +19249,9 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "kien-thanh-tai-yen-bai",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
       "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
-      "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
       "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-lao-cai"
     ],
     "id": 1146,
     "tenModel": "Lễ hội Lồng Tồng của người Tày",
@@ -19597,14 +19488,14 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "đong-hai-tai-bac-lieu",
     "diTichLienQuan": [
-      "tinh-tien-giang"
+      "tinh-binh-thuan"
     ],
     "id": 1160,
-    "tenModel": "Lễ hội nghinh Ông",
+    "tenModel": "Lễ hội nghinh Ông Đông Hải tại Bạc Liêu",
     "moTa": [
       "Lễ hội Nghinh Ông là một lễ hội văn hóa dân gian đặc trưng của những người ngư dân biển Gành Hào, thuộc huyện Đông Hải, Bạc Liêu. Lễ hội Nghinh Ông thường diễn ra vào hai ngày, từ ngày mồng 09 đến ngày..."
     ],
-    "code": "le-hoi-nghinh-ong"
+    "code": "le-hoi-nghinh-ong-đong-hai-tai-bac-lieu"
   },
   {
     "thoiGian": "29/3 Âm lịch",
@@ -19744,22 +19635,9 @@
     "toChucLanDau": "Không rõ",
     "diaDanhCode": "vinh-phuc",
     "diTichLienQuan": [
-      "thanh-pho-cao-bang",
-      "thanh-pho-lang-son",
       "thanh-pho-lao-cai",
-      "thanh-pho-tuyen-quang",
-      "thanh-tuyen-quang",
-      "thi-xa-bac-kan",
-      "thi-xa-cao-bang",
-      "thi-xa-lang-son",
       "thi-xa-lao-cai",
-      "thi-xa-tuyen-quang",
-      "tinh-bac-kan",
-      "tinh-cao-bang",
-      "tinh-lang-son",
-      "tinh-lao-cai",
-      "tinh-tuyen-quang",
-      "xu-lang-son"
+      "tinh-lao-cai"
     ],
     "id": 1169,
     "tenModel": "Lễ hội Lồng Tồng (xuống đồng) của người Cao Lan",
