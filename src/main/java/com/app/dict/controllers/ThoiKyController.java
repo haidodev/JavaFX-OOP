@@ -19,8 +19,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ThoiKyController extends GeneralController implements Initializable {
-    public VBox contentVBox1;
-    public VBox contentVBox2;
+    public VBox cacNhanVatLienQuan;
+    public VBox cacDiTichLienQuan;
+    public Label nhanVatLienQuanLabel;
+    public Label diTichLienQuanLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,15 +45,21 @@ public class ThoiKyController extends GeneralController implements Initializable
         showDanhSachLienQuan(item);
     }
     private void showDanhSachLienQuan(ThoiKyModel thoiKy){
-        contentVBox1.getChildren().clear();
+        nhanVatLienQuanLabel.setVisible(true);
+        diTichLienQuanLabel.setVisible(true);
+
+        cacNhanVatLienQuan.getChildren().clear();
+        cacDiTichLienQuan.getChildren().clear();
+
         if (thoiKy == null) return;
+
         for (String nhanVat : thoiKy.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
             int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
-            contentVBox1.getChildren().add(btn);
+            cacNhanVatLienQuan.getChildren().add(btn);
         }
         for (String diTich : thoiKy.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
@@ -59,10 +67,9 @@ public class ThoiKyController extends GeneralController implements Initializable
             if (idx < 0) continue;
             Button btn = new Button(dtL.get(idx).getTenModel());
             btn.setOnAction(this::handleDiTichLienQuanButton);
-            contentVBox2.getChildren().add(btn);
+            cacDiTichLienQuan.getChildren().add(btn);
         }
     }
-
     @FXML
     public void thoiKySearchFieldAction() {
         searchFieldAction((ArrayList<Model>) database.getThoiKy());

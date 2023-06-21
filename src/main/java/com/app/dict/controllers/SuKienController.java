@@ -6,6 +6,7 @@ import com.app.dict.base.ThoiKyModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -14,7 +15,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class SuKienController extends GeneralController implements Initializable {
-    public VBox contentVBox;
+    public VBox cacNhanVatLienQuan;
+    public VBox cacDiTichLienQuan;
+    public Label nhanVatLienQuanLabel;
+    public Label diTichLienQuanLabel;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getSuKien()) {
@@ -40,15 +44,20 @@ public class SuKienController extends GeneralController implements Initializable
         searchFieldAction((ArrayList<Model>) database.getSuKien());
     }
     private void showDanhSachLienQuan(SuKienModel item){
-        contentVBox.getChildren().clear();
+        nhanVatLienQuanLabel.setVisible(true);
+        diTichLienQuanLabel.setVisible(true);
+
+        cacNhanVatLienQuan.getChildren().clear();
+        cacDiTichLienQuan.getChildren().clear();
         if (item == null) return;
+
         for (String nhanVat : item.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
             int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
-            contentVBox.getChildren().add(btn);
+            cacNhanVatLienQuan.getChildren().add(btn);
         }
         for (String diTich : item.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
@@ -56,8 +65,7 @@ public class SuKienController extends GeneralController implements Initializable
             if (idx < 0) continue;
             Button btn = new Button(dtL.get(idx).getTenModel());
             btn.setOnAction(this::handleDiTichLienQuanButton);
-            contentVBox.getChildren().add(btn);
-
+            cacDiTichLienQuan.getChildren().add(btn);
         }
     }
 }

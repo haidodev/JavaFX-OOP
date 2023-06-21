@@ -5,6 +5,7 @@ import com.app.dict.base.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -13,7 +14,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class DiTichController extends GeneralController implements Initializable {
-    public VBox contentVBox;
+    public VBox cacNhanVatLienQuan;
+    public Label nhanVatLienQuanLabel;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getDiTich()) {
@@ -40,7 +42,8 @@ public class DiTichController extends GeneralController implements Initializable
     }
     @FXML
     private void showDanhSachLienQuan(DiTichModel item){
-        contentVBox.getChildren().clear();
+        nhanVatLienQuanLabel.setVisible(true);
+        cacNhanVatLienQuan.getChildren().clear();
         if (item == null) return;
         for (String nhanVat : item.getcacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
@@ -48,7 +51,7 @@ public class DiTichController extends GeneralController implements Initializable
             if (idx < 0) continue;
             Button btn = new Button(nvL.get(idx).getTenModel());
             btn.setOnAction(this::handleNhanVatLienQuanButton);
-            contentVBox.getChildren().add(btn);
+            cacNhanVatLienQuan.getChildren().add(btn);
         }
     }
 }

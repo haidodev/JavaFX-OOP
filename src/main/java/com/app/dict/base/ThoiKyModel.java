@@ -45,7 +45,7 @@ public class ThoiKyModel extends Model
         htmlBuilder.append("<meta charset=\"UTF-8\">");
         // htmlBuilder.append("<title>").append(getName()).append("</title>");
         htmlBuilder.append("<style>");
-        htmlBuilder.append("body { font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:14px; }");
+        htmlBuilder.append("body { background-color:#f2f3f5; font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:14px; }");
         htmlBuilder.append("</style>");
 
         // Add the name as a heading

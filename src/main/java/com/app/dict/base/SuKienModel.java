@@ -83,26 +83,26 @@ public class SuKienModel extends Model {
         htmlBuilder.append("<p>").append(this.ketQua).append("</p>");
 
 
-        // Add the related figures
-        htmlBuilder.append("<h2>Related Figures</h2>");
-        if (this.cacNhanVatLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String figure : this.cacNhanVatLienQuan) {
-                htmlBuilder.append("<li>").append(figure).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
-
-
-        // Add the related places
-        htmlBuilder.append("<h2>Related Places</h2>");
-        if (this.cacDiTichLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String place : this.cacDiTichLienQuan) {
-                htmlBuilder.append("<li>").append(place).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
+//        // Add the related figures
+//        htmlBuilder.append("<h2>Related Figures</h2>");
+//        if (this.cacNhanVatLienQuan != null) {
+//            htmlBuilder.append("<ul>");
+//            for (String figure : this.cacNhanVatLienQuan) {
+//                htmlBuilder.append("<li>").append(figure).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
+//
+//
+//        // Add the related places
+//        htmlBuilder.append("<h2>Related Places</h2>");
+//        if (this.cacDiTichLienQuan != null) {
+//            htmlBuilder.append("<ul>");
+//            for (String place : this.cacDiTichLienQuan) {
+//                htmlBuilder.append("<li>").append(place).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
 
 
         // Close the HTML structure

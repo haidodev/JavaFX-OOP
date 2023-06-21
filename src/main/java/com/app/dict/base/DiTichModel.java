@@ -60,16 +60,16 @@ public class DiTichModel extends Model{
             }
         }
 
-        // Add the related figures
-        if (this.cacNhanVatLienQuan != null)
-        {
-            htmlBuilder.append("<h2>Related Figures</h2>");
-            htmlBuilder.append("<ul>");
-            for (String figure : this.cacNhanVatLienQuan) {
-                htmlBuilder.append("<li>").append(figure).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
+//        // Add the related figures
+//        if (this.cacNhanVatLienQuan != null)
+//        {
+//            htmlBuilder.append("<h2>Related Figures</h2>");
+//            htmlBuilder.append("<ul>");
+//            for (String figure : this.cacNhanVatLienQuan) {
+//                htmlBuilder.append("<li>").append(figure).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
 
         // Close the HTML structure
         htmlBuilder.append("</body>");
