@@ -86,15 +86,6 @@ public class LoadData
         Collections.sort(newList);
         return newList;
     }
-    public <T> List<Model> loading(String resource)
-    {
-        List<T> myList = loader(resource,  new TypeToken<List<T>>() {});
-        List<Model> newList = (List<Model>) new ArrayList<>(myList);
-        for (Model model : newList) model.setHTML();
-        Collections.sort(newList);
-        return newList;
-    }
-
     public <T> List<T> loader(String filePath, TypeToken<List<T>> typeToken) {
         List<T> list = new ArrayList<>();
         try (FileReader reader = new FileReader(filePath);
@@ -167,4 +158,19 @@ public class LoadData
             System.out.println(m);
         }
     }
+    public int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
+        if (end < start) {
+            return -1;
+        }
+        int mid = start + (end - start) / 2;
+        int compare = StringUtility.isContain(dT, temp.get(mid).getCode());
+        if (compare == -1) {
+            return binaryLookupByCode(start, mid - 1, dT, temp);
+        } else if (compare == 1) {
+            return binaryLookupByCode(mid + 1, end, dT, temp);
+        } else {
+            return mid;
+        }
+    }
+
 }

@@ -10,7 +10,7 @@ public class NhanVatModel extends Model
     private List<List<String>> thongTin;
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
-    private Set<String> thoiKyLienQuan;
+    private Set<String> cacThoiKyLienQuan;
 
 
     public NhanVatModel(String tenModel, List<String> moTa, String code, List<List<String>> thongTin
@@ -141,9 +141,9 @@ public class NhanVatModel extends Model
 
         // Add the related time periods
         htmlBuilder.append("<h2>Related Time Periods</h2>");
-        if (this.thoiKyLienQuan != null) {
+        if (this.cacThoiKyLienQuan != null) {
             htmlBuilder.append("<ul>");
-            for (String timePeriod : this.thoiKyLienQuan) {
+            for (String timePeriod : this.cacNhanVatLienQuan) {
                 htmlBuilder.append("<li>").append(timePeriod).append("</li>");
             }
             htmlBuilder.append("</ul>");

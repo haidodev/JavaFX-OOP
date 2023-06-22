@@ -56,7 +56,7 @@ public class NhanVatController extends GeneralController implements Initializabl
 
         if (nhanVat == null) return;
 
-        for (String nv : nhanVat.getcacNhanVatLienQuan()) {
+        for (String nv : nhanVat.getCacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
             int idx = database.binaryLookupByCode(0, nvL.size() - 1, nv, (ArrayList<Model>) nvL);
             if (idx < 0) continue;
@@ -64,7 +64,7 @@ public class NhanVatController extends GeneralController implements Initializabl
             btn.setOnAction(this::handleNhanVatLienQuanButton);
             cacNhanVatLienQuan.getChildren().add(btn);
         }
-        for (String diTich : nhanVat.getcacDiTichLienQuan()) {
+        for (String diTich : nhanVat.getCacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
             int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
             if (idx < 0) continue;
@@ -72,7 +72,7 @@ public class NhanVatController extends GeneralController implements Initializabl
             btn.setOnAction(this::handleDiTichLienQuanButton);
             cacDiTichLienQuan.getChildren().add(btn);
         }
-        for (String thoiKy : nhanVat.getcacThoiKyLienQuan()) {
+        for (String thoiKy : nhanVat.getCacThoiKyLienQuan()) {
             List<Model> tkL = database.getThoiKy();
             int idx = database.binaryLookupByCode(0, tkL.size() - 1, thoiKy, (ArrayList<Model>) tkL);
             if (idx < 0) continue;

@@ -2,6 +2,7 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
+import com.app.dict.util.StringUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +36,7 @@ public class GeneralController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //super.initialize(location, resources);
     }
     public void setListViewItem(ArrayList<Model> resource) {
         objectList.clear();
@@ -72,16 +74,6 @@ public class GeneralController implements Initializable {
         definitionView.getEngine().loadContent(meaning, "text/html");
         return resource.get(index);
     }
-    public Model showDetail(ArrayList<Model> resource, boolean returnValue) {
-        String spelling = listView.getSelectionModel().getSelectedItem();
-        if (spelling == null) {
-            return null;
-        }
-        int index = Collections.binarySearch(resource, new Model(spelling, ""));
-        String meaning = resource.get(index).getHTML();
-        definitionView.getEngine().loadContent(meaning, "text/html");
-        return resource.get(index);
-    }
     public void updateWordInListView(String word, int index, ArrayList<Model> res, ArrayList<Model> des) {
         if (index < 0) {
             return;
@@ -107,12 +99,19 @@ public class GeneralController implements Initializable {
             }
         }
     }
-    public void handleNhanVatLienQuanBtn(){
-        //showNhanVatPane();
-
-
+    public void handleNhanVatLienQuanButton(ActionEvent event){
+        MainController.getInstance().linkNhanVatPane(((Button) event.getSource()).getText());
     }
-//    public void handleLeHoiLienQuanButton(ActionEvent event){
-//        MainController.getInstance().linkLeHoiPane(((Button) event.getSource()).getText());
-//    }
+    public void handleDiTichLienQuanButton(ActionEvent event){
+        MainController.getInstance().linkDiTichPane(((Button) event.getSource()).getText());
+    }
+    public void handleThoiKyLienQuanButton(ActionEvent event){
+        MainController.getInstance().linkThoiKyPane(((Button) event.getSource()).getText());
+    }
+    public void handleSuKienLienQuanButton(ActionEvent event){
+        MainController.getInstance().linkSuKienPane(((Button) event.getSource()).getText());
+    }
+    public void handleSuKienLeHoiButton(ActionEvent event){
+        MainController.getInstance().linkLeHoiPane(((Button) event.getSource()).getText());
+    }
 }

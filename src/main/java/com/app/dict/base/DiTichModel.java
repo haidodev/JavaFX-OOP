@@ -8,9 +8,6 @@ import java.util.ArrayList;
 
 public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
-    public List<String> getcacNhanVatLienQuan() {
-        return new ArrayList<>(this.cacNhanVatLienQuan);
-    }
     private Set<String> cacThoiKyLienQuan;
     private List<String> cacLeHoiLienQuan;
 

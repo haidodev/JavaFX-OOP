@@ -42,10 +42,11 @@ public class DiTichController extends GeneralController implements Initializable
     }
     @FXML
     private void showDanhSachLienQuan(DiTichModel item){
-        nhanVatLienQuanLabel.setVisible(true);
+        nhanVatLienQuanLabel.setVisible(false);
         cacNhanVatLienQuan.getChildren().clear();
         if (item == null) return;
-        for (String nhanVat : item.getcacNhanVatLienQuan()) {
+        if (item.getCacNhanVatLienQuan().size() > 0) nhanVatLienQuanLabel.setVisible(true);
+        for (String nhanVat : item.getCacNhanVatLienQuan()) {
             List<Model> nvL = database.getNhanVat();
             int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
             if (idx < 0) continue;

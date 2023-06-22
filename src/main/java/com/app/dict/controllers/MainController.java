@@ -107,10 +107,10 @@ public class MainController implements Initializable {
         leHoiBtn.getStyleClass().add("active");
         setMainContent(leHoiPane);
     }
-//    public void linkLeHoiPane(String leHoiName) {
-//        showLeHoiPane();
-//        leHoiController.preloadLeHoi(leHoiName);
-//    }
+    public void linkLeHoiPane(String leHoiName) {
+        showLeHoiPane();
+        leHoiController.preloadLeHoi(leHoiName);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -152,27 +152,5 @@ public class MainController implements Initializable {
         System.out.println(thoiKyPane);
 
         setMainContent(thoiKyPane);
-    }
-
-
-
-    // Testing
-    private static MainController instance;
-    public MainController(){
-        instance = this;
-    }
-    public static MainController getInstance() {
-        return instance;
-    }
-
-    public void createPage(AnchorPane page, String url) {
-        try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource(url));
-            mainContent.getChildren().clear();
-            mainContent.getChildren().add(pane);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
