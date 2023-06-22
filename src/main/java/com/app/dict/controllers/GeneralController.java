@@ -2,6 +2,8 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
+import com.app.dict.util.StringUtility;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

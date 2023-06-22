@@ -14,14 +14,14 @@ public class NhanVatModel extends Model
 
 
     public NhanVatModel(String tenModel, List<String> moTa, String code, List<List<String>> thongTin
-            , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan, Set<String> cacThoiKyLienQuan)
+            , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan, Set<String> thoiKyLienQuan)
     {
         super(tenModel, moTa);
         setCode(code);
         setThongTin(thongTin);
         setCacNhanVatLienQuan(cacNhanVatLienQuan);
         setCacDiTichLienQuan(cacDiTichLienQuan);
-        setCacThoiKyLienQuan(cacThoiKyLienQuan);
+        setthoiKyLienQuan(thoiKyLienQuan);
     }
     public NhanVatModel(String tenModel)
     {
@@ -31,7 +31,7 @@ public class NhanVatModel extends Model
         setThongTin(new ArrayList<>());
         setCacNhanVatLienQuan(new HashSet<>());
         setCacDiTichLienQuan(new HashSet<>());
-        setCacThoiKyLienQuan(new HashSet<>());
+        setthoiKyLienQuan(new HashSet<>());
     }
 
     public List<List<String>> getThongTin() {
@@ -40,8 +40,8 @@ public class NhanVatModel extends Model
     public Set<String> getCacNhanVatLienQuan() {
         return cacNhanVatLienQuan;
     }
-    public Set<String> getCacThoiKyLienQuan() {
-        return cacThoiKyLienQuan;
+    public Set<String> getThoiKyLienQuan() {
+        return thoiKyLienQuan;
     }
     public Set<String> getCacDiTichLienQuan() {
         return cacDiTichLienQuan;
@@ -58,8 +58,8 @@ public class NhanVatModel extends Model
         this.cacDiTichLienQuan = cacDiTichLienQuan;
     }
 
-    public void setCacThoiKyLienQuan(Set<String> cacThoiKyLienQuan) {
-        this.cacThoiKyLienQuan = cacThoiKyLienQuan;
+    public void setthoiKyLienQuan(Set<String> thoiKyLienQuan) {
+        this.thoiKyLienQuan = thoiKyLienQuan;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class NhanVatModel extends Model
 
         htmlBuilder.append("<h2>Related Periods</h2>");
         htmlBuilder.append("<ul>");
-        for (String figure : this.cacThoiKyLienQuan) {
+        for (String figure : this.thoiKyLienQuan) {
             htmlBuilder.append("<li>").append(figure).append("</li>");
         }
         htmlBuilder.append("</ul>");
