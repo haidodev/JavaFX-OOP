@@ -1,25 +1,50 @@
 package com.app.dict.base;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
 
 public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
     public List<String> getcacNhanVatLienQuan() {
         return new ArrayList<>(this.cacNhanVatLienQuan);
     }
+    private Set<String> cacThoiKyLienQuan;
+    private List<String> cacLeHoiLienQuan;
+
     public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
         super(tenModel, moTa);
         setCode(code);
-        setcacNhanVatLienQuan(cacNhanVatLienQuan);
+        setCacNhanVatLienQuan(cacNhanVatLienQuan);
+        setCacThoiKyLienQuan(new HashSet<>());
+        setCacLeHoiLienQuan(new ArrayList<>());
     }
 
-    public void setcacNhanVatLienQuan(Set<String> cacNhanVatLienQuan)
-    {
+    public void setCacLeHoiLienQuan(List<String> cacLeHoiLienQuan) {
+        this.cacLeHoiLienQuan = cacLeHoiLienQuan;
+    }
 
+    public Set<String> getCacNhanVatLienQuan() {
+        return cacNhanVatLienQuan;
+    }
+
+    public void setCacNhanVatLienQuan(Set<String> cacNhanVatLienQuan) {
         this.cacNhanVatLienQuan = cacNhanVatLienQuan;
+    }
+
+    public Set<String> getCacThoiKyLienQuan() {
+        return cacThoiKyLienQuan;
+    }
+
+    public void setCacThoiKyLienQuan(Set<String> cacThoiKyLienQuan) {
+        this.cacThoiKyLienQuan = cacThoiKyLienQuan;
+    }
+
+    public List<String> getCacLeHoiLienQuan() {
+        return cacLeHoiLienQuan;
     }
 
     @Override
@@ -52,9 +77,33 @@ public class DiTichModel extends Model{
 
 
         // Add the description
-        if (this.moTa != null)
+
+        if (this.cacThoiKyLienQuan != null)
         {
-            htmlBuilder.append("<h2>Description</h2>");
+            htmlBuilder.append("<h2>Thời kỳ liên quan</h2>");
+            htmlBuilder.append("<ul>");
+
+            for (String desc : this.cacThoiKyLienQuan) {
+                htmlBuilder.append("<li>").append(desc).append("</li>");
+            }
+
+            htmlBuilder.append("</ul>");
+        }
+
+        if (this.cacLeHoiLienQuan != null)
+        {
+            htmlBuilder.append("<h2>Lễ hội liên quan</h2>");
+            htmlBuilder.append("<ul>");
+
+            for (String desc : this.cacLeHoiLienQuan) {
+                htmlBuilder.append("<li>").append(desc).append("</li>");
+            }
+
+            htmlBuilder.append("</ul>");
+        }
+
+        {
+            htmlBuilder.append("<h2>Mô tả</h2>");
             for (String desc : this.moTa) {
                 htmlBuilder.append("<p>").append(desc).append("</p>");
             }
@@ -81,7 +130,6 @@ public class DiTichModel extends Model{
     @Override
     public String toString() {
         return  "\n{ \"Id\":\"" + this.id + "\", "
-
                 + "\n\"Địa danh\":\"" + this.tenModel + "\", "
                 + "\n\"Code\":\"" + this.code + "\", "
                 + "\n\"Miêu tả\":\"" + this.moTa + "\", "

@@ -1,6 +1,8 @@
 package com.app.dict.base;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class ThoiKyModel extends Model
 {
@@ -15,6 +17,10 @@ public class ThoiKyModel extends Model
         return new ArrayList<>(this.cacDiTichLienQuan);
     }
 
+    public Set<String> getCacDiTichLienQuan() {
+        return cacDiTichLienQuan;
+    }
+
     public ThoiKyModel(String name, List<String> moTa, String code, Set<String> cacNhanVatLienQuan
             , Set<String> cacDiTichLienQuan)
     {
@@ -23,6 +29,7 @@ public class ThoiKyModel extends Model
         setcacNhanVatLienQuan(cacNhanVatLienQuan);
         setcacDiTichLienQuan(cacDiTichLienQuan);
     }
+    
     public void setcacNhanVatLienQuan(Set<String> cacNhanVatLienQuan) {
         this.cacNhanVatLienQuan = cacNhanVatLienQuan;
     }
@@ -77,8 +84,8 @@ public class ThoiKyModel extends Model
 
     @Override
     public String toString() {
-        return "\n{ \"Tên thời kỳ\":\"" + this.tenModel + "\", "
-                + "\n\"Miêu tả\":\"" + this.moTa + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
+        return "\n{ \"tenModel\":\"" + this.tenModel + "\", "
+                + "\n\"moTa\":\"" + this.moTa + "\", "
+                + "\n\"cacNhanVatLienQuan\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
     }
 }

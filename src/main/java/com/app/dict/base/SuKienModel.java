@@ -1,8 +1,8 @@
 package com.app.dict.base;
 
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 
 public class SuKienModel extends Model {
     private String thoiGian;
@@ -77,32 +77,32 @@ public class SuKienModel extends Model {
 
 
         // Add the description
-        htmlBuilder.append("<h2>Description</h2>");
+        htmlBuilder.append("<h2>Mô tả</h2>");
         htmlBuilder.append("<p>").append(this.thoiGian).append("</p>");
         htmlBuilder.append("<p>").append(this.diaDiem).append("</p>");
         htmlBuilder.append("<p>").append(this.ketQua).append("</p>");
 
 
-//        // Add the related figures
-//        htmlBuilder.append("<h2>Related Figures</h2>");
-//        if (this.cacNhanVatLienQuan != null) {
-//            htmlBuilder.append("<ul>");
-//            for (String figure : this.cacNhanVatLienQuan) {
-//                htmlBuilder.append("<li>").append(figure).append("</li>");
-//            }
-//            htmlBuilder.append("</ul>");
-//        }
-//
-//
-//        // Add the related places
-//        htmlBuilder.append("<h2>Related Places</h2>");
-//        if (this.cacDiTichLienQuan != null) {
-//            htmlBuilder.append("<ul>");
-//            for (String place : this.cacDiTichLienQuan) {
-//                htmlBuilder.append("<li>").append(place).append("</li>");
-//            }
-//            htmlBuilder.append("</ul>");
-//        }
+        // Add the related figures
+        htmlBuilder.append("<h2>Related Figures</h2>");
+        if (this.cacNhanVatLienQuan != null) {
+            htmlBuilder.append("<ul>");
+            for (String figure : this.cacNhanVatLienQuan) {
+                htmlBuilder.append("<li>").append(figure).append("</li>");
+            }
+            htmlBuilder.append("</ul>");
+        }
+
+
+        // Add the related places
+        htmlBuilder.append("<h2>Related Places</h2>");
+        if (this.cacDiTichLienQuan != null) {
+            htmlBuilder.append("<ul>");
+            for (String place : this.cacDiTichLienQuan) {
+                htmlBuilder.append("<li>").append(place).append("</li>");
+            }
+            htmlBuilder.append("</ul>");
+        }
 
 
         // Close the HTML structure
@@ -114,12 +114,12 @@ public class SuKienModel extends Model {
 
     @Override
     public String toString() {
-        return  "\n{ \"Id\":\"" + this.id + "\", "
-                + "\n\"Tên\":\"" + this.tenModel + "\", "
-                + "\n\"Thời gian\":\"" + this.thoiGian + "\", "
-                + "\n\"Địa điểm\":\"" + this.diaDiem + "\", "
-                + "\n\"kết quả\":\"" + this.ketQua + "\", "
-                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\", "
-                + "\n\"Địa điểm liên quan code\":\"" + this.cacDiTichLienQuan + "\" }" + "\n";
+        return  "\n{ \"id\":\"" + this.id + "\", "
+                + "\n\"tenModel\":\"" + this.tenModel + "\", "
+                + "\n\"thoiGian\":\"" + this.thoiGian + "\", "
+                + "\n\"diaDiem\":\"" + this.diaDiem + "\", "
+                + "\n\"ketQuan\":\"" + this.ketQua + "\", "
+                + "\n\"cacNhanVatLienQuan\":\"" + this.cacNhanVatLienQuan + "\", "
+                + "\n\"cacDiTichLienQuan\":\"" + this.cacDiTichLienQuan + "\" }" + "\n";
     }
 }

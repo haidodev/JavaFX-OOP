@@ -47,7 +47,7 @@ public class LoadData
     }
     public List<Model> loadNhanVat()
     {
-        List<NhanVatModel> myList = loader(Config.HISTORICAL_FIGURE_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
+        List<NhanVatModel> myList = loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -55,7 +55,7 @@ public class LoadData
     }
     public List<Model> loadThoiKy()
     {
-        List<ThoiKyModel> myList = loader(Config.ERA_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
+        List<ThoiKyModel> myList = loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -63,7 +63,7 @@ public class LoadData
     }
     public List<Model> loadSuKien()
     {
-        List<SuKienModel> myList = loader(Config.EVENT_FILENAME,  new TypeToken<List<SuKienModel>>() {});
+        List<SuKienModel> myList = loader(Config.SU_KIEN_FILENAME,  new TypeToken<List<SuKienModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -71,7 +71,7 @@ public class LoadData
     }
     public List<Model> loadDiTich()
     {
-        List<DiTichModel> myList = loader(Config.HISTORICAL_DESTINATION_FILENAME,  new TypeToken<List<DiTichModel>>() {});
+        List<DiTichModel> myList = loader(Config.DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -80,7 +80,7 @@ public class LoadData
 
     public List<Model> loadLeHoi()
     {
-        List<LeHoiModel> myList = loader(Config.FESTIVAL_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
+        List<LeHoiModel> myList = loader(Config.LE_HOI_FILENAME ,  new TypeToken<List<LeHoiModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -165,20 +165,6 @@ public class LoadData
 
         for (Model m : ld.getThoiKy()) {
             System.out.println(m);
-        }
-    }
-    public int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
-        if (end < start) {
-            return -1;
-        }
-        int mid = start + (end - start) / 2;
-        int compare = StringUtility.isContain(dT, temp.get(mid).getCode());
-        if (compare == -1) {
-            return binaryLookupByCode(start, mid - 1, dT, temp);
-        } else if (compare == 1) {
-            return binaryLookupByCode(mid + 1, end, dT, temp);
-        } else {
-            return mid;
         }
     }
 }
