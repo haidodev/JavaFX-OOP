@@ -9,9 +9,10 @@ public class StringUtility {
         String normalizedString = Normalizer.normalize(vietnameseString, Normalizer.Form.NFD);
         Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
         String withoutAccents = pattern.matcher(normalizedString).replaceAll("");
+        String replacedText = withoutAccents.replace("đ", "d").replace("Đ", "d");
 
         // Convert to lowercase
-        String lowercaseString = withoutAccents.toLowerCase();
+        String lowercaseString = replacedText.toLowerCase();
 
         // Remove redundant spaces
         String trimmedString = lowercaseString.trim();

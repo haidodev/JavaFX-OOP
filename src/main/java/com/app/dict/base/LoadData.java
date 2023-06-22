@@ -167,18 +167,4 @@ public class LoadData
             System.out.println(m);
         }
     }
-    public static int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
-        if (end < start) {
-            return -1;
-        }
-        int mid = start + (end - start) / 2;
-        int compare = StringUtility.isContain(dT, temp.get(mid).getCode());
-        if (compare == -1) {
-            return binaryLookupByCode(start, mid - 1, dT, temp);
-        } else if (compare == 1) {
-            return binaryLookupByCode(mid + 1, end, dT, temp);
-        } else {
-            return mid;
-        }
-    }
 }

@@ -2,12 +2,12 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
-import com.app.dict.base.ThoiKyModel;
-import com.app.dict.util.StringUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-public class GeneralController extends MainController implements Initializable {
+public class GeneralController implements Initializable {
     protected final ObservableList<String> nhanVatList = FXCollections.observableArrayList();
     protected final ObservableList<String> objectList = FXCollections.observableArrayList();
     protected final ObservableList<String> suKienList = FXCollections.observableArrayList();
@@ -35,7 +35,6 @@ public class GeneralController extends MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        super.initialize(location, resources);
     }
     public void setListViewItem(ArrayList<Model> resource) {
         objectList.clear();
@@ -61,15 +60,17 @@ public class GeneralController extends MainController implements Initializable {
         updateWordInListView(word, index, resource, searchTemp);
         setListViewItem(resource);
     }
-
-    public void showDetail(ArrayList<Model> resource) {
-        String spelling = listView.getSelectionModel().getSelectedItem();
+    public Model showDetail(ArrayList<Model> resource) {
+        return showDetail(resource, listView.getSelectionModel().getSelectedItem());
+    }
+    public Model showDetail(ArrayList<Model> resource, String spelling) {
         if (spelling == null) {
-            return;
+            return null;
         }
         int index = Collections.binarySearch(resource, new Model(spelling, ""));
         String meaning = resource.get(index).getHTML();
         definitionView.getEngine().loadContent(meaning, "text/html");
+        return resource.get(index);
     }
     public Model showDetail(ArrayList<Model> resource, boolean returnValue) {
         String spelling = listView.getSelectionModel().getSelectedItem();
@@ -107,15 +108,11 @@ public class GeneralController extends MainController implements Initializable {
         }
     }
     public void handleNhanVatLienQuanBtn(){
-        System.out.println(listView);
-
         //showNhanVatPane();
-        String spelling = "An Dương Vương";
-        //listView.getSelectionModel().select(spelling);
-        ArrayList<Model> resource = (ArrayList<Model>) database.getNhanVat();
-        int index = Collections.binarySearch(resource, new Model(spelling, ""));
-        String meaning = resource.get(index).getHTML();
-        System.out.println(spelling);
-        definitionView.getEngine().loadContent(meaning, "text/html");
+
+
     }
+//    public void handleLeHoiLienQuanButton(ActionEvent event){
+//        MainController.getInstance().linkLeHoiPane(((Button) event.getSource()).getText());
+//    }
 }

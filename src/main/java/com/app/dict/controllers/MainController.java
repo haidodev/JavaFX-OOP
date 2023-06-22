@@ -1,21 +1,24 @@
 package com.app.dict.controllers;
 
-import com.app.dict.base.Model;
-import com.app.dict.base.NhanVatModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebView;
-
 import java.io.IOException;
 import java.net.URL;
 
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    private static MainController instance;
+    public MainController(){
+        instance = this;
+    }
+    public static MainController getInstance(){
+        return instance;
+    }
     public AnchorPane mainContent;
     @FXML
     private Button thoiKyBtn;
@@ -65,11 +68,18 @@ public class MainController implements Initializable {
         setMainContent(thoiKyPane);
 
     }
-
+    public void linkThoiKyPane(String thoiKyName) {
+        showThoiKyPane();
+        thoiKyController.preloadThoiKy(thoiKyName);
+    }
     public void showNhanVatPane() {
         resetStyleNav();
         nhanVatBtn.getStyleClass().add("active");
         setMainContent(nhanVatPane);
+    }
+    public void linkNhanVatPane(String nhanVatName) {
+        showNhanVatPane();
+        nhanVatController.preloadNhanVat(nhanVatName);
     }
 
     public void showSuKienPane() {
@@ -77,7 +87,15 @@ public class MainController implements Initializable {
         suKienBtn.getStyleClass().add("active");
         setMainContent(suKienPane);
     }
+    public void linkSuKienPane(String suKienName) {
+        showSuKienPane();
+        suKienController.preloadSuKien(suKienName);
+    }
 
+    public void linkDiTichPane(String diTichName) {
+        showDiTichPane();
+        diTichController.preloadDiTich(diTichName);
+    }
     public void showDiTichPane() {
         resetStyleNav();
         diTichBtn.getStyleClass().add("active");
@@ -89,7 +107,10 @@ public class MainController implements Initializable {
         leHoiBtn.getStyleClass().add("active");
         setMainContent(leHoiPane);
     }
-
+//    public void linkLeHoiPane(String leHoiName) {
+//        showLeHoiPane();
+//        leHoiController.preloadLeHoi(leHoiName);
+//    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -131,8 +152,6 @@ public class MainController implements Initializable {
         System.out.println(thoiKyPane);
 
         setMainContent(thoiKyPane);
-
-
     }
 
 

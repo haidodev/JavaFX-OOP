@@ -6,11 +6,15 @@ import java.util.Set;
 
 public class ThoiKyModel extends Model
 {
+
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
 
     public List<String> getcacNhanVatLienQuan() {
         return new ArrayList<>(this.cacNhanVatLienQuan);
+    }
+    public List<String> getcacDiTichLienQuan() {
+        return new ArrayList<>(this.cacDiTichLienQuan);
     }
 
     public Set<String> getCacDiTichLienQuan() {
@@ -48,7 +52,7 @@ public class ThoiKyModel extends Model
         htmlBuilder.append("<meta charset=\"UTF-8\">");
         // htmlBuilder.append("<title>").append(getName()).append("</title>");
         htmlBuilder.append("<style>");
-        htmlBuilder.append("body { font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:14px; }");
+        htmlBuilder.append("body { background-color:#f2f3f5; font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:14px; }");
         htmlBuilder.append("</style>");
 
         // Add the name as a heading
@@ -70,15 +74,6 @@ public class ThoiKyModel extends Model
 
 
         // Add the related figures
-        if (this.cacNhanVatLienQuan != null)
-        {
-            htmlBuilder.append("<h2>Related Figures</h2>");
-            htmlBuilder.append("<ul>");
-            for (String figure : this.cacNhanVatLienQuan) {
-                htmlBuilder.append("<li>").append(figure).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
 
         // Close the HTML structure
         htmlBuilder.append("</body>");

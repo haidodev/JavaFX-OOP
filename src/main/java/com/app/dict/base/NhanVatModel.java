@@ -10,7 +10,7 @@ public class NhanVatModel extends Model
     private List<List<String>> thongTin;
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
-    private Set<String> cacThoiKyLienQuan;
+    private Set<String> thoiKyLienQuan;
 
 
     public NhanVatModel(String tenModel, List<String> moTa, String code, List<List<String>> thongTin
@@ -115,6 +115,40 @@ public class NhanVatModel extends Model
                 htmlBuilder.append("<p>").append(desc).append("</p>");
             }
         }
+
+
+        // Add the related figures
+        htmlBuilder.append("<h2>Related Figures</h2>");
+        if (this.cacNhanVatLienQuan != null) {
+            htmlBuilder.append("<ul>");
+            for (String figure : this.cacNhanVatLienQuan) {
+                htmlBuilder.append("<li>").append(figure).append("</li>");
+            }
+            htmlBuilder.append("</ul>");
+        }
+
+
+        // Add the related places
+        htmlBuilder.append("<h2>Related Places</h2>");
+        if (this.cacDiTichLienQuan != null) {
+            htmlBuilder.append("<ul>");
+            for (String place : this.cacDiTichLienQuan) {
+                htmlBuilder.append("<li>").append(place).append("</li>");
+            }
+            htmlBuilder.append("</ul>");
+        }
+
+
+        // Add the related time periods
+        htmlBuilder.append("<h2>Related Time Periods</h2>");
+        if (this.thoiKyLienQuan != null) {
+            htmlBuilder.append("<ul>");
+            for (String timePeriod : this.thoiKyLienQuan) {
+                htmlBuilder.append("<li>").append(timePeriod).append("</li>");
+            }
+            htmlBuilder.append("</ul>");
+        }
+
 
         // Close the HTML structure
         htmlBuilder.append("</body>");

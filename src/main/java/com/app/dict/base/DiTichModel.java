@@ -1,5 +1,6 @@
 package com.app.dict.base;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -7,6 +8,9 @@ import java.util.ArrayList;
 
 public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
+    public List<String> getcacNhanVatLienQuan() {
+        return new ArrayList<>(this.cacNhanVatLienQuan);
+    }
     private Set<String> cacThoiKyLienQuan;
     private List<String> cacLeHoiLienQuan;
 
@@ -105,16 +109,16 @@ public class DiTichModel extends Model{
             }
         }
 
-        // Add the related figures
-        if (this.cacNhanVatLienQuan != null)
-        {
-            htmlBuilder.append("<h2>Related Figures</h2>");
-            htmlBuilder.append("<ul>");
-            for (String figure : this.cacNhanVatLienQuan) {
-                htmlBuilder.append("<li>").append(figure).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
+//        // Add the related figures
+//        if (this.cacNhanVatLienQuan != null)
+//        {
+//            htmlBuilder.append("<h2>Related Figures</h2>");
+//            htmlBuilder.append("<ul>");
+//            for (String figure : this.cacNhanVatLienQuan) {
+//                htmlBuilder.append("<li>").append(figure).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
 
         // Close the HTML structure
         htmlBuilder.append("</body>");
@@ -125,10 +129,10 @@ public class DiTichModel extends Model{
 
     @Override
     public String toString() {
-        return  "\n{ \"id\":\"" + this.id + "\", "
-                + "\n\"tenModel\":\"" + this.tenModel + "\", "
-                + "\n\"code\":\"" + this.code + "\", "
-                + "\n\"moTa\":\"" + this.moTa + "\", "
-                + "\n\"cacNhanVatLienQuan\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
+        return  "\n{ \"Id\":\"" + this.id + "\", "
+                + "\n\"Địa danh\":\"" + this.tenModel + "\", "
+                + "\n\"Code\":\"" + this.code + "\", "
+                + "\n\"Miêu tả\":\"" + this.moTa + "\", "
+                + "\n\"Nhân vật liên quan code\":\"" + this.cacNhanVatLienQuan + "\" }" + "\n";
     }
 }

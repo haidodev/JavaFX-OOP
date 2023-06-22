@@ -30,9 +30,10 @@ import java.util.ResourceBundle;
 
 
 public class ThoiKyController extends GeneralController implements Initializable {
-    public ScrollPane scbar;
-    public AnchorPane outerAnchorPane;
-    public VBox contentVBox;
+    public VBox cacNhanVatLienQuan;
+    public VBox cacDiTichLienQuan;
+    public Label nhanVatLienQuanLabel;
+    public Label diTichLienQuanLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,56 +42,47 @@ public class ThoiKyController extends GeneralController implements Initializable
         }
         listView.setItems(objectList);
     }
+    public void preloadThoiKy(String thoiKyName) {
+        listView.getSelectionModel().select(thoiKyName);
+        showThoiKyDetail(thoiKyName);
+    }
     @FXML
     public void showThoiKyDetail() {
-        contentVBox.getChildren().clear();
-        ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy(), true);
-        String str = "";
-        if (item != null){
-            for (String nhanVat : item.getcacNhanVatLienQuan()){
-                List<Model> nvL = database.getNhanVat();
-                int idx = LoadData.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
-                if (idx < 0) continue;
-                str += nvL.get(idx).getTenModel();
-                str += "\n";
-            }
+        ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy());
+        showDanhSachLienQuan(item);
+    }
+    public void showThoiKyDetail(String thoiKyName) {
+        ThoiKyModel item = (ThoiKyModel) showDetail((ArrayList<Model>) database.getThoiKy(), thoiKyName);
+        showDanhSachLienQuan(item);
+    }
+    private void showDanhSachLienQuan(ThoiKyModel thoiKy){
+        nhanVatLienQuanLabel.setVisible(true);
+        diTichLienQuanLabel.setVisible(true);
+
+        cacNhanVatLienQuan.getChildren().clear();
+        cacDiTichLienQuan.getChildren().clear();
+
+        if (thoiKy == null) return;
+
+        for (String nhanVat : thoiKy.getcacNhanVatLienQuan()) {
+            List<Model> nvL = database.getNhanVat();
+            int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
+            if (idx < 0) continue;
+            Button btn = new Button(nvL.get(idx).getTenModel());
+            btn.setOnAction(this::handleNhanVatLienQuanButton);
+            cacNhanVatLienQuan.getChildren().add(btn);
         }
-        Label lb = new Label(str);
-        contentVBox.getChildren().add(lb);
+        for (String diTich : thoiKy.getcacDiTichLienQuan()) {
+            List<Model> dtL = database.getDiTich();
+            int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
+            if (idx < 0) continue;
+            Button btn = new Button(dtL.get(idx).getTenModel());
+            btn.setOnAction(this::handleDiTichLienQuanButton);
+            cacDiTichLienQuan.getChildren().add(btn);
+        }
     }
     @FXML
     public void thoiKySearchFieldAction() {
         searchFieldAction((ArrayList<Model>) database.getThoiKy());
-    }
-
-
-
-    public void handleButtonClick(ActionEvent actionEvent) {
-        Button btn = new Button("A new Btn created");
-        contentVBox.getChildren().add(btn);
-
-    }
-
-    public void handleButtonClick2(ActionEvent actionEvent) {
-        contentVBox.getChildren().clear();
-    }
-
-
-
-    // Testing
-    @FXML
-    private AnchorPane thoiKy;
-    @FXML
-    public void handleSwitchPane() throws IOException {
-//        thoiKy.getChildren().clear();
-//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/com/app/dict/nhan-vat.fxml"));
-//        MainController.getInstance().showNhanVatPane();
-//        MainController.getInstance().createPage(thoiKy,"/com/app/dict/nhan-vat.fxml");
-//        FXMLLoader loader = FXMLLoader.load(getClass().getResource("/com/app/dict/nhan-vat.fxml\""));
-//        Parent root = loader.load();
-//        MainController mainController = (MainController) loader.getController();
-//        mainController.showNhanVatPane();
-
-
     }
 }

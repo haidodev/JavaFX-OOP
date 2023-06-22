@@ -1,5 +1,6 @@
 package com.app.dict.base;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +11,12 @@ public class SuKienModel extends Model {
 
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
-
+    public List<String> getcacNhanVatLienQuan() {
+        return new ArrayList<>(this.cacNhanVatLienQuan);
+    }
+    public List<String> getcacDiTichLienQuan() {
+        return new ArrayList<>(this.cacDiTichLienQuan);
+    }
     public SuKienModel(String tenModel, String code, List<String> moTa, String thoiGian, String diaDiem, String ketQua
             , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan) {
         super(tenModel, moTa);
@@ -78,7 +84,7 @@ public class SuKienModel extends Model {
 
 
         // Add the related figures
-        htmlBuilder.append("<h2>Nhân vật liên quan</h2>");
+        htmlBuilder.append("<h2>Related Figures</h2>");
         if (this.cacNhanVatLienQuan != null) {
             htmlBuilder.append("<ul>");
             for (String figure : this.cacNhanVatLienQuan) {
@@ -89,7 +95,7 @@ public class SuKienModel extends Model {
 
 
         // Add the related places
-        htmlBuilder.append("<h2>Di tích liên quan</h2>");
+        htmlBuilder.append("<h2>Related Places</h2>");
         if (this.cacDiTichLienQuan != null) {
             htmlBuilder.append("<ul>");
             for (String place : this.cacDiTichLienQuan) {
