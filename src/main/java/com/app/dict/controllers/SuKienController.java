@@ -2,7 +2,6 @@ package com.app.dict.controllers;
 
 import com.app.dict.base.Model;
 import com.app.dict.base.SuKienModel;
-import com.app.dict.base.ThoiKyModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -50,15 +49,8 @@ public class SuKienController extends GeneralController implements Initializable
         cacNhanVatLienQuan.getChildren().clear();
         cacDiTichLienQuan.getChildren().clear();
         if (item == null) return;
-
-        for (String nhanVat : item.getcacNhanVatLienQuan()) {
-            List<Model> nvL = database.getNhanVat();
-            int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
-            if (idx < 0) continue;
-            Button btn = new Button(nvL.get(idx).getTenModel());
-            btn.setOnAction(this::handleNhanVatLienQuanButton);
-            cacNhanVatLienQuan.getChildren().add(btn);
-        }
+        if (item.getCacNhanVatLienQuan().size() > 0) nhanVatLienQuanLabel.setVisible(true);
+        cacNhanVatLienQuan.getChildren().addAll(GeneralController.nhanVatLienQuanButtons(item.getCacNhanVatLienQuan(), database.getNhanVat()));
         for (String diTich : item.getcacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
             int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);

@@ -149,8 +149,6 @@ public class MainController implements Initializable {
             throw new RuntimeException(e);
         }
         thoiKyBtn.getStyleClass().add("active");
-        System.out.println(thoiKyPane);
-
         setMainContent(thoiKyPane);
     }
 }

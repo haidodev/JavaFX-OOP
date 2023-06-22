@@ -1,6 +1,7 @@
 package com.app.dict.controllers;
 
 import com.app.dict.base.DiTichModel;
+import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -42,17 +43,13 @@ public class DiTichController extends GeneralController implements Initializable
     }
     @FXML
     private void showDanhSachLienQuan(DiTichModel item){
-        nhanVatLienQuanLabel.setVisible(false);
-        cacNhanVatLienQuan.getChildren().clear();
+        resetDanhSachLienQuan();
         if (item == null) return;
         if (item.getCacNhanVatLienQuan().size() > 0) nhanVatLienQuanLabel.setVisible(true);
-        for (String nhanVat : item.getCacNhanVatLienQuan()) {
-            List<Model> nvL = database.getNhanVat();
-            int idx = database.binaryLookupByCode(0, nvL.size() - 1, nhanVat, (ArrayList<Model>) nvL);
-            if (idx < 0) continue;
-            Button btn = new Button(nvL.get(idx).getTenModel());
-            btn.setOnAction(this::handleNhanVatLienQuanButton);
-            cacNhanVatLienQuan.getChildren().add(btn);
-        }
+        cacNhanVatLienQuan.getChildren().addAll(GeneralController.nhanVatLienQuanButtons(item.getCacNhanVatLienQuan(), database.getNhanVat()));
+    }
+    private void resetDanhSachLienQuan(){
+        nhanVatLienQuanLabel.setVisible(false);
+        cacNhanVatLienQuan.getChildren().clear();
     }
 }

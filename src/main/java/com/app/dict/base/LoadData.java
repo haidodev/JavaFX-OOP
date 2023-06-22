@@ -158,16 +158,16 @@ public class LoadData
             System.out.println(m);
         }
     }
-    public int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> temp) {
+    public static int binaryLookupByCode(int start, int end, String dT, ArrayList<Model> allModels) {
         if (end < start) {
             return -1;
         }
         int mid = start + (end - start) / 2;
-        int compare = StringUtility.isContain(dT, temp.get(mid).getCode());
+        int compare = StringUtility.isContain(dT, allModels.get(mid).getCode());
         if (compare == -1) {
-            return binaryLookupByCode(start, mid - 1, dT, temp);
+            return binaryLookupByCode(start, mid - 1, dT, allModels);
         } else if (compare == 1) {
-            return binaryLookupByCode(mid + 1, end, dT, temp);
+            return binaryLookupByCode(mid + 1, end, dT, allModels);
         } else {
             return mid;
         }

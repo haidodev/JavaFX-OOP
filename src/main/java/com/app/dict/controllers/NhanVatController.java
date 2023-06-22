@@ -1,5 +1,6 @@
 package com.app.dict.controllers;
 
+import com.app.dict.base.LoadData;
 import com.app.dict.base.Model;
 import com.app.dict.base.NhanVatModel;
 import com.app.dict.base.ThoiKyModel;
@@ -46,27 +47,15 @@ public class NhanVatController extends GeneralController implements Initializabl
         showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName));
     }
     private void showDanhSachLienQuan(NhanVatModel nhanVat){
-        nhanVatLienQuanLabel.setVisible(true);
-        diTichLienQuanLabel.setVisible(true);
-        thoiKyLienQuanLabel.setVisible(true);
-
-        cacNhanVatLienQuan.getChildren().clear();
-        cacDiTichLienQuan.getChildren().clear();
-        cacThoiKyLienQuan.getChildren().clear();
+        resetDanhSachLienQuan();
 
         if (nhanVat == null) return;
+        if (nhanVat.getCacNhanVatLienQuan().size() > 0) nhanVatLienQuanLabel.setVisible(true);
+        cacNhanVatLienQuan.getChildren().addAll(GeneralController.nhanVatLienQuanButtons(nhanVat.getCacNhanVatLienQuan(), database.getNhanVat()));
 
-        for (String nv : nhanVat.getCacNhanVatLienQuan()) {
-            List<Model> nvL = database.getNhanVat();
-            int idx = database.binaryLookupByCode(0, nvL.size() - 1, nv, (ArrayList<Model>) nvL);
-            if (idx < 0) continue;
-            Button btn = new Button(nvL.get(idx).getTenModel());
-            btn.setOnAction(this::handleNhanVatLienQuanButton);
-            cacNhanVatLienQuan.getChildren().add(btn);
-        }
         for (String diTich : nhanVat.getCacDiTichLienQuan()) {
             List<Model> dtL = database.getDiTich();
-            int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
+            int idx = LoadData.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
             if (idx < 0) continue;
             Button btn = new Button(dtL.get(idx).getTenModel());
             btn.setOnAction(this::handleDiTichLienQuanButton);
@@ -80,5 +69,14 @@ public class NhanVatController extends GeneralController implements Initializabl
             btn.setOnAction(this::handleThoiKyLienQuanButton);
             cacThoiKyLienQuan.getChildren().add(btn);
         }
+    }
+    private void resetDanhSachLienQuan(){
+        nhanVatLienQuanLabel.setVisible(false);
+        diTichLienQuanLabel.setVisible(false);
+        thoiKyLienQuanLabel.setVisible(false);
+
+        cacNhanVatLienQuan.getChildren().clear();
+        cacDiTichLienQuan.getChildren().clear();
+        cacThoiKyLienQuan.getChildren().clear();
     }
 }

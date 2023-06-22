@@ -11,8 +11,8 @@ public class SuKienModel extends Model {
 
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacDiTichLienQuan;
-    public List<String> getcacNhanVatLienQuan() {
-        return new ArrayList<>(this.cacNhanVatLienQuan);
+    public Set<String> getCacNhanVatLienQuan() {
+        return this.cacNhanVatLienQuan;
     }
     public List<String> getcacDiTichLienQuan() {
         return new ArrayList<>(this.cacDiTichLienQuan);

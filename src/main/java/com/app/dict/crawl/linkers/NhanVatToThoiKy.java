@@ -20,7 +20,7 @@ public class NhanVatToThoiKy
 
         for (ThoiKyModel thoiKy : thoiKyList)
         {
-            for (String nhanVat : thoiKy.getcacNhanVatLienQuan())
+            for (String nhanVat : thoiKy.getCacNhanVatLienQuan())
             {
                 if (!hashMap.containsKey(nhanVat))
                 {
