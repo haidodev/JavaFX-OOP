@@ -42,26 +42,41 @@ public class ThoiKyController extends GeneralController implements Initializable
         showDanhSachLienQuan(item);
     }
     private void showDanhSachLienQuan(ThoiKyModel thoiKy){
-        nhanVatLienQuanLabel.setVisible(true);
-        diTichLienQuanLabel.setVisible(true);
+//        nhanVatLienQuanLabel.setVisible(false);
+//        diTichLienQuanLabel.setVisible(false);
+//
+//        cacNhanVatLienQuan.getChildren().clear();
+//        cacDiTichLienQuan.getChildren().clear();
 
-        cacNhanVatLienQuan.getChildren().clear();
-        cacDiTichLienQuan.getChildren().clear();
+        resetDanhSachLienQuan();
 
         if (thoiKy == null) return;
+
         if (thoiKy.getCacNhanVatLienQuan().size() > 0) nhanVatLienQuanLabel.setVisible(true);
         cacNhanVatLienQuan.getChildren().addAll(GeneralController.nhanVatLienQuanButtons(thoiKy.getCacNhanVatLienQuan(), database.getNhanVat()));
-        for (String diTich : thoiKy.getcacDiTichLienQuan()) {
-            List<Model> dtL = database.getDiTich();
-            int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
-            if (idx < 0) continue;
-            Button btn = new Button(dtL.get(idx).getTenModel());
-            btn.setOnAction(this::handleDiTichLienQuanButton);
-            cacDiTichLienQuan.getChildren().add(btn);
-        }
+
+        if (thoiKy.getcacDiTichLienQuan().size() > 0) diTichLienQuanLabel.setVisible(true);
+        cacDiTichLienQuan.getChildren().addAll(GeneralController.diTichLienQuanButtons(thoiKy.getCacDiTichLienQuan(), database.getDiTich()));
+
+//        for (String diTich : thoiKy.getcacDiTichLienQuan()) {
+//            List<Model> dtL = database.getDiTich();
+//            int idx = database.binaryLookupByCode(0, dtL.size() - 1, diTich, (ArrayList<Model>) dtL);
+//            if (idx < 0) continue;
+//            Button btn = new Button(dtL.get(idx).getTenModel());
+//            btn.setOnAction(this::handleDiTichLienQuanButton);
+//            cacDiTichLienQuan.getChildren().add(btn);
+//        }
     }
     @FXML
     public void thoiKySearchFieldAction() {
         searchFieldAction((ArrayList<Model>) database.getThoiKy());
+    }
+
+    private void resetDanhSachLienQuan(){
+        nhanVatLienQuanLabel.setVisible(false);
+        diTichLienQuanLabel.setVisible(false);
+
+        cacNhanVatLienQuan.getChildren().clear();
+        cacDiTichLienQuan.getChildren().clear();
     }
 }
