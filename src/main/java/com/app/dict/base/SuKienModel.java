@@ -14,9 +14,7 @@ public class SuKienModel extends Model {
     public Set<String> getCacNhanVatLienQuan() {
         return this.cacNhanVatLienQuan;
     }
-    public List<String> getcacDiTichLienQuan() {
-        return new ArrayList<>(this.cacDiTichLienQuan);
-    }
+    public Set<String> getCacDiTichLienQuan() { return this.cacDiTichLienQuan; }
     public SuKienModel(String tenModel, String code, List<String> moTa, String thoiGian, String diaDiem, String ketQua
             , Set<String> cacNhanVatLienQuan, Set<String> cacDiTichLienQuan) {
         super(tenModel, moTa);
@@ -83,26 +81,26 @@ public class SuKienModel extends Model {
         htmlBuilder.append("<p>").append(this.ketQua).append("</p>");
 
 
-        // Add the related figures
-        htmlBuilder.append("<h2>Related Figures</h2>");
-        if (this.cacNhanVatLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String figure : this.cacNhanVatLienQuan) {
-                htmlBuilder.append("<li>").append(figure).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
-
-
-        // Add the related places
-        htmlBuilder.append("<h2>Related Places</h2>");
-        if (this.cacDiTichLienQuan != null) {
-            htmlBuilder.append("<ul>");
-            for (String place : this.cacDiTichLienQuan) {
-                htmlBuilder.append("<li>").append(place).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
+//        // Add the related figures
+//        htmlBuilder.append("<h2>Related Figures</h2>");
+//        if (this.cacNhanVatLienQuan != null) {
+//            htmlBuilder.append("<ul>");
+//            for (String figure : this.cacNhanVatLienQuan) {
+//                htmlBuilder.append("<li>").append(figure).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
+//
+//
+//        // Add the related places
+//        htmlBuilder.append("<h2>Related Places</h2>");
+//        if (this.cacDiTichLienQuan != null) {
+//            htmlBuilder.append("<ul>");
+//            for (String place : this.cacDiTichLienQuan) {
+//                htmlBuilder.append("<li>").append(place).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
 
 
         // Close the HTML structure
