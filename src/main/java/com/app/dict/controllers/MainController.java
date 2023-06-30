@@ -1,6 +1,6 @@
 package com.app.dict.controllers;
 
-import javafx.event.ActionEvent;
+import com.app.dict.crawl.CrawlAll;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,6 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
+
+import javafx.concurrent.Task;
+import javafx.scene.Scene;
+import javafx.scene.control.ProgressIndicator;
+import javafx.stage.Stage;
 
 import java.util.ResourceBundle;
 
@@ -19,6 +24,9 @@ public class MainController implements Initializable {
     public static MainController getInstance(){
         return instance;
     }
+    public Stage primaryStage;
+    public Scene dictMainScene;
+    public Scene splashScene;
     public AnchorPane mainContent;
     @FXML
     private Button thoiKyBtn;
@@ -30,6 +38,8 @@ public class MainController implements Initializable {
     private Button diTichBtn;
     @FXML
     private Button leHoiBtn;
+    @FXML
+    private Button crawlingBtn;
 
     @FXML
     private AnchorPane thoiKyPane;
@@ -51,10 +61,14 @@ public class MainController implements Initializable {
     private DiTichController diTichController;
     @FXML
     private LeHoiController leHoiController;
+    @FXML
+    public ProgressIndicator loadingCircle;
+
 
     private void setMainContent(AnchorPane anchorPane) {
         mainContent.getChildren().setAll(anchorPane);
     }
+
     public void resetStyleNav() {
         thoiKyBtn.getStyleClass().removeAll("active");
         nhanVatBtn.getStyleClass().removeAll("active");
@@ -62,6 +76,7 @@ public class MainController implements Initializable {
         diTichBtn.getStyleClass().removeAll("active");
         leHoiBtn.getStyleClass().removeAll("active");
     }
+
     public void showThoiKyPane() {
         resetStyleNav();
         thoiKyBtn.getStyleClass().add("active");
@@ -111,6 +126,7 @@ public class MainController implements Initializable {
         showLeHoiPane();
         leHoiController.preloadLeHoi(leHoiName);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -150,5 +166,35 @@ public class MainController implements Initializable {
         }
         thoiKyBtn.getStyleClass().add("active");
         setMainContent(thoiKyPane);
+    }
+
+    public void setScenes(Stage primaryStage, Scene scene, Scene splashScene) {
+        this.primaryStage = primaryStage;
+        this.dictMainScene = scene;
+        this.splashScene = splashScene;
+    }
+
+    public void showSplashScreenAndRunMethod() {
+        primaryStage.setScene(splashScene);
+        primaryStage.show();
+
+        Task<Void> crawlTask = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                CrawlAll crawlAll = new CrawlAll();
+                crawlAll.crawl();
+                crawlAll.link();
+                return null;
+            }
+        };
+
+        crawlTask.setOnSucceeded(e -> {
+            primaryStage.setScene(dictMainScene);
+            primaryStage.show();
+        });
+
+        // Run the task in a separate thread
+        Thread crawlThread = new Thread(crawlTask);
+        crawlThread.start();
     }
 }
