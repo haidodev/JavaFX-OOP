@@ -69,7 +69,8 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
                     continue;
                 }
                 try {
-                    doc = Jsoup.connect(baseUrl+nextPageUrl).get();
+                    String sanitizedUrl = nextPageUrl.replace("|", "%7C");
+                    doc = Jsoup.connect(baseUrl+sanitizedUrl).get();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -144,12 +145,12 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
     public void createThoiKyJson()
     {
         List<Model> models = crawlPages();
-        writeJson(Config.THOI_KY_FILENAME, models);
+        writeJson(Config.TEMP_THOI_KY_FILENAME, models);
     }
     // Testing
     public static void main(String[] args) {
         ThoiKyCrawler test = new ThoiKyCrawler();
         List<Model> models = test.crawlPages();
-        test.writeJson(Config.THOI_KY_FILENAME, models);
+        test.writeJson(Config.TEMP_THOI_KY_FILENAME, models);
     }
 }

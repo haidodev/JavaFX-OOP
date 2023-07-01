@@ -16,7 +16,7 @@ public class NhanVatToThoiKy
     {
         Map<String, List<String>> hashMap = new HashMap<>();
         ThoiKyCrawler thoiKyCrawler = new ThoiKyCrawler();
-        List<ThoiKyModel> thoiKyList = thoiKyCrawler.loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
+        List<ThoiKyModel> thoiKyList = thoiKyCrawler.loader(Config.TEMP_THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
 
         for (ThoiKyModel thoiKy : thoiKyList)
         {
@@ -39,7 +39,7 @@ public class NhanVatToThoiKy
         System.out.println(nhanVatToThoiKy);
         NhanVatCrawler nhanVatCrawler = new NhanVatCrawler();
         List<NhanVatModel> nhanVatList = nhanVatCrawler
-                .loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
+                .loader(Config.TEMP_NHAN_VAT_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
 
         for (NhanVatModel nhanVat : nhanVatList)
         {
@@ -52,7 +52,7 @@ public class NhanVatToThoiKy
 
         List<Model> models = new ArrayList<>();
         models.addAll(nhanVatList);
-        nhanVatCrawler.writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, models);
+        nhanVatCrawler.writeJson(Config.TEMP_NHAN_VAT_FILENAME, models);
     }
 
     public static void main(String[] args)

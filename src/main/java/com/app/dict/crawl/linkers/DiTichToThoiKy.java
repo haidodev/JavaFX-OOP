@@ -4,7 +4,6 @@ package com.app.dict.crawl.linkers;
 import com.app.dict.base.ThoiKyModel;
 import com.app.dict.base.DiTichModel;
 import com.app.dict.base.Model;
-import com.app.dict.base.NhanVatModel;
 import com.app.dict.crawl.crawlers.*;
 import com.app.dict.crawl.crawlers.ThoiKyCrawler;
 import com.app.dict.util.Config;
@@ -17,7 +16,7 @@ public class DiTichToThoiKy
     {
         Map<String, List<String>> hashMap = new HashMap<>();
         ThoiKyCrawler thoiKyCrawler = new ThoiKyCrawler();
-        List<ThoiKyModel> thoiKyList = thoiKyCrawler.loader(Config.THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
+        List<ThoiKyModel> thoiKyList = thoiKyCrawler.loader(Config.TEMP_THOI_KY_FILENAME,  new TypeToken<List<ThoiKyModel>>() {});
 
         for (ThoiKyModel thoiKy : thoiKyList)
         {
@@ -39,7 +38,7 @@ public class DiTichToThoiKy
     {
         Map<String, List<String>> diaDanhToThoiKy = generateHashMap();
         DiTichCrawler diaDanhCrawler = new DiTichCrawler();
-        List<DiTichModel> diaDanhList = diaDanhCrawler.loader(Config.DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});
+        List<DiTichModel> diaDanhList = diaDanhCrawler.loader(Config.TEMP_DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});
 
         for (DiTichModel diaDanh : diaDanhList)
         {
@@ -53,7 +52,7 @@ public class DiTichToThoiKy
 
         List<Model> models = new ArrayList<>();
         models.addAll(diaDanhList);
-        diaDanhCrawler.writeJson(Config.DI_TICH_FILENAME, models);
+        diaDanhCrawler.writeJson(Config.TEMP_DI_TICH_FILENAME, models);
     }
 
     public static void main(String[] args)

@@ -1,7 +1,12 @@
 package com.app.dict.crawl;
 
+import com.app.dict.base.*;
 import com.app.dict.crawl.crawlers.*;
 import com.app.dict.crawl.linkers.*;
+import com.app.dict.util.Config;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.List;
 
 public class CrawlAll
 {
@@ -64,8 +69,25 @@ public class CrawlAll
 
         NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
         nhanVatToThoiKy.linkNhanVatToThoiKy();
+    }
 
+    public void overwriteDatabase() {
+        SCrawler sCrawler = new SCrawler() {};
 
+        List<NhanVatModel> nhanVatModels = sCrawler.loader(Config.TEMP_NHAN_VAT_FILENAME, new TypeToken<List<NhanVatModel>>() {});
+        sCrawler.writeJson(Config.NHAN_VAT_FILENAME, nhanVatModels);
+
+        List<DiTichModel> diTichModels = sCrawler.loader(Config.TEMP_DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});
+        sCrawler.writeJson(Config.DI_TICH_FILENAME, diTichModels);
+
+        List<ThoiKyModel> thoiKyModels = sCrawler.loader(Config.TEMP_THOI_KY_FILENAME, new TypeToken<List<ThoiKyModel>>() {});
+        sCrawler.writeJson(Config.THOI_KY_FILENAME, thoiKyModels);
+
+        List<SuKienModel> suKienModels = sCrawler.loader(Config.TEMP_SU_KIEN_FILENAME, new TypeToken<List<SuKienModel>>() {});
+        sCrawler.writeJson(Config.SU_KIEN_FILENAME, suKienModels);
+        
+        List<LeHoiModel> leHoiModels = sCrawler.loader(Config.TEMP_LE_HOI_FILENAME, new TypeToken<List<LeHoiModel>>() {});
+        sCrawler.writeJson(Config.LE_HOI_FILENAME, leHoiModels);
     }
 
     // Test
@@ -73,5 +95,6 @@ public class CrawlAll
         CrawlAll crawlAll = new CrawlAll();
         crawlAll.crawl();
         crawlAll.link();
+        crawlAll.overwriteDatabase();
     }
 }

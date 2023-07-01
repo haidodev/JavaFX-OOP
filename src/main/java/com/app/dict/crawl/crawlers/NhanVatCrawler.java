@@ -2,7 +2,6 @@ package com.app.dict.crawl.crawlers;
 
 import com.app.dict.base.Model;
 import com.app.dict.base.NhanVatModel;
-import com.app.dict.crawl.linkers.NhanVatToThoiKy;
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
 
@@ -167,12 +166,12 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
         }
         
         // Write to JSON file
-        writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, nhanVatList);
+        writeJson(Config.TEMP_NHAN_VAT_FILENAME, nhanVatList);
     }
 
     public void crawlWiki()  {
         //  Input from JSON back to Objects
-        List<NhanVatModel> nhanVatList = loader(Config.NHAN_VAT_LICH_SU_FILENAME, new TypeToken<List<NhanVatModel>>() {});
+        List<NhanVatModel> nhanVatList = loader(Config.TEMP_NHAN_VAT_FILENAME, new TypeToken<List<NhanVatModel>>() {});
         String baseUrl = "https://vi.wikipedia.org/wiki/";
         String nhanVatUrl = "";
         Document doc;
@@ -196,7 +195,7 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
 
         // Write to JSON file
         List<Model> modelList = new ArrayList<>(nhanVatList);
-        writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, nhanVatList);
+        writeJson(Config.TEMP_NHAN_VAT_FILENAME, nhanVatList);
     }
 
     public static boolean shouldMerge(List<String> info1, List<String> info2) {
@@ -284,7 +283,7 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
     public List<Model> crawlPages() {
         crawlNguoiKeSu();
         crawlWiki();
-        List<NhanVatModel> nhanVatList = loader(Config.NHAN_VAT_LICH_SU_FILENAME, new TypeToken<List<NhanVatModel>>() {});
+        List<NhanVatModel> nhanVatList = loader(Config.TEMP_NHAN_VAT_FILENAME, new TypeToken<List<NhanVatModel>>() {});
         List<Model> modelList = new ArrayList<>(nhanVatList);
         // Write to JSON file
         return modelList;
@@ -293,12 +292,12 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
     public void createNhanVatJson()
     {
         List<Model> figures = crawlPages();
-        writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, figures);
+        writeJson(Config.TEMP_NHAN_VAT_FILENAME, figures);
     }
 
     public static void main(String[] args) {
         NhanVatCrawler test = new NhanVatCrawler();
         List<Model> figures = test.crawlPages();
-        test.writeJson(Config.NHAN_VAT_LICH_SU_FILENAME, figures);
+        test.writeJson(Config.TEMP_NHAN_VAT_FILENAME, figures);
     }
 }
