@@ -4,6 +4,7 @@ import com.app.dict.crawl.CrawlAll;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
@@ -205,10 +206,25 @@ public class MainController implements Initializable {
         crawlTask.setOnSucceeded(e -> {
             primaryStage.setScene(dictMainScene);
             primaryStage.show();
+            showRelaunchMessage();
+        });
+
+        primaryStage.setOnCloseRequest(event -> {
+            // Terminate the crawling process if it's still running
+            if (crawlTask != null && crawlTask.isRunning()) {
+                crawlTask.cancel();
+            }
         });
 
         // Run the task in a separate thread
         Thread crawlThread = new Thread(crawlTask);
         crawlThread.start();
+    }
+    private void showRelaunchMessage() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Application Restart Required");
+        alert.setHeaderText(null);
+        alert.setContentText("The application has finished recrawling the data.\nPlease relaunch the application.");
+        alert.showAndWait();
     }
 }
