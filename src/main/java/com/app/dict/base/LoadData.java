@@ -47,7 +47,7 @@ public class LoadData
     }
     public List<Model> loadNhanVat()
     {
-        List<NhanVatModel> myList = loader(Config.NHAN_VAT_LICH_SU_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
+        List<NhanVatModel> myList = loader(Config.NHAN_VAT_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);
@@ -80,7 +80,7 @@ public class LoadData
 
     public List<Model> loadLeHoi()
     {
-        List<LeHoiModel> myList = loader(Config.LE_HOI_FILENAME ,  new TypeToken<List<LeHoiModel>>() {});
+        List<LeHoiModel> myList = loader(Config.LE_HOI_FILENAME,  new TypeToken<List<LeHoiModel>>() {});
         List<Model> newList = new ArrayList<>(myList);
         for (Model model : newList) model.setHTML();
         Collections.sort(newList);

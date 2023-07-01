@@ -324,12 +324,13 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
         str = str.toLowerCase();
         str = Normalizer.normalize(str, Normalizer.Form.NFD);
         str = str.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        str = str.replace("đ", "d").replace("Đ", "d");
 
         return str.replaceAll(" ", "-");
     }
 
     public void createLeHoiJson() {
-        String festivalFilename = Config.LE_HOI_FILENAME;
+        String festivalFilename = Config.TEMP_LE_HOI_FILENAME;
         List<Model> festivals;
 
         festivals = crawlPages();
@@ -338,7 +339,7 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
 
     public static void main(String[] args) {
         LeHoiCrawler leHoiCrawler = new LeHoiCrawler();
-        String festivalFilename = Config.LE_HOI_FILENAME;
+        String festivalFilename = Config.TEMP_LE_HOI_FILENAME;
         List<Model> leHoiList;
 
         leHoiList = leHoiCrawler.crawlPages();

@@ -19,7 +19,7 @@ public class LeHoiToDiTich
     {
         Map<String, List<String>> hashMap = new HashMap<>();
         DiTichCrawler diTichCrawler = new DiTichCrawler();
-        List<DiTichModel> diTichList = diTichCrawler.loader(Config.DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
+        List<DiTichModel> diTichList = diTichCrawler.loader(Config.TEMP_DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
 
         for (DiTichModel diTich : diTichList)
         {
@@ -45,7 +45,7 @@ public class LeHoiToDiTich
         System.out.println(hashMap);
 
         LeHoiCrawler leHoiCrawler = new LeHoiCrawler();
-        List<LeHoiModel> leHoiList = leHoiCrawler.loader(Config.LE_HOI_FILENAME, new TypeToken<List<LeHoiModel>>() {});
+        List<LeHoiModel> leHoiList = leHoiCrawler.loader(Config.TEMP_LE_HOI_FILENAME, new TypeToken<List<LeHoiModel>>() {});
 
         for (LeHoiModel leHoi : leHoiList)
         {
@@ -67,7 +67,7 @@ public class LeHoiToDiTich
 
         List<Model> models = new ArrayList<>();
         models.addAll(leHoiList);
-        leHoiCrawler.writeJson(Config.LE_HOI_FILENAME, models);
+        leHoiCrawler.writeJson(Config.TEMP_LE_HOI_FILENAME, models);
     }
 
     public static void main(String[] args)
