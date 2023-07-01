@@ -182,8 +182,22 @@ public class MainController implements Initializable {
             @Override
             protected Void call() throws Exception {
                 CrawlAll crawlAll = new CrawlAll();
-                crawlAll.crawl();
-                crawlAll.link();
+                boolean crawlSuccess = false;
+                boolean linkSuccess = false;
+
+                try {
+                    crawlAll.crawl();
+                    crawlSuccess = true;
+                    crawlAll.link();
+                    linkSuccess = true;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if (crawlSuccess && linkSuccess) {
+                    crawlAll.overwriteDatabase();
+                }
+
                 return null;
             }
         };

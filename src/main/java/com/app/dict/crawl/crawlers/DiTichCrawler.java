@@ -4,8 +4,6 @@ package com.app.dict.crawl.crawlers;
 import com.app.dict.base.DiTichModel;
 import com.app.dict.base.Model;
 
-import com.app.dict.crawl.linkers.DiTichToLeHoi;
-import com.app.dict.crawl.linkers.DiTichToThoiKy;
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
@@ -118,18 +116,18 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
     public void createDiTichJson()
     {
         List<Model> locationList = crawlPages();
-        writeJson(Config.DI_TICH_FILENAME, locationList);
+        writeJson(Config.TEMP_DI_TICH_FILENAME, locationList);
     }
 
     // Testing
     public static void main(String[] args) {
         DiTichCrawler test = new DiTichCrawler();
         List<Model> locationList = test.crawlPages();
-        test.writeJson(Config.DI_TICH_FILENAME, locationList);
+        test.writeJson(Config.TEMP_DI_TICH_FILENAME, locationList);
 //        test.writeHTML(Config.DI_TICH_HTML, locationList);
 
 //        DiTichCrawler test = new DiTichCrawler();
-        List<DiTichModel> myList = test.loader(Config.DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
+        List<DiTichModel> myList = test.loader(Config.TEMP_DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
 //        List<Model> newList = new ArrayList<>();
 //        newList.addAll(myList);
 //        test.writeHTML(Config.DI_TICH_HTML, newList);

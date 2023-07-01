@@ -142,13 +142,13 @@ public class SuKienCrawler extends SCrawler implements ICrawler {
     public void createSuKienJson()
     {
         List<Model> historicalEvents = crawlPages();
-        writeJson(Config.SU_KIEN_FILENAME, historicalEvents);
+        writeJson(Config.TEMP_SU_KIEN_FILENAME, historicalEvents);
     }
 
     // testing
     public static void main(String[] args) {
         SuKienCrawler test = new SuKienCrawler();
         List<Model> historicalEvents = test.crawlPages();
-        test.writeJson(Config.SU_KIEN_FILENAME, historicalEvents);
+        test.writeJson(Config.TEMP_SU_KIEN_FILENAME, historicalEvents);
     }
 }
