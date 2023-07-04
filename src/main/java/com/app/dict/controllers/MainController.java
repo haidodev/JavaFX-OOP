@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.URL;
 
 import javafx.concurrent.Task;
@@ -64,6 +65,7 @@ public class MainController implements Initializable {
     private LeHoiController leHoiController;
     @FXML
     public ProgressIndicator loadingCircle;
+    boolean isConnected = isInternetAvailable();
 
 
     private void setMainContent(AnchorPane anchorPane) {
@@ -175,9 +177,18 @@ public class MainController implements Initializable {
         this.splashScene = splashScene;
     }
 
-    public void showSplashScreenAndRunMethod() {
+    public void showSplashScreenAndCrawl() {
         primaryStage.setScene(splashScene);
         primaryStage.show();
+
+        if(isConnected == false){
+            primaryStage.setScene(dictMainScene);
+            primaryStage.show();
+            showInternetErrorMessage();
+            isConnected = isInternetAvailable();
+            return;
+
+        }
 
         Task<Void> crawlTask = new Task<Void>() {
             @Override
@@ -185,6 +196,7 @@ public class MainController implements Initializable {
                 CrawlAll crawlAll = new CrawlAll();
                 boolean crawlSuccess = false;
                 boolean linkSuccess = false;
+
 
                 try {
                     crawlAll.crawl();
@@ -225,6 +237,21 @@ public class MainController implements Initializable {
         alert.setTitle("Application Restart Required");
         alert.setHeaderText(null);
         alert.setContentText("The application has finished recrawling the data.\nPlease relaunch the application.");
+        alert.showAndWait();
+    }
+    public static boolean isInternetAvailable() {
+        try {
+            InetAddress address = InetAddress.getByName("nguoikesu.com");
+            return address.isReachable(5000); // Timeout in milliseconds
+        } catch (IOException e) {
+            return false;
+        }
+    }
+    private void showInternetErrorMessage() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Internet error");
+        alert.setHeaderText(null);
+        alert.setContentText("Please check your Internet connection and retry!");
         alert.showAndWait();
     }
 }

@@ -5,6 +5,8 @@ import com.app.dict.crawl.crawlers.*;
 import com.app.dict.crawl.linkers.*;
 import com.app.dict.util.Config;
 import com.google.gson.reflect.TypeToken;
+import java.net.InetAddress;
+import java.io.IOException;
 
 import java.util.List;
 
